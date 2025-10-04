@@ -83,7 +83,7 @@ export default function Sidebar({ isMobileMenuOpen, setMobileMenuOpen }: Sidebar
               <SheetTitle asChild>
                 <div className="flex items-center justify-between h-14 px-4">
                   <a href="/" className="flex items-center gap-2 font-bold text-lg">
-                     <Image src="/exnus.jpg" alt="Exnus Protocol" width={32} height={32} className="h-8 w-8 rounded-full object-cover" />
+                     <Image src="/logo.png" alt="Exnus Protocol" width={32} height={32} className="h-8 w-8" />
                     <span>Exnus Protocol</span>
                   </a>
                 </div>
@@ -98,7 +98,7 @@ export default function Sidebar({ isMobileMenuOpen, setMobileMenuOpen }: Sidebar
       <aside className="hidden md:flex md:flex-col w-20 border-r bg-card fixed inset-y-0 z-50">
         <div className="flex h-14 items-center justify-center border-b">
           <a href="/" className="flex items-center justify-center">
-             <Image src="/exnus.jpg" alt="Exnus Protocol" width={40} height={40} className="h-10 w-10 rounded-full object-cover" />
+             <Image src="/logo.png" alt="Exnus Protocol" width={40} height={40} className="h-10 w-10" />
              <span className="sr-only">Exnus</span>
           </a>
         </div>
