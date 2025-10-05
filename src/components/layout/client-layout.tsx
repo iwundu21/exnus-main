@@ -1,7 +1,7 @@
 
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Sidebar from '@/components/layout/sidebar';
 import NewHeader from '@/components/layout/new-header';
 import Footer from './footer';
@@ -12,10 +12,36 @@ export default function ClientLayout({
   children: React.ReactNode;
 }) {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [theme, setTheme] = useState('dark');
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      setTheme(savedTheme);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
+  };
 
   return (
     <div className="min-h-screen bg-background">
-      <Sidebar isMobileMenuOpen={isMobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
+      <Sidebar 
+        isMobileMenuOpen={isMobileMenuOpen} 
+        setMobileMenuOpen={setMobileMenuOpen}
+        theme={theme}
+        toggleTheme={toggleTheme}
+      />
       <div className="flex flex-col md:pl-20">
         <NewHeader onMenuClick={() => setMobileMenuOpen(true)} />
         <main className="flex-1 p-4 sm:p-6 md:p-8">

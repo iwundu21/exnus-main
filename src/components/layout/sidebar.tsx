@@ -13,13 +13,17 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip"
 import Image from 'next/image';
+import { Moon, Sun } from 'lucide-react';
+import { Button } from '../ui/button';
 
 interface SidebarProps {
   isMobileMenuOpen: boolean;
   setMobileMenuOpen: (isOpen: boolean) => void;
+  theme: string;
+  toggleTheme: () => void;
 }
 
-export default function Sidebar({ isMobileMenuOpen, setMobileMenuOpen }: SidebarProps) {
+export default function Sidebar({ isMobileMenuOpen, setMobileMenuOpen, theme, toggleTheme }: SidebarProps) {
   const pathname = usePathname();
   const [activePath, setActivePath] = useState(pathname);
   
@@ -43,34 +47,55 @@ export default function Sidebar({ isMobileMenuOpen, setMobileMenuOpen }: Sidebar
     );
   };
 
-  const NavLinks = () => (
-    <nav className="flex-1 overflow-auto p-4 space-y-2">
-      {navLinks.map((link) => (
-        <a key={link.href} href={link.href} className={getLinkClass(link.href)} onClick={() => setMobileMenuOpen(false)}>
-          {link.icon}
-          {link.label}
-        </a>
-      ))}
-    </nav>
+  const NavContent = () => (
+    <>
+      <nav className="flex-1 overflow-auto p-4 space-y-2">
+        {navLinks.map((link) => (
+          <a key={link.href} href={link.href} className={getLinkClass(link.href)} onClick={() => setMobileMenuOpen(false)}>
+            {link.icon}
+            {link.label}
+          </a>
+        ))}
+      </nav>
+      <div className="p-4 mt-auto border-t">
+          <Button onClick={toggleTheme} variant="ghost" className="w-full justify-start gap-3">
+              {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+              <span>{theme === 'light' ? 'Dark Mode' : 'Light Mode'}</span>
+          </Button>
+      </div>
+    </>
   );
 
-  const DesktopNavLinks = () => (
+  const DesktopNavContent = () => (
     <TooltipProvider>
-        <nav className="flex flex-col items-center gap-4 px-2 py-4">
-            {navLinks.map((link) => (
-                <Tooltip key={link.href}>
-                    <TooltipTrigger asChild>
-                        <a href={link.href} className={getDesktopLinkClass(link.href)}>
-                            {link.icon}
-                            <span className="sr-only">{link.label}</span>
-                        </a>
-                    </TooltipTrigger>
-                    <TooltipContent side="right">
-                        <p>{link.label}</p>
-                    </TooltipContent>
-                </Tooltip>
-            ))}
-        </nav>
+      <nav className="flex flex-col items-center gap-4 px-2 py-4">
+          {navLinks.map((link) => (
+              <Tooltip key={link.href}>
+                  <TooltipTrigger asChild>
+                      <a href={link.href} className={getDesktopLinkClass(link.href)}>
+                          {link.icon}
+                          <span className="sr-only">{link.label}</span>
+                      </a>
+                  </TooltipTrigger>
+                  <TooltipContent side="right">
+                      <p>{link.label}</p>
+                  </TooltipContent>
+              </Tooltip>
+          ))}
+      </nav>
+      <div className="mt-auto flex flex-col items-center gap-4 p-4">
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Button onClick={toggleTheme} variant="ghost" size="icon" className="h-10 w-10 rounded-lg text-muted-foreground">
+                {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+                <span className="sr-only">Toggle theme</span>
+            </Button>
+          </TooltipTrigger>
+          <TooltipContent side="right">
+            <p>{theme === 'light' ? 'Enable Dark Mode' : 'Enable Light Mode'}</p>
+          </TooltipContent>
+        </Tooltip>
+      </div>
     </TooltipProvider>
   );
 
@@ -89,7 +114,7 @@ export default function Sidebar({ isMobileMenuOpen, setMobileMenuOpen }: Sidebar
                 </div>
               </SheetTitle>
             </SheetHeader>
-            <NavLinks />
+            <NavContent />
         </SheetContent>
       </Sheet>
 
@@ -102,7 +127,7 @@ export default function Sidebar({ isMobileMenuOpen, setMobileMenuOpen }: Sidebar
              <span className="sr-only">Exnus</span>
           </a>
         </div>
-        <DesktopNavLinks />
+        <DesktopNavContent />
       </aside>
     </>
   );
