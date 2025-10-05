@@ -80,19 +80,12 @@ export default function RoadmapSection() {
     <section 
       id="roadmap" 
       className="relative"
-      style={{
-        backgroundImage: `url(/6.jpeg)`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed'
-      }}
     >
-      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm z-0" />
       <div className="relative z-10">
-        <div className="header-card text-center mb-12 bg-transparent border-0">
+        <div className="header-card text-center mb-12 bg-card border-border">
           <ScrollReveal>
           <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Roadmap</h2>
-          <p className="max-w-2xl mx-auto text-white/80 mt-4">
+          <p className="max-w-2xl mx-auto text-foreground/80 mt-4">
               Follow our journey as we build the future of decentralized technology, one milestone at a time.
           </p>
           </ScrollReveal>
@@ -109,8 +102,8 @@ export default function RoadmapSection() {
                     <RoadmapIcon status={status as 'complete' | 'current' | 'future'} />
                   </div>
                   <p className="text-sm font-semibold text-primary">{item.quarter}</p>
-                  <h3 className="font-bold text-lg mt-1 text-white">{item.title}</h3>
-                  <p className="text-white/70 mt-1">{item.description}</p>
+                  <h3 className="font-bold text-lg mt-1 text-foreground">{item.title}</h3>
+                  <p className="text-foreground/70 mt-1">{item.description}</p>
                 </div>
               </ScrollReveal>
             )

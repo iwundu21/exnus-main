@@ -128,24 +128,15 @@ export default function ContactPage() {
 
   return (
     <div className="space-y-12">
-      <section className="relative overflow-hidden rounded-lg">
-        <div
-            className="absolute inset-0"
-            style={{
-            backgroundImage: `url(/6.jpeg)`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            }}
-        />
-        <div className="absolute inset-0 bg-black/50 backdrop-blur-sm z-0" />
-        <div className="relative z-10 p-8 md:p-12 lg:p-20 text-center">
+      <section className="rounded-lg">
+        <div className="p-8 md:p-12 lg:p-20 text-center bg-card border-border">
             <ScrollReveal>
                 <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-primary">
                     Contact Us
                 </h1>
             </ScrollReveal>
             <ScrollReveal delay={200}>
-                <p className="max-w-3xl mx-auto text-lg text-white/80">
+                <p className="max-w-3xl mx-auto text-lg text-foreground/80">
                     Have questions or want to get involved? We'd love to hear from you. Reach out through our contact form or connect with us on our social channels.
                 </p>
             </ScrollReveal>

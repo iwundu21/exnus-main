@@ -15,22 +15,16 @@ export default function HeroSection() {
   return (
     <section 
       className="relative overflow-hidden"
-      style={{
-        backgroundImage: `url(/4.jpeg)`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
     >
-      <div className="absolute inset-0 bg-black/50 z-0" />
       <div className="relative z-10">
-        <div className="header-card text-center bg-transparent border-0 p-8 md:p-12 lg:p-20">
+        <div className="header-card text-center bg-card border-border p-8 md:p-12 lg:p-20">
           <ScrollReveal>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6 text-white">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6 text-foreground">
               <span className="text-primary">Exnus Protocol:</span> Fostering Innovation Through Incentivized Participation.
             </h1>
           </ScrollReveal>
           <ScrollReveal delay={200}>
-            <p className="max-w-3xl mx-auto text-lg md:text-xl text-white/80 mb-10">
+            <p className="max-w-3xl mx-auto text-lg md:text-xl text-foreground/80 mb-10">
               Exnus introduces a revolutionary reward system on Solana, designed to cultivate a vibrant, collaborative ecosystem by rewarding meaningful contributions from every community member.
             </p>
           </ScrollReveal>
@@ -43,7 +37,7 @@ export default function HeroSection() {
               </Button>
               <Dialog>
                 <DialogTrigger asChild>
-                  <Button size="lg" variant="outline" className="bg-transparent text-white border-white hover:bg-white hover:text-black">
+                  <Button size="lg" variant="outline">
                     Explore Protocol
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>

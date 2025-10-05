@@ -361,21 +361,12 @@ export default function ProtocolPage() {
 
     return (
         <div className="space-y-8">
-            <div className="header-card text-center relative overflow-hidden">
-                <div 
-                    className="absolute inset-0"
-                    style={{
-                    backgroundImage: `url(/2.jpeg)`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    }}
-                />
-                <div className="absolute inset-0 bg-black/50 backdrop-blur-sm z-0" />
+            <div className="header-card text-center bg-card border-border">
                 <div className="relative z-10 p-8">
-                    <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                    <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">
                     Technical Documents
                     </h1>
-                    <p className="text-lg text-white/80 max-w-4xl mx-auto">
+                    <p className="text-lg text-foreground/80 max-w-4xl mx-auto">
                     An in-depth exploration of the mechanisms, architecture, and strategic vision behind the protocol.
                     </p>
                 </div>

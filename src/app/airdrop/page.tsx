@@ -47,37 +47,26 @@ const airdropDetails = [
 export default function AirdropPage() {
   return (
     <div className="space-y-12 p-4 md:p-8">
-      <section className="relative overflow-hidden rounded-lg">
-          <div 
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `url(/6.jpeg)`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-            }}
-          />
-          <div className="absolute inset-0 bg-black/50 backdrop-blur-sm z-0" />
-          <div className="relative z-10">
-            <div className="header-card text-center bg-transparent border-0 text-white">
-                <ScrollReveal>
-                <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-                    Join the <span className="text-primary">Exnus Protocol</span> Airdrop
-                </h1>
-                </ScrollReveal>
-                <ScrollReveal delay={200}>
-                <p className="max-w-3xl mx-auto text-lg text-white/80 mb-8">
-                    Become an early member of our community and earn exclusive rewards. Participate in our airdrop campaign by completing simple tasks in our Telegram mini-app.
-                </p>
-                </ScrollReveal>
-                <ScrollReveal delay={400}>
-                    <Button size="lg" asChild>
-                        <a href="https://t.me/Exnusprotocol" target="_blank" rel="noopener noreferrer">
-                            Join Airdrop Now
-                            <ArrowRight className="ml-2 h-5 w-5" />
-                        </a>
-                    </Button>
-                </ScrollReveal>
-            </div>
+      <section className="rounded-lg">
+          <div className="header-card text-center bg-card border-border text-foreground">
+              <ScrollReveal>
+              <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-primary">
+                  Join the Exnus Protocol Airdrop
+              </h1>
+              </ScrollReveal>
+              <ScrollReveal delay={200}>
+              <p className="max-w-3xl mx-auto text-lg text-foreground/80 mb-8">
+                  Become an early member of our community and earn exclusive rewards. Participate in our airdrop campaign by completing simple tasks in our Telegram mini-app.
+              </p>
+              </ScrollReveal>
+              <ScrollReveal delay={400}>
+                  <Button size="lg" asChild>
+                      <a href="https://t.me/Exnusprotocol" target="_blank" rel="noopener noreferrer">
+                          Join Airdrop Now
+                          <ArrowRight className="ml-2 h-5 w-5" />
+                      </a>
+                  </Button>
+              </ScrollReveal>
           </div>
         </section>
 
@@ -94,12 +83,7 @@ export default function AirdropPage() {
               <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                   {steps.map((step, index) => (
                       <ScrollReveal key={step.title} delay={index * 150}>
-                        <div className="relative h-full p-6 text-center border rounded-lg overflow-hidden theme-gold">
-                          <div
-                              className="absolute inset-0 bg-cover bg-center"
-                              style={{ backgroundImage: `url(/2.jpeg)` }}
-                          />
-                          <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
+                        <div className="relative h-full p-6 text-center border rounded-lg overflow-hidden theme-gold bg-card">
                           <div className="relative z-10">
                             <div className="flex justify-center mb-4">
                                 <div className="p-4 bg-primary/10 rounded-full w-fit">
@@ -107,7 +91,7 @@ export default function AirdropPage() {
                                 </div>
                             </div>
                             <h3 className="text-xl font-bold text-primary">{step.title}</h3>
-                            <p className="text-white/80 mt-2">{step.description}</p>
+                            <p className="text-foreground/80 mt-2">{step.description}</p>
                           </div>
                         </div>
                       </ScrollReveal>
@@ -129,19 +113,14 @@ export default function AirdropPage() {
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 text-left">
           {airdropDetails.map((detail, index) => (
             <ScrollReveal key={detail.title} delay={index * 150}>
-              <div className="relative p-6 border rounded-lg flex items-start gap-4 h-full overflow-hidden theme-gold">
-                <div
-                    className="absolute inset-0 bg-cover bg-center"
-                    style={{ backgroundImage: `url(/2.jpeg)` }}
-                />
-                <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
+              <div className="relative p-6 border rounded-lg flex items-start gap-4 h-full overflow-hidden theme-gold bg-card">
                 <div className="relative z-10 flex items-start gap-4">
                   <div className="p-2 bg-primary/10 rounded-full mt-1">
                     {detail.icon}
                   </div>
                   <div>
                     <h3 className="font-bold text-xl text-primary">{detail.title}</h3>
-                    <p className="mt-2 text-white/80">
+                    <p className="mt-2 text-foreground/80">
                       {detail.description}
                     </p>
                   </div>
@@ -153,15 +132,10 @@ export default function AirdropPage() {
       </section>
       <section>
           <ScrollReveal>
-            <div className="relative max-w-3xl mx-auto p-8 border rounded-lg text-center overflow-hidden theme-gold">
-               <div
-                  className="absolute inset-0 bg-cover bg-center"
-                  style={{ backgroundImage: `url(/2.jpeg)` }}
-              />
-              <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
+            <div className="relative max-w-3xl mx-auto p-8 border rounded-lg text-center overflow-hidden theme-gold bg-card">
               <div className="relative z-10">
                 <h3 className="font-bold text-xl text-primary">Important Notice</h3>
-                <p className="mt-4 text-white/80">
+                <p className="mt-4 text-foreground/80">
                     Airdrop rewards will be distributed after the Token Generation Event (TGE). The number of tokens you receive will be proportional to the points you accumulate. Stay tuned to our official channels for more announcements.
                 </p>
               </div>
