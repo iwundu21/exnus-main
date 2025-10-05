@@ -30,6 +30,7 @@ export default function Footer() {
               <span>Telegram</span>
             </a>
              <a href="https://discord.gg/v8MpYYFdP8" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white/90 hover:text-white">
+                <Image src="/discord.jpg" alt="Discord" width={20} height={20} />
                 <span>Discord</span>
             </a>
           </div>
