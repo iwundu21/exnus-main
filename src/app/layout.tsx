@@ -6,6 +6,9 @@ import ClientLayout from '@/components/layout/client-layout';
 export const metadata: Metadata = {
   title: 'Exnus Protocol',
   description: 'Redefining user engagement within the Web3 space.',
+  icons: {
+    icon: '/logo.png',
+  },
 };
 
 export default function RootLayout({
