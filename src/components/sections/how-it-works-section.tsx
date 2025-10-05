@@ -73,7 +73,16 @@ export default function HowItWorksSection() {
                            {index === 0 ? (
                                 <div className="w-full h-auto bg-card flex items-center justify-center p-4">{step.diagram}</div>
                             ) : index === 1 ? (
-                                <div className="w-full h-full p-8 flex items-center justify-center min-h-[220px] bg-card">
+                                <div className="relative w-full h-full p-8 flex items-center justify-center min-h-[220px] bg-card overflow-hidden">
+                                    <div 
+                                      className="absolute inset-0"
+                                      style={{
+                                        backgroundImage: `url(/3.jpeg)`,
+                                        backgroundSize: 'cover',
+                                        backgroundPosition: 'center',
+                                      }}
+                                    />
+                                    <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
                                     <div className="relative z-10">{step.diagram}</div>
                                 </div>
                             ) : (
@@ -102,7 +111,16 @@ export default function HowItWorksSection() {
                        {index === 0 ? (
                             <div className="w-full h-auto bg-card flex items-center justify-center">{step.diagram}</div>
                         ) : index === 1 ? (
-                           <div className="w-full h-full p-8 flex items-center justify-center min-h-[220px] bg-card">
+                           <div className="relative w-full h-full p-8 flex items-center justify-center min-h-[220px] bg-card overflow-hidden">
+                                <div 
+                                    className="absolute inset-0"
+                                    style={{
+                                    backgroundImage: `url(/3.jpeg)`,
+                                    backgroundSize: 'cover',
+                                    backgroundPosition: 'center',
+                                    }}
+                                />
+                                <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
                                <div className="relative z-10">{step.diagram}</div>
                            </div>
                         ) : (
