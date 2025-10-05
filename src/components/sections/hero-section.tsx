@@ -14,7 +14,7 @@ import {
 export default function HeroSection() {
   return (
     <section 
-      className="relative overflow-hidden min-h-screen flex items-center justify-center"
+      className="relative overflow-hidden"
     >
       <div 
         className="absolute inset-0"
