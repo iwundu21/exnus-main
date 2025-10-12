@@ -1,6 +1,6 @@
 
 'use client';
-import { Search, Bell, Menu } from "lucide-react";
+import { Search, Bell, Menu, Moon, Sun } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect, useRef } from "react";
@@ -9,12 +9,22 @@ import { usePathname } from "next/navigation";
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator } from "@/components/ui/dropdown-menu";
 import { getNews, NewsPost } from "@/app/admin/actions";
 import { formatDistanceToNow, sub } from "date-fns";
+import Image from "next/image";
+import { cn } from "@/lib/utils";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
 
 interface NewHeaderProps {
     onMenuClick: () => void;
+    theme: string;
+    toggleTheme: () => void;
 }
 
-export default function NewHeader({ onMenuClick }: NewHeaderProps) {
+export default function NewHeader({ onMenuClick, theme, toggleTheme }: NewHeaderProps) {
     const [searchQuery, setSearchQuery] = useState('');
     const [searchResults, setSearchResults] = useState<NavLink[]>([]);
     const [isSearchFocused, setIsSearchFocused] = useState(false);
@@ -62,41 +72,55 @@ export default function NewHeader({ onMenuClick }: NewHeaderProps) {
         };
     }, []);
 
+    const getLinkClass = (href: string) => {
+        const isActive = pathname === href;
+        return cn(
+            "text-sm font-medium transition-colors text-foreground/70 hover:text-foreground",
+            isActive && "text-foreground"
+        );
+    };
+
     return (
-        <header className="sticky top-0 z-30 flex h-14 items-center gap-4 border-b bg-background/50 backdrop-blur-sm px-4 sm:static sm:h-auto sm:border-b sm:bg-background/50 sm:px-6">
-            <Button variant="outline" size="icon" className="md:hidden flex-shrink-0" onClick={onMenuClick}>
-                <Menu className="h-6 w-6" />
-                <span className="sr-only">Toggle Menu</span>
-            </Button>
-            <div className="hidden sm:block font-bold text-lg">
-                Exnus Protocol
-            </div>
-            <div className="relative flex-1" ref={searchRef}>
-                <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-                <Input
-                    type="search"
-                    placeholder="Search..."
-                    className="pl-8 sm:w-full"
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    onFocus={() => setIsSearchFocused(true)}
-                />
-                {isSearchFocused && searchResults.length > 0 && (
-                    <div className="absolute top-full mt-2 w-full md:w-1/3 rounded-md border bg-popover text-popover-foreground shadow-md">
-                        <ul>
-                            {searchResults.map(link => (
-                                <li key={link.href}>
-                                    <a href={link.href} className="flex items-center gap-3 px-4 py-2 hover:bg-accent">
-                                        {link.icon}
-                                        <span>{link.label}</span>
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                )}
-            </div>
-            <div className="flex flex-shrink-0 items-center justify-end gap-2 md:gap-4">
+        <header className="sticky top-0 z-30 flex h-16 items-center gap-4 border-b bg-background/50 backdrop-blur-sm px-4 sm:px-6">
+            <a href="/" className="flex items-center gap-2 font-bold text-lg mr-4">
+               <Image src="/logo.png" alt="Exnus Protocol" width={40} height={40} className="h-10 w-10" />
+               <span className="hidden sm:inline-block">Exnus Protocol</span>
+            </a>
+            
+            <nav className="hidden lg:flex items-center gap-6">
+                 {navLinks.map((link) => (
+                    <a key={link.href} href={link.href} className={getLinkClass(link.href)}>
+                        {link.label}
+                    </a>
+                ))}
+            </nav>
+
+            <div className="flex-1 flex justify-end items-center gap-4">
+                <div className="relative flex-1 max-w-xs" ref={searchRef}>
+                    <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+                    <Input
+                        type="search"
+                        placeholder="Search..."
+                        className="pl-8 w-full"
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                        onFocus={() => setIsSearchFocused(true)}
+                    />
+                    {isSearchFocused && searchResults.length > 0 && (
+                        <div className="absolute top-full mt-2 w-full rounded-md border bg-popover text-popover-foreground shadow-md">
+                            <ul>
+                                {searchResults.map(link => (
+                                    <li key={link.href}>
+                                        <a href={link.href} className="flex items-center gap-3 px-4 py-2 hover:bg-accent">
+                                            {link.icon}
+                                            <span>{link.label}</span>
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
+                </div>
                  <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                         <Button variant="ghost" size="icon" className="relative">
@@ -125,6 +149,25 @@ export default function NewHeader({ onMenuClick }: NewHeaderProps) {
                         )}
                     </DropdownMenuContent>
                 </DropdownMenu>
+
+                <TooltipProvider>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <Button onClick={toggleTheme} variant="ghost" size="icon" className="h-10 w-10 rounded-lg text-muted-foreground">
+                            {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+                            <span className="sr-only">Toggle theme</span>
+                        </Button>
+                      </TooltipTrigger>
+                      <TooltipContent side="bottom">
+                        <p>{theme === 'light' ? 'Enable Dark Mode' : 'Enable Light Mode'}</p>
+                      </TooltipContent>
+                    </Tooltip>
+                </TooltipProvider>
+
+                <Button variant="outline" size="icon" className="lg:hidden flex-shrink-0" onClick={onMenuClick}>
+                    <Menu className="h-6 w-6" />
+                    <span className="sr-only">Toggle Menu</span>
+                </Button>
             </div>
         </header>
     );

@@ -44,8 +44,8 @@ export default function ClientLayout({
         theme={theme}
         toggleTheme={toggleTheme}
       />
-      <div className="flex flex-col md:pl-20">
-        <NewHeader onMenuClick={() => setMobileMenuOpen(true)} />
+      <div className="flex flex-col lg:pl-0">
+        <NewHeader onMenuClick={() => setMobileMenuOpen(true)} theme={theme} toggleTheme={toggleTheme} />
         <main className="flex-1 p-4 sm:p-6 md:p-8">
           {children}
         </main>
