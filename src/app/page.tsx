@@ -4,6 +4,7 @@ import FeaturesSection from '@/components/sections/features-section';
 import HowItWorksSection from '@/components/sections/how-it-works-section';
 import CtaSection from '@/components/sections/cta-section';
 import EcosystemSection from '@/components/sections/ecosystem-section';
+import FounderSection from '@/components/sections/founder-section';
 
 export default function Home() {
   return (
@@ -14,6 +15,9 @@ export default function Home() {
       </div>
       <div className="py-20 px-4 md:px-6">
         <HowItWorksSection />
+      </div>
+       <div className="py-20 px-4 md:px-6">
+        <FounderSection />
       </div>
       <div className="py-20 px-4 md:px-6">
         <EcosystemSection />
