@@ -16,35 +16,11 @@ import { CardContent, CardDescription, CardHeader, CardTitle } from "@/component
 import ScrollReveal from "@/components/scroll-reveal";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { deleteNews, getNews, postNews, type NewsPost } from "./actions";
 import { getSubmittedMessages, type Message } from "@/app/contact/actions";
-import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Checkbox } from "@/components/ui/checkbox";
 import { useEffect, useState, useRef, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
 import { format } from "date-fns";
-
-
-const newsFormSchema = z.object({
-  title: z.string().min(2, "Title must be at least 2 characters."),
-  content: z.string().min(10, "Content must be at least 10 characters."),
-  image: z.any().optional(),
-  generateAudio: z.boolean().default(false).optional(),
-});
-
 
 function AdminDashboard() {
     const searchParams = useSearchParams();
@@ -52,82 +28,14 @@ function AdminDashboard() {
     const correctCode = "203040";
 
     const { toast } = useToast();
-    const [news, setNews] = useState<NewsPost[]>([]);
     const [messages, setMessages] = useState<Message[]>([]);
-    const [isSubmittingNews, setIsSubmittingNews] = useState(false);
-    const fileInputRef = useRef<HTMLInputElement>(null);
-
-    const newsForm = useForm<z.infer<typeof newsFormSchema>>({
-        resolver: zodResolver(newsFormSchema),
-        defaultValues: {
-            title: "",
-            content: "",
-            generateAudio: false,
-        },
-    });
 
     useEffect(() => {
         if (accessCode === correctCode) {
-            getNews().then(setNews);
             getSubmittedMessages().then(setMessages);
         }
     }, [accessCode]);
 
-    async function onNewsSubmit(values: z.infer<typeof newsFormSchema>) {
-        const formData = new FormData();
-        formData.append('title', values.title);
-        formData.append('content', values.content);
-        if (values.generateAudio) {
-            formData.append('generateAudio', 'on');
-        }
-        
-        if (fileInputRef.current?.files?.[0]) {
-            formData.append('image', fileInputRef.current.files[0]);
-        }
-
-        setIsSubmittingNews(true);
-        try {
-            const result = await postNews(formData);
-            if (result.post) {
-                setNews(prevNews => [result.post, ...prevNews]);
-            }
-            toast({
-                title: "News posted successfully!",
-                description: "The announcement is now live.",
-            });
-            newsForm.reset();
-             if (fileInputRef.current) {
-                fileInputRef.current.value = "";
-            }
-        } catch (error) {
-            console.error("Error posting news:", error);
-            toast({
-                variant: "destructive",
-                title: "Uh oh! Something went wrong.",
-                description: "There was a problem posting the news.",
-            });
-        } finally {
-            setIsSubmittingNews(false);
-        }
-    }
-
-    async function handleDelete(id: string) {
-        try {
-            await deleteNews(id);
-            setNews(prevNews => prevNews.filter(post => post.id !== id));
-            toast({
-                title: "Post deleted!",
-                description: "The news post has been removed.",
-            });
-        } catch (error) {
-             toast({
-                variant: "destructive",
-                title: "Deletion failed",
-                description: "There was a problem deleting the post.",
-            });
-        }
-    }
-    
   if (accessCode !== correctCode) {
     return (
       <div className="w-full">
@@ -171,141 +79,7 @@ function AdminDashboard() {
             </p>
         </ScrollReveal>
       </div>
-      <div className="grid lg:grid-cols-2 gap-8">
-        <ScrollReveal>
-            <div>
-                <CardHeader>
-                    <CardTitle>Post News</CardTitle>
-                    <CardDescription>Create and publish a new announcement.</CardDescription>
-                </CardHeader>
-                <CardContent>
-                    <Form {...newsForm}>
-                        <form onSubmit={newsForm.handleSubmit(onNewsSubmit)} className="space-y-6">
-                            <FormField
-                                control={newsForm.control}
-                                name="title"
-                                render={({ field }) => (
-                                    <FormItem>
-                                    <FormLabel>Title</FormLabel>
-                                    <FormControl>
-                                        <Input placeholder="Enter news title" {...field} />
-                                    </FormControl>
-                                    <FormMessage />
-                                    </FormItem>
-                                )}
-                            />
-                             <FormField
-                                control={newsForm.control}
-                                name="image"
-                                render={({ field }) => (
-                                    <FormItem>
-                                    <FormLabel>Image (Optional)</FormLabel>
-                                    <FormControl>
-                                        <Input type="file" accept="image/*" ref={fileInputRef} onChange={(e) => field.onChange(e.target.files)} />
-                                    </FormControl>
-                                    <FormMessage />
-                                    </FormItem>
-                                )}
-                            />
-                            <FormField
-                                control={newsForm.control}
-                                name="content"
-                                render={({ field }) => (
-                                    <FormItem>
-                                    <FormLabel>Content</FormLabel>
-                                    <FormControl>
-                                        <Textarea placeholder="Type your announcement here..." {...field} rows={6}/>
-                                    </FormControl>
-                                    <FormMessage />
-                                    </FormItem>
-                                )}
-                            />
-                            <FormField
-                                control={newsForm.control}
-                                name="generateAudio"
-                                render={({ field }) => (
-                                    <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
-                                    <FormControl>
-                                        <Checkbox
-                                            checked={field.value}
-                                            onCheckedChange={field.onChange}
-                                        />
-                                    </FormControl>
-                                    <div className="space-y-1 leading-none">
-                                        <FormLabel>
-                                        Generate Audio Version
-                                        </FormLabel>
-                                    </div>
-                                    </FormItem>
-                                )}
-                            />
-                            <Button type="submit" disabled={isSubmittingNews} className="w-full">
-                                {isSubmittingNews ? 'Posting...' : 'Post Announcement'}
-                            </Button>
-                        </form>
-                    </Form>
-                </CardContent>
-            </div>
-        </ScrollReveal>
-         <ScrollReveal delay={200}>
-            <div>
-                <CardHeader>
-                    <CardTitle>Manage News</CardTitle>
-                    <CardDescription>Review and delete existing news posts.</CardDescription>
-                </CardHeader>
-                <CardContent>
-                    <div className="overflow-y-auto max-h-[500px] border rounded-md">
-                        {news.length > 0 ? (
-                             <Table>
-                                <TableHeader>
-                                    <TableRow>
-                                    <TableHead>Title</TableHead>
-                                    <TableHead>Date</TableHead>
-                                    <TableHead className="text-right">Actions</TableHead>
-                                    </TableRow>
-                                </TableHeader>
-                                <TableBody>
-                                    {news.map((post) => (
-                                    <TableRow key={post.id}>
-                                        <TableCell className="font-medium truncate max-w-[200px]">{post.title}</TableCell>
-                                        <TableCell>{format(new Date(post.createdAt), "PPP")}</TableCell>
-                                        <TableCell className="text-right">
-                                             <AlertDialog>
-                                                <AlertDialogTrigger asChild>
-                                                    <Button variant="ghost" size="icon">
-                                                        <svg className="h-4 w-4 text-destructive" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
-                                                    </Button>
-                                                </AlertDialogTrigger>
-                                                <AlertDialogContent>
-                                                    <AlertDialogHeader>
-                                                    <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
-                                                    <AlertDialogDescription>
-                                                        This action cannot be undone. This will permanently delete the post titled "{post.title}".
-                                                    </AlertDialogDescription>
-                                                    </AlertDialogHeader>
-                                                    <AlertDialogFooter>
-                                                    <AlertDialogCancel>Cancel</AlertDialogCancel>
-                                                    <AlertDialogAction onClick={() => handleDelete(post.id)} className="bg-destructive hover:bg-destructive/90">
-                                                        Delete
-                                                    </AlertDialogAction>
-                                                    </AlertDialogFooter>
-                                                </AlertDialogContent>
-                                            </AlertDialog>
-                                        </TableCell>
-                                    </TableRow>
-                                    ))}
-                                </TableBody>
-                            </Table>
-                        ) : (
-                             <div className="text-center py-10 text-foreground/70">
-                                No news posts have been created yet.
-                            </div>
-                        )}
-                    </div>
-                </CardContent>
-            </div>
-        </ScrollReveal>
-      </div>
+      
       <ScrollReveal delay={200}>
         <div>
           <CardHeader>
@@ -355,5 +129,3 @@ export default function AdminPage() {
         </Suspense>
     );
 }
-
-    

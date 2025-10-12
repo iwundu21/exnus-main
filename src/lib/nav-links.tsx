@@ -11,7 +11,6 @@ export const navLinks: NavLink[] = [
   { href: '/about', label: 'Our Mission' },
   { href: '/documents', label: 'Documents' },
   { href: '/roadmap', label: 'Roadmap' },
-  { href: '/news', label: 'News' },
   { href: '/market', label: 'Market' },
   { href: '/contact', label: 'Contact' },
 ];
