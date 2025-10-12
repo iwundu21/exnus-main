@@ -34,7 +34,7 @@ export default function HowItWorksSection() {
       className="relative py-20 px-4 md:px-6 bg-cover bg-center"
       style={{ backgroundImage: "url('/3.jpeg')" }}
     >
-      <div className="absolute inset-0 bg-background/80 backdrop-blur-sm"></div>
+      <div className="absolute inset-0 bg-background/90 backdrop-blur-sm"></div>
       <div className="relative z-10">
        <div className="text-center">
           <ScrollReveal>
