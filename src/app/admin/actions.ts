@@ -64,7 +64,7 @@ export async function postNews(formData: FormData) {
         }
     }
 
-    if (validatedData.image && validatedData.image.size > 0) {
+    if (validatedData.image && validatedData.image instanceof File && validatedData.image.size > 0) {
         const imageFile = validatedData.image as File;
         const imageBuffer = await imageFile.arrayBuffer();
         const imageBase64 = Buffer.from(imageBuffer).toString('base64');
