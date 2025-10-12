@@ -35,12 +35,12 @@ export default async function NewsPage() {
                             <ScrollReveal key={post.id} delay={index * 150}>
                                 <div className="h-full flex flex-col border rounded-lg">
                                     {post.imageUrl && (
-                                        <div className="aspect-video relative w-full rounded-t-lg overflow-hidden">
+                                        <div className="aspect-video relative w-full rounded-t-lg overflow-hidden bg-muted/30">
                                             <Image
                                                 src={post.imageUrl}
                                                 alt={post.title}
                                                 fill
-                                                className="object-cover"
+                                                className="object-contain"
                                             />
                                         </div>
                                     )}

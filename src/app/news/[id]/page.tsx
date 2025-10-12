@@ -1,9 +1,8 @@
 
 'use client'
 
-import { getNewsById, getComments, addComment, type Comment as CommentType } from "@/app/admin/actions";
+import { getNewsById, getComments, addComment, type Comment as CommentType, type NewsPost } from "@/app/admin/actions";
 import ScrollReveal from "@/components/scroll-reveal";
-import { CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { format } from "date-fns";
 import Image from "next/image";
 import { useEffect, useState, useTransition, useRef } from "react";
@@ -110,7 +109,7 @@ const Comment = ({ comment, postId, onCommentAdded }: { comment: CommentType, po
 };
 
 function NewsDetailClient({ id }: { id: string }) {
-  const [newsItem, setNewsItem] = useState<Awaited<ReturnType<typeof getNewsById>>>(null);
+  const [newsItem, setNewsItem] = useState<NewsPost | null>(null);
   const [comments, setComments] = useState<CommentType[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -163,12 +162,12 @@ function NewsDetailClient({ id }: { id: string }) {
         <ScrollReveal delay={200}>
           <div className="rounded-lg border">
             {newsItem.imageUrl && (
-              <div className="aspect-video relative w-full rounded-t-lg overflow-hidden">
+              <div className="aspect-video relative w-full rounded-t-lg overflow-hidden bg-muted/30">
                   <Image 
                       src={newsItem.imageUrl}
                       alt={newsItem.title}
                       fill
-                      className="object-cover"
+                      className="object-contain"
                   />
               </div>
             )}
@@ -225,7 +224,7 @@ export default function NewsDetailPage({ params }: { params: { id: string } }) {
     }, []);
 
     if (!isClient) {
-        return null;
+        return null; // Render nothing on the server
     }
 
     return <NewsDetailClient id={params.id} />;
