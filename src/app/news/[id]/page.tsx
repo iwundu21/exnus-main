@@ -217,15 +217,5 @@ function NewsDetailClient({ id }: { id: string }) {
 
 
 export default function NewsDetailPage({ params }: { params: { id: string } }) {
-    const [isClient, setIsClient] = useState(false);
-
-    useEffect(() => {
-        setIsClient(true);
-    }, []);
-
-    if (!isClient) {
-        return null; // Render nothing on the server
-    }
-
     return <NewsDetailClient id={params.id} />;
 }
