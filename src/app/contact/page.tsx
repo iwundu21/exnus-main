@@ -118,7 +118,13 @@ export default function ContactPage() {
   }
 
   return (
-    <div>
+    <div className="relative">
+       <div 
+        className="absolute inset-0 w-full h-full bg-cover bg-center" 
+        style={{ backgroundImage: "url('/6.jpeg')" }}
+      ></div>
+      <div className="absolute inset-0 w-full h-full bg-background/60 backdrop-blur-sm"></div>
+      <div className="relative z-10">
       <section className="py-12 px-4 md:px-6">
         <div className="text-center">
             <ScrollReveal>
@@ -290,6 +296,7 @@ export default function ContactPage() {
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
+    </div>
     </div>
   );
 }
