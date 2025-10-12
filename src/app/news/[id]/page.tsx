@@ -5,13 +5,13 @@ import { getNewsById, getComments, addComment, type Comment as CommentType, type
 import ScrollReveal from "@/components/scroll-reveal";
 import { format } from "date-fns";
 import Image from "next/image";
-import { useEffect, useState, useTransition, useRef } from "react";
+import { useEffect, useState, useTransition, useRef, Suspense } from "react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useToast } from "@/hooks/use-toast";
-
+import Linkify from "@/components/linkify";
 
 const CommentForm = ({ postId, parentId, onCommentAdded }: { postId: string, parentId?: string | null, onCommentAdded: () => void }) => {
     const [isPending, startTransition] = useTransition();
@@ -108,36 +108,28 @@ const Comment = ({ comment, postId, onCommentAdded }: { comment: CommentType, po
     );
 };
 
-function NewsDetailClient({ id }: { id: string }) {
-  const [newsItem, setNewsItem] = useState<NewsPost | null>(null);
-  const [comments, setComments] = useState<CommentType[]>([]);
-  const [loading, setLoading] = useState(true);
+function NewsDetailClient({ post, initialComments }: { post: NewsPost, initialComments: CommentType[] }) {
+  const [newsItem] = useState<NewsPost | null>(post);
+  const [comments, setComments] = useState<CommentType[]>(initialComments);
+  const [loading, setLoading] = useState(false);
+  const { toast } = useToast();
 
-  const fetchPostAndComments = async (postId: string) => {
+  const fetchComments = async (postId: string) => {
     try {
       setLoading(true);
-      const [postData, commentsData] = await Promise.all([
-        getNewsById(postId),
-        getComments(postId)
-      ]);
-      setNewsItem(postData);
+      const commentsData = await getComments(postId);
       setComments(commentsData);
     } catch (error) {
-      console.error("Failed to fetch data", error);
-      setNewsItem(null);
+      console.error("Failed to fetch comments", error);
+       toast({
+        variant: "destructive",
+        title: "Error",
+        description: "Could not load comments.",
+      });
     } finally {
       setLoading(false);
     }
   };
-
-  useEffect(() => {
-    fetchPostAndComments(id);
-  }, [id]);
-
-
-  if (loading) {
-      return <div className="p-12 text-center">Loading...</div>
-  }
 
   if (!newsItem) {
     return <div className="p-12 text-center">Post not found.</div>;
@@ -181,8 +173,8 @@ function NewsDetailClient({ id }: { id: string }) {
                   </audio>
                 </div>
               )}
-              <div className="prose prose-invert max-w-none text-foreground/80 whitespace-pre-wrap">
-                <p>{newsItem.content}</p>
+              <div className="prose prose-invert max-w-none">
+                 <Linkify text={newsItem.content} />
               </div>
             </div>
           </div>
@@ -197,7 +189,7 @@ function NewsDetailClient({ id }: { id: string }) {
             </div>
             <div className="p-6 pt-0 space-y-6">
               {comments.length > 0 ? (
-                      comments.map(comment => <Comment key={comment.id} comment={comment} postId={newsItem.id} onCommentAdded={() => fetchPostAndComments(id)} />)
+                      comments.map(comment => <Comment key={comment.id} comment={comment} postId={newsItem.id} onCommentAdded={() => fetchComments(newsItem.id)} />)
                   ) : (
                       <p className="text-foreground/70">Be the first to comment.</p>
                   )}
@@ -205,7 +197,7 @@ function NewsDetailClient({ id }: { id: string }) {
             <div className="p-6 border-t">
               <div className="w-full">
                   <h3 className="font-bold text-lg mb-2">Leave a Comment</h3>
-                  <CommentForm postId={newsItem.id} onCommentAdded={() => fetchPostAndComments(id)} />
+                  <CommentForm postId={newsItem.id} onCommentAdded={() => fetchComments(newsItem.id)} />
               </div>
             </div>
           </div>
@@ -216,6 +208,17 @@ function NewsDetailClient({ id }: { id: string }) {
 }
 
 
-export default function NewsDetailPage({ params }: { params: { id: string } }) {
-    return <NewsDetailClient id={params.id} />;
+export default async function NewsDetailPage({ params }: { params: { id: string } }) {
+    const postData = await getNewsById(params.id);
+    const commentsData = postData ? await getComments(postData.id) : [];
+
+    if (!postData) {
+        return <div className="p-12 text-center">Post not found.</div>;
+    }
+    
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <NewsDetailClient post={postData} initialComments={commentsData} />
+        </Suspense>
+    );
 }
