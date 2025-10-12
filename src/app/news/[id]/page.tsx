@@ -6,7 +6,6 @@ import ScrollReveal from "@/components/scroll-reveal";
 import { CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { format } from "date-fns";
 import Image from "next/image";
-import { notFound } from "next/navigation";
 import { useEffect, useState, useTransition, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -117,17 +116,16 @@ function NewsDetailClient({ id }: { id: string }) {
 
   const fetchPostAndComments = async (postId: string) => {
     try {
+      setLoading(true);
       const [postData, commentsData] = await Promise.all([
         getNewsById(postId),
         getComments(postId)
       ]);
-      if (!postData) {
-        notFound();
-      }
       setNewsItem(postData);
       setComments(commentsData);
     } catch (error) {
       console.error("Failed to fetch data", error);
+      setNewsItem(null);
     } finally {
       setLoading(false);
     }
@@ -143,7 +141,7 @@ function NewsDetailClient({ id }: { id: string }) {
   }
 
   if (!newsItem) {
-    return null;
+    return <div className="p-12 text-center">Post not found.</div>;
   }
 
   return (
