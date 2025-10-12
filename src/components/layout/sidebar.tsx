@@ -4,7 +4,7 @@
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import { usePathname } from 'next/navigation';
-import { navLinks } from '@/lib/nav-links.tsx';
+import { navLinks } from '@/lib/nav-links';
 import Image from 'next/image';
 
 interface SidebarProps {
@@ -27,10 +27,11 @@ export default function Sidebar({ isMobileMenuOpen, setMobileMenuOpen }: Sidebar
     <Sheet open={isMobileMenuOpen} onOpenChange={setMobileMenuOpen}>
       <SheetContent side="left" className="p-0 w-64 flex flex-col bg-background border-r lg:hidden">
           <SheetHeader className='border-b h-16 flex items-center px-4'>
-              <a href="/" className="flex items-center gap-2 font-bold text-lg">
-                 <Image src="/logo.png" alt="Exnus Protocol" width={32} height={32} className="h-8 w-8" />
+             <a href="/" className="flex items-center gap-2 font-bold text-lg">
+                <Image src="/logo.png" alt="Exnus Protocol" width={32} height={32} className="h-8 w-8" />
                 <span>Exnus Protocol</span>
               </a>
+              <SheetTitle className="sr-only">Main Menu</SheetTitle>
           </SheetHeader>
           <nav className="flex-1 overflow-auto p-4 space-y-2">
             {navLinks.map((link) => (

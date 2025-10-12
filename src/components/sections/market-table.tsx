@@ -13,7 +13,6 @@ import {
 import { SparklineChart } from "@/components/charts/sparkline-chart";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight, Search } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { DetailedCoinChart } from "../charts/detailed-coin-chart";
 import { getMarketData } from "@/app/market/actions";
@@ -125,7 +124,7 @@ export default function MarketTable() {
         <Dialog>
             <div className="w-full">
                 <div className="mb-4 relative">
-                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                    <svg className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                     <Input
                         type="text"
                         placeholder="Search for a cryptocurrency..."
@@ -188,14 +187,14 @@ export default function MarketTable() {
                 {totalPages > 1 && (
                     <div className="flex items-center justify-center gap-4 py-8">
                         <Button variant="outline" size="icon" onClick={handlePrevPage} disabled={currentPage === 1}>
-                            <ChevronLeft className="h-4 w-4" />
+                             <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path></svg>
                             <span className="sr-only">Previous page</span>
                         </Button>
                         <span className="text-sm text-foreground/80">
                             Page {currentPage} of {totalPages}
                         </span>
                         <Button variant="outline" size="icon" onClick={handleNextPage} disabled={currentPage === totalPages}>
-                            <ChevronRight className="h-4 w-4" />
+                            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
                             <span className="sr-only">Next page</span>
                         </Button>
                     </div>
