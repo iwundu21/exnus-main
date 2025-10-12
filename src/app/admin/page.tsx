@@ -16,7 +16,7 @@ import { CardContent, CardDescription, CardHeader, CardTitle } from "@/component
 import ScrollReveal from "@/components/scroll-reveal";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { getSubmittedMessages, type Message } from "@/app/contact/actions";
+import { getSubmittedMessages, type Message } from "@/app/admin/actions";
 import { useToast } from "@/hooks/use-toast";
 import { useEffect, useState, useRef, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
