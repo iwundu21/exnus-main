@@ -80,7 +80,7 @@ export default function StakingPage() {
         <div className="space-y-12">
             <section className="text-center">
                 <ScrollReveal>
-                <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-primary">
+                <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 gradient-text">
                     Stake Exnus Tokens
                 </h1>
                 </ScrollReveal>
@@ -197,10 +197,6 @@ export default function StakingPage() {
                         <ScrollReveal key={index} delay={index * 100}>
                             <div className="h-full">
                                 <CardHeader className="flex-row items-center gap-4">
-                                    <svg className="w-6 h-6 text-primary flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
-                                        <path d="M12 16v-4m0-4h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                                    </svg>
                                     <CardTitle className="text-lg">{faq.question}</CardTitle>
                                 </CardHeader>
                                 <CardContent>
