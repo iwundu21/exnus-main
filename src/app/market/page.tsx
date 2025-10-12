@@ -1,5 +1,5 @@
 
-import MarketTable from "@/components/sections/market-table";
+import MarketTable from "@/components/market/market-table";
 import ScrollReveal from "@/components/scroll-reveal";
 
 export default function MarketPage() {

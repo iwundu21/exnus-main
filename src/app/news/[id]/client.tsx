@@ -11,7 +11,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useToast } from "@/hooks/use-toast";
-import Linkify from "@/components/linkify";
 
 const CommentForm = ({ postId, parentId, onCommentAdded }: { postId: string, parentId?: string | null, onCommentAdded: () => void }) => {
     const [isPending, startTransition] = useTransition();
@@ -77,7 +76,7 @@ const Comment = ({ comment, postId, onCommentAdded }: { comment: CommentType, po
                     <p className="font-bold">{comment.author}</p>
                     <p className="text-xs text-muted-foreground">{format(new Date(comment.createdAt), "PPP p")}</p>
                 </div>
-                <p className="text-foreground/90 mt-1">{comment.content}</p>
+                <p className="text-foreground/90 mt-1 whitespace-pre-wrap">{comment.content}</p>
                 <Button variant="link" size="sm" className="p-0 h-auto" onClick={() => setIsReplying(!isReplying)}>
                     {isReplying ? 'Cancel' : 'Reply'}
                 </Button>
@@ -168,7 +167,7 @@ export function NewsDetailClient({ post, initialComments }: { post: NewsPost, in
                 </div>
               )}
               <div className="prose prose-invert max-w-none">
-                 <Linkify text={post.content} />
+                 <p className="text-foreground/80 whitespace-pre-wrap">{post.content}</p>
               </div>
             </div>
           </div>

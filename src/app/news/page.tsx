@@ -6,7 +6,6 @@ import { CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from 
 import { format } from "date-fns";
 import Image from "next/image";
 import Link from "next/link";
-import Linkify from "@/components/linkify";
 
 export default async function NewsPage() {
     const news = await getNews();
@@ -50,9 +49,9 @@ export default async function NewsPage() {
                                         <CardDescription>{format(new Date(post.createdAt), "MMMM d, yyyy")}</CardDescription>
                                     </CardHeader>
                                     <CardContent className="flex-grow">
-                                        <div className="line-clamp-3">
-                                            <Linkify text={post.content} />
-                                        </div>
+                                        <p className="line-clamp-3 text-foreground/80 whitespace-pre-wrap">
+                                            {post.content}
+                                        </p>
                                     </CardContent>
                                     <CardFooter>
                                         <Button asChild variant="secondary">
