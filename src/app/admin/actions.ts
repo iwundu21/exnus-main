@@ -47,16 +47,18 @@ export async function postNews(formData: FormData) {
     const generateAudio = formData.get('generateAudio') === 'on';
     const imageFile = formData.get('image') as File | null;
 
-    const validatedData = newsSchema.parse({ title, content });
+    if (!title || !content) {
+        throw new Error("Title and content are required.");
+    }
     
     const news = await getNews();
     
     let audioDataUri: string | undefined = undefined;
     let imageDataUri: string | undefined = undefined;
 
-    if (generateAudio && validatedData.content) {
+    if (generateAudio && content) {
         try {
-            const ttsResponse = await generateSpeech({ text: validatedData.content });
+            const ttsResponse = await generateSpeech({ text: content });
             audioDataUri = ttsResponse.audioDataUri;
         } catch (error) {
             console.error("TTS generation failed:", error);
@@ -71,8 +73,8 @@ export async function postNews(formData: FormData) {
 
     const newPost: NewsPost = {
       id: uuidv4(),
-      title: validatedData.title,
-      content: validatedData.content,
+      title: title,
+      content: content,
       imageUrl: imageDataUri,
       createdAt: new Date().toISOString(),
       audioUrl: audioDataUri,
