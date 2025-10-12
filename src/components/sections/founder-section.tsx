@@ -14,7 +14,7 @@ export default function FounderSection() {
                         src="/rob.jpeg"
                         alt="Founder of Exnus Protocol"
                         fill
-                        className="object-cover"
+                        className="object-contain"
                     />
                 </div>
             </ScrollReveal>
