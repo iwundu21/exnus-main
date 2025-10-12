@@ -356,63 +356,72 @@ export default function ProtocolPage() {
     const activeSection = documentSections[activeIndex];
 
     return (
-        <div>
-            <section className="py-12 px-4 md:px-6">
-                <div className="text-center">
-                    <div className="relative z-10">
-                        <h1 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
-                        Technical Documents
-                        </h1>
-                        <p className="text-lg text-foreground/80 max-w-4xl mx-auto">
-                        An in-depth exploration of the mechanisms, architecture, and strategic vision behind the protocol.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <section className="py-12 px-4 md:px-6">
-                <div className="flex flex-col lg:flex-row gap-8">
-                    <aside className="w-full lg:w-1/4">
-                        <div className="lg:sticky lg:top-24 rounded-lg border p-4">
-                            <nav className="flex flex-row lg:flex-col gap-2 overflow-x-auto lg:overflow-x-visible pb-2 lg:pb-0">
-                                {documentSections.map(section => (
-                                    <a
-                                        key={section.id}
-                                        href={`#${section.id}`}
-                                        onClick={(e) => {
-                                            e.preventDefault();
-                                            handleNavigate(section.id);
-                                        }}
-                                        className={`flex items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors whitespace-nowrap ${
-                                            activeSectionId === section.id
-                                            ? "bg-secondary text-foreground font-medium"
-                                            : "text-foreground/70 hover:bg-secondary hover:text-foreground"
-                                        }`}
-                                    >
-                                        {section.title}
-                                    </a>
-                                ))}
-                            </nav>
+        <div className="relative">
+             <div 
+                className="absolute inset-0 w-full h-full bg-cover bg-center" 
+                style={{ backgroundImage: "url('/6.jpeg')" }}
+              ></div>
+              <div className="absolute inset-0 w-full h-full bg-background/60 backdrop-blur-sm"></div>
+              <div className="relative z-10">
+                <section className="py-12 px-4 md:px-6">
+                    <div className="text-center">
+                        <div className="relative z-10">
+                            <h1 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
+                            Technical Documents
+                            </h1>
+                            <p className="text-lg text-foreground/80 max-w-4xl mx-auto">
+                            An in-depth exploration of the mechanisms, architecture, and strategic vision behind the protocol.
+                            </p>
                         </div>
-                    </aside>
-
-                    <div className="w-full lg:w-3/4">
-                        {activeSection && (
-                            <div className="my-8 p-8 md:p-12 rounded-lg text-card-foreground border" key={activeSection.id}>
-                                <ScrollReveal>
-                                    <section id={activeSection.id}>
-                                        <h2 className="text-3xl font-bold gradient-text mb-6">
-                                            {activeSection.title}
-                                        </h2>
-                                        <SectionContent id={activeSection.id} />
-                                        <SectionNavigation currentIndex={activeIndex} onNavigate={handleNavigate}/>
-                                    </section>
-                                </ScrollReveal>
-                            </div>
-                        )}
                     </div>
-                </div>
-            </section>
+                </section>
+
+                <section className="py-12 px-4 md:px-6">
+                    <div className="flex flex-col lg:flex-row gap-8">
+                        <aside className="w-full lg:w-1/4">
+                            <div className="lg:sticky lg:top-24 rounded-lg border p-4">
+                                <nav className="flex flex-row lg:flex-col gap-2 overflow-x-auto lg:overflow-x-visible pb-2 lg:pb-0">
+                                    {documentSections.map(section => (
+                                        <a
+                                            key={section.id}
+                                            href={`#${section.id}`}
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                handleNavigate(section.id);
+                                            }}
+                                            className={`flex items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors whitespace-nowrap ${
+                                                activeSectionId === section.id
+                                                ? "bg-secondary text-foreground font-medium"
+                                                : "text-foreground/70 hover:bg-secondary hover:text-foreground"
+                                            }`}
+                                        >
+                                            {section.title}
+                                        </a>
+                                    ))}
+                                </nav>
+                            </div>
+                        </aside>
+
+                        <div className="w-full lg:w-3/4">
+                            {activeSection && (
+                                <div className="my-8 p-8 md:p-12 rounded-lg text-card-foreground border" key={activeSection.id}>
+                                    <ScrollReveal>
+                                        <section id={activeSection.id}>
+                                            <h2 className="text-3xl font-bold gradient-text mb-6">
+                                                {activeSection.title}
+                                            </h2>
+                                            <SectionContent id={activeSection.id} />
+                                            <SectionNavigation currentIndex={activeIndex} onNavigate={handleNavigate}/>
+                                        </section>
+                                    </ScrollReveal>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                </section>
+            </div>
         </div>
     );
 }
+
+    
