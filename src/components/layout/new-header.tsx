@@ -81,7 +81,7 @@ export default function NewHeader({ onMenuClick, theme, toggleTheme }: NewHeader
     };
 
     return (
-        <header className="sticky top-0 z-30 flex h-16 items-center gap-4 border-b bg-background/50 backdrop-blur-sm px-4 sm:px-6">
+        <header className="sticky top-0 z-30 flex h-16 items-center gap-4 border-b bg-background px-4 sm:px-6">
             <a href="/" className="flex items-center gap-2 font-bold text-lg mr-4">
                <Image src="/logo.png" alt="Exnus Protocol" width={40} height={40} className="h-10 w-10" />
                <span className="hidden sm:inline-block">Exnus Protocol</span>
