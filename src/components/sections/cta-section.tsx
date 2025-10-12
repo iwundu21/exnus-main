@@ -22,10 +22,10 @@ export default function CtaSection() {
           {pageLinks.map((link, index) => (
               <ScrollReveal key={link.href} delay={index * 150}>
                   <a href={link.href}>
-                      <div className="theme-gold h-full border hover:border-primary/50 transition-all duration-300 hover:shadow-lg p-6 flex items-center gap-6 rounded-lg bg-primary text-primary-foreground">
+                      <div className="theme-gold h-full border hover:border-primary/50 transition-all duration-300 hover:shadow-lg p-6 flex items-center gap-6 rounded-lg bg-gradient-to-br from-primary via-primary/70 to-background text-primary-foreground">
                           <BookOpen className="w-8 h-8 text-primary-foreground"/>
                           <div>
-                              <h3 className="text-xl font-bold">{link.title}</h3>
+                              <h3 className="text-xl font-bold">{' '}{link.title}</h3>
                               <p className="text-primary-foreground/80">{link.description}</p>
                           </div>
                           <ArrowRight className="w-6 h-6 text-primary-foreground/70 ml-auto"/>

@@ -54,28 +54,33 @@ export default function HowItWorksSection() {
       </div>
 
       {/* Desktop Content */}
-      <div className="hidden md:block relative bg-card/50 backdrop-blur-sm border rounded-lg p-8">
-          {steps.map((step, index) => (
-              <div
-                key={step.title}
-                className={cn(
-                  "w-full transition-opacity duration-700 ease-in-out",
-                  activeIndex !== index && 'hidden'
-                )}
-              >
-                <div className={`flex flex-col gap-8 md:gap-12 items-center ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
-                    <div className="md:w-1/2">
-                      <h3 className="text-2xl md:text-3xl font-bold mb-4 text-primary">{step.title}</h3>
-                      <p className="text-foreground/80 text-lg">{step.description}</p>
-                    </div>
-                    <div className="md:w-1/2 w-full">
-                        <div className="w-full rounded-lg">
-                           {step.diagram}
-                        </div>
-                    </div>
+      <div className="hidden md:block relative bg-card/50 backdrop-blur-sm border rounded-lg p-8 overflow-hidden">
+           <div className="absolute inset-0 opacity-[0.03]">
+              <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="a" patternUnits="userSpaceOnUse" width="40" height="40" patternTransform="scale(2) rotate(0)"><rect x="0" y="0" width="100%" height="100%" fill="hsla(0,0%,100%,0)"/><path d="M0 10h40M10 0v40M0 30h40M30 0v40" stroke-width="0.8" stroke="hsl(var(--primary))" fill="none"/></pattern></defs><rect width="800%" height="800%" transform="translate(0,0)" fill="url(#a)"/></svg>
+          </div>
+          <div className="relative">
+            {steps.map((step, index) => (
+                <div
+                  key={step.title}
+                  className={cn(
+                    "w-full transition-opacity duration-700 ease-in-out",
+                    activeIndex !== index && 'hidden'
+                  )}
+                >
+                  <div className={`flex flex-col gap-8 md:gap-12 items-center ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
+                      <div className="md:w-1/2">
+                        <h3 className="text-2xl md:text-3xl font-bold mb-4 text-primary">{step.title}</h3>
+                        <p className="text-foreground/80 text-lg">{step.description}</p>
+                      </div>
+                      <div className="md:w-1/2 w-full">
+                          <div className="w-full rounded-lg">
+                             {step.diagram}
+                          </div>
+                      </div>
+                  </div>
                 </div>
-              </div>
-          ))}
+            ))}
+          </div>
       </div>
 
       {/* Mobile Accordion/List */}
