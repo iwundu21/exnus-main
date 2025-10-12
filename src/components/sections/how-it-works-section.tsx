@@ -49,7 +49,7 @@ export default function HowItWorksSection() {
             </TabsList>
             {howItWorksSteps.map((step) => (
                  <TabsContent key={step.value} value={step.value}>
-                    <div className="flex flex-col gap-8 items-center border rounded-lg p-6 backdrop-blur-sm bg-card/50">
+                    <div className="flex flex-col gap-8 items-center border rounded-lg p-6 backdrop-blur-sm bg-background/50">
                         <div className="text-center">
                             <h3 className="text-2xl font-bold text-primary">{step.title}</h3>
                             <p className="text-foreground/70 mt-2 max-w-xl mx-auto">{step.description}</p>
