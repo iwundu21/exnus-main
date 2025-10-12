@@ -64,12 +64,15 @@ export default function IntegrationsPage() {
               <p className="mt-4 text-foreground/70">
                   Ready to integrate the next generation of decentralized incentives into your project? Explore our technical documentation to get started.
               </p>
-               <div className="mt-8">
-                  <Button asChild size="lg">
+               <div className="mt-8 flex justify-center">
+                  <Button asChild size="lg" className="w-full max-w-xs text-lg rounded-full font-semibold relative overflow-hidden bg-slate-800 border border-slate-700 hover:bg-slate-700 transition-all duration-300">
                     <a href="/documents">
-                      View Documentation
+                        <span className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]"></span>
+                        <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-900 px-8 py-3 text-sm font-medium text-gray-50 backdrop-blur-3xl">
+                            View Documentation
+                        </span>
                     </a>
-                  </Button>
+                </Button>
                 </div>
             </div>
           </ScrollReveal>

@@ -1,5 +1,6 @@
 
 import ScrollReveal from "@/components/scroll-reveal";
+import { Button } from "@/components/ui/button";
 
 const projects = [
     {
@@ -60,10 +61,15 @@ export default function CommunityProjectsPage() {
               <p className="mt-4 text-foreground/70">
                   Have you built something with the Exnus protocol? We would love to see it. Share your project with our community for a chance to be featured here.
               </p>
-               <div className="mt-8">
-                  <a href="/contact" className="text-primary hover:underline">
-                      Submit Your Project &rarr;
-                  </a>
+               <div className="mt-8 flex justify-center">
+                    <Button asChild size="lg" className="w-full max-w-xs text-lg rounded-full font-semibold relative overflow-hidden bg-slate-800 border border-slate-700 hover:bg-slate-700 transition-all duration-300">
+                        <a href="/contact">
+                            <span className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]"></span>
+                            <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-900 px-8 py-3 text-sm font-medium text-gray-50 backdrop-blur-3xl">
+                                Submit Your Project
+                            </span>
+                        </a>
+                    </Button>
                 </div>
             </div>
           </ScrollReveal>
