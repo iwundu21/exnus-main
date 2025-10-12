@@ -197,16 +197,13 @@ export default function ContactPage() {
                          <p className="text-foreground/70 mb-6">Stay updated and engage with the community on our social platforms:</p>
                          <div className="flex flex-wrap gap-6">
                             <Link href="https://x.com/exnusprotocol?t=erRcFQecZLsl-pW3MGFC9g&s=09" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground hover:text-primary transition-colors">
-                                <Image src="/x-white.png" alt="X" width={20} height={20} />
-                                <span className="text-foreground">X</span>
+                                <span>X</span>
                             </Link>
                             <Link href="https://t.me/Exnusprotocol" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground hover:text-primary transition-colors">
-                                <Image src="/tg-white.png" alt="Telegram" width={20} height={20} />
-                                <span className="text-foreground">Telegram</span>
+                                <span>Telegram</span>
                             </Link>
                             <Link href="https://discord.gg/v8MpYYFdP8" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground hover:text-primary transition-colors">
-                                <Image src="/discord-white.png" alt="Discord" width={20} height={20} />
-                                <span className="text-foreground">Discord</span>
+                                <span>Discord</span>
                             </Link>
                              <Link href="mailto:contact@exnus.xyz" className="flex items-center gap-2 text-foreground hover:text-primary transition-colors">
                                 <span>contact@exnus.xyz</span>

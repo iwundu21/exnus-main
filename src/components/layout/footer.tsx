@@ -21,15 +21,15 @@ export default function Footer() {
         </div>
         <div className="flex items-center gap-6">
             <Link href="https://x.com/exnusprotocol?t=erRcFQecZLsl-pW3MGFC9g&s=09" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                <Image src="/x-white.png" alt="X" width={20} height={20} />
+                <span>X</span>
                 <span className="sr-only">X</span>
             </Link>
             <Link href="https://t.me/Exnusprotocol" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                <Image src="/tg-white.png" alt="Telegram" width={20} height={20} />
+                <span>Telegram</span>
                 <span className="sr-only">Telegram</span>
             </Link>
             <Link href="https://discord.gg/v8MpYYFdP8" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                <Image src="/discord-white.png" alt="Discord" width={20} height={20} />
+                <span>Discord</span>
                 <span className="sr-only">Discord</span>
             </Link>
         </div>
