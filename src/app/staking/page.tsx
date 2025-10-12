@@ -118,7 +118,7 @@ export default function StakingPage() {
                 <div className="max-w-5xl mx-auto mt-8 grid md:grid-cols-3 gap-8 text-left">
                     {benefits.map((benefit, index) => (
                         <ScrollReveal key={benefit.title} delay={index * 150}>
-                        <div className="p-6 border rounded-lg flex flex-col items-center text-center h-full border-border/50">
+                        <div className="p-6 border rounded-lg flex flex-col items-center text-center h-full border-border/50 backdrop-blur-sm bg-card/50">
                             <div className="p-4 bg-primary/10 rounded-full w-fit mb-4">
                                 {benefit.icon}
                             </div>
@@ -134,7 +134,7 @@ export default function StakingPage() {
                 </div>
             </section>
 
-            <section className="p-6 md:p-8 rounded-lg border border-border/50">
+            <section className="p-6 md:p-8 rounded-lg border border-border/50 backdrop-blur-sm bg-card/50">
                 <ScrollReveal>
                     <div className="not-prose relative overflow-hidden">
                         <StakingDiagram />
@@ -142,7 +142,7 @@ export default function StakingPage() {
                 </ScrollReveal>
             </section>
             
-            <section id="staking-calculator" className="p-6 md:p-8 rounded-lg border border-border/50">
+            <section id="staking-calculator" className="p-6 md:p-8 rounded-lg border border-border/50 backdrop-blur-sm bg-card/50">
                 <div className="grid md:grid-cols-2 gap-12 items-center">
                     <ScrollReveal>
                          <div>
@@ -151,7 +151,7 @@ export default function StakingPage() {
                                 Estimate your potential rewards by entering the amount of Exnus tokens you wish to stake. See how your contribution can grow over time.
                             </p>
                             <div>
-                                <CardContent className="pt-6">
+                                <div className="pt-6">
                                      <div className="space-y-4">
                                         <div className="space-y-2">
                                             <Label htmlFor="stake-amount">Amount to Stake (EXN)</Label>
@@ -173,7 +173,7 @@ export default function StakingPage() {
                                             <span className="text-primary">{estimatedRewards.toLocaleString(undefined, { maximumFractionDigits: 2 })} EXN</span>
                                         </div>
                                      </div>
-                                </CardContent>
+                                </div>
                             </div>
                              <Button size="lg" className="w-full mt-6">Connect Wallet & Stake</Button>
                              <p className="text-xs text-center text-muted-foreground mt-2">Note: This is an estimate. Actual rewards may vary based on network conditions.</p>
@@ -201,13 +201,13 @@ export default function StakingPage() {
                 <div className="max-w-4xl mx-auto mt-8 grid md:grid-cols-2 gap-6">
                     {faqs.map((faq, index) => (
                         <ScrollReveal key={index} delay={index * 100}>
-                            <div className="h-full">
-                                <CardHeader className="flex-row items-center gap-4">
-                                    <CardTitle className="text-lg">{faq.question}</CardTitle>
-                                </CardHeader>
-                                <CardContent>
+                            <div className="h-full p-6 border rounded-lg backdrop-blur-sm bg-card/50">
+                                <div className="flex-row items-center gap-4">
+                                    <h3 className="text-lg font-bold">{faq.question}</h3>
+                                </div>
+                                <div className="pt-2">
                                     <p className="text-foreground/80">{faq.answer}</p>
-                                </CardContent>
+                                </div>
                             </div>
                         </ScrollReveal>
                     ))}

@@ -86,8 +86,8 @@ function AdminDashboard() {
             <CardTitle className="gradient-text">Contact Form Submissions</CardTitle>
             <CardDescription>Messages sent from the contact form.</CardDescription>
           </CardHeader>
-          <CardContent>
-            <div className="overflow-y-auto max-h-[500px] border rounded-md">
+          <div className="p-6 pt-0">
+            <div className="overflow-y-auto max-h-[500px] border rounded-md backdrop-blur-sm bg-card/50">
                 {messages.length > 0 ? (
                     <Table>
                         <TableHeader>
@@ -115,7 +115,7 @@ function AdminDashboard() {
                     </div>
                 )}
             </div>
-          </CardContent>
+          </div>
         </div>
       </ScrollReveal>
     </div>

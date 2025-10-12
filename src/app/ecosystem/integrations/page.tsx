@@ -45,7 +45,7 @@ export default function IntegrationsPage() {
         <div className="max-w-5xl mx-auto mt-8 grid md:grid-cols-3 gap-8 text-left">
           {integrationSteps.map((step, index) => (
             <ScrollReveal key={step.title} delay={index * 150}>
-              <div className="p-6 border rounded-lg h-full border-border/50">
+              <div className="p-6 border rounded-lg h-full border-border/50 backdrop-blur-sm bg-card/50">
                 <div className="p-4 bg-primary/10 rounded-full w-fit mb-4">
                    <svg className="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -65,7 +65,7 @@ export default function IntegrationsPage() {
 
       <section className="py-12 px-4 md:px-6">
           <ScrollReveal>
-            <div className="max-w-3xl mx-auto p-8 border rounded-lg border-border/50 text-center">
+            <div className="max-w-3xl mx-auto p-8 border rounded-lg border-border/50 text-center backdrop-blur-sm bg-card/50">
               <h3 className="font-bold text-xl gradient-text">Start Building with Exnus</h3>
               <p className="mt-4 text-foreground/70">
                   Ready to integrate the next generation of decentralized incentives into your project? Explore our technical documentation to get started.
