@@ -162,7 +162,7 @@ export default function MarketTable() {
                                         </TableCell>
                                         <TableCell>{formatCurrency(coin.current_price)}</TableCell>
                                         <TableCell>
-                                            <Badge variant={coin.price_change_percentage_24h >= 0 ? "default" : "destructive"}>
+                                            <Badge variant={coin.price_change_percentage_24h >= 0 ? "success" : "destructive"}>
                                                 {coin.price_change_percentage_24h >= 0 ? '+' : ''}{coin.price_change_percentage_24h.toFixed(2)}%
                                             </Badge>
                                         </TableCell>
