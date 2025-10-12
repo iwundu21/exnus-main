@@ -24,7 +24,7 @@ export default function RoadmapPage() {
             <div className="max-w-5xl mx-auto mt-12 grid md:grid-cols-2 gap-8 text-left">
               <div className="relative p-6 border rounded-lg bg-card/80 backdrop-blur-sm overflow-hidden">
                  <div className="absolute inset-0 opacity-[0.04]">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><defs><pattern id="a" patternUnits="userSpaceOnUse" width="21" height="21" patternTransform="scale(2) rotate(0)"><rect x="0" y="0" width="100%" height="100%" fill="hsla(0,0%,100%,0)"/><path d="M10.5 21V0M0 10.5h21"  stroke-width="1.2" stroke="hsl(var(--primary))" fill="none"/></pattern></defs><rect width="800%" height="800%" transform="translate(0,0)" fill="url(#a)"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><defs><pattern id="a" patternUnits="userSpaceOnUse" width="21" height="21" patternTransform="scale(2) rotate(0)"><rect x="0" y="0" width="100%" height="100%" fill="hsla(0,0%,100%,0)"/><path d="M10.5 21V0M0 10.5h21"  strokeWidth="1.2" stroke="hsl(var(--primary))" fill="none"/></pattern></defs><rect width="800%" height="800%" transform="translate(0,0)" fill="url(#a)"/></svg>
                 </div>
                 <div className="relative z-10 theme-gold">
                   <h3 className="font-bold text-xl text-primary">Ecosystem Expansion</h3>
@@ -35,7 +35,7 @@ export default function RoadmapPage() {
               </div>
               <div className="relative p-6 border rounded-lg bg-card/80 backdrop-blur-sm overflow-hidden">
                 <div className="absolute inset-0 opacity-[0.04]">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><defs><pattern id="b" patternUnits="userSpaceOnUse" width="21" height="21" patternTransform="scale(2) rotate(0)"><rect x="0" y="0" width="100%" height="100%" fill="hsla(0,0%,100%,0)"/><path d="M10.5 21V0M0 10.5h21"  stroke-width="1.2" stroke="hsl(var(--primary))" fill="none"/></pattern></defs><rect width="800%" height="800%" transform="translate(0,0)" fill="url(#b)"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><defs><pattern id="b" patternUnits="userSpaceOnUse" width="21" height="21" patternTransform="scale(2) rotate(0)"><rect x="0" y="0" width="100%" height="100%" fill="hsla(0,0%,100%,0)"/><path d="M10.5 21V0M0 10.5h21"  strokeWidth="1.2" stroke="hsl(var(--primary))" fill="none"/></pattern></defs><rect width="800%" height="800%" transform="translate(0,0)" fill="url(#b)"/></svg>
                 </div>
                 <div className="relative z-10 theme-gold">
                   <h3 className="font-bold text-xl text-primary">Decentralization & Autonomy</h3>

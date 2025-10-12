@@ -41,7 +41,7 @@ export default function MarketPage() {
             <div className="max-w-5xl mx-auto mt-8 grid md:grid-cols-2 gap-8 text-left">
               <div className="p-6 border rounded-lg bg-card/80 backdrop-blur-sm relative overflow-hidden">
                 <div className="absolute inset-0 opacity-[0.03]">
-                    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="a" patternUnits="userSpaceOnUse" width="20" height="20" patternTransform="scale(2) rotate(45)"><rect x="0" y="0" width="100%" height="100%" fill="hsla(0,0%,100%,0)"/><path d="M10-5v20M-5 10h20" stroke-width="1" stroke="hsl(var(--primary))" fill="none"/></pattern></defs><rect width="800%" height="800%" transform="translate(0,0)" fill="url(#a)"/></svg>
+                    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="a" patternUnits="userSpaceOnUse" width="20" height="20" patternTransform="scale(2) rotate(45)"><rect x="0" y="0" width="100%" height="100%" fill="hsla(0,0%,100%,0)"/><path d="M10-5v20M-5 10h20" strokeWidth="1" stroke="hsl(var(--primary))" fill="none"/></pattern></defs><rect width="800%" height="800%" transform="translate(0,0)" fill="url(#a)"/></svg>
                 </div>
                 <div className="relative z-10">
                   <h3 className="font-bold text-xl text-primary">Data Accuracy</h3>
@@ -52,7 +52,7 @@ export default function MarketPage() {
               </div>
               <div className="p-6 border rounded-lg bg-card/80 backdrop-blur-sm relative overflow-hidden">
                 <div className="absolute inset-0 opacity-[0.03]">
-                    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="b" patternUnits="userSpaceOnUse" width="20" height="20" patternTransform="scale(2) rotate(45)"><rect x="0" y="0" width="100%" height="100%" fill="hsla(0,0%,100%,0)"/><path d="M10-5v20M-5 10h20" stroke-width="1" stroke="hsl(var(--primary))" fill="none"/></pattern></defs><rect width="800%" height="800%" transform="translate(0,0)" fill="url(#b)"/></svg>
+                    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="b" patternUnits="userSpaceOnUse" width="20" height="20" patternTransform="scale(2) rotate(45)"><rect x="0" y="0" width="100%" height="100%" fill="hsla(0,0%,100%,0)"/><path d="M10-5v20M-5 10h20" strokeWidth="1" stroke="hsl(var(--primary))" fill="none"/></pattern></defs><rect width="800%" height="800%" transform="translate(0,0)" fill="url(#b)"/></svg>
                 </div>
                 <div className="relative z-10">
                   <h3 className="font-bold text-xl text-primary">Investment Risk</h3>

@@ -49,7 +49,7 @@ export default function FeaturesSection() {
                 className="relative h-full p-6 border rounded-lg overflow-hidden bg-card/80 backdrop-blur-sm transition-all duration-300 hover:border-primary/50 hover:shadow-lg"
               >
                 <div className="absolute inset-0 opacity-[0.02]">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><defs><pattern id={`pattern-${index}`} patternUnits="userSpaceOnUse" width="40" height="40" patternTransform={`scale(1) rotate(${index * 45})`}><rect x="0" y="0" width="100%" height="100%" fill="hsla(0,0%,100%,0)"/><path d="M10-5v20M-5 10h20" stroke-width="0.5" stroke="hsl(var(--primary))" fill="none"/></pattern></defs><rect width="800%" height="800%" transform="translate(0,0)" fill={`url(#pattern-${index})`}/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><defs><pattern id={`pattern-${index}`} patternUnits="userSpaceOnUse" width="40" height="40" patternTransform={`scale(1) rotate(${index * 45})`}><rect x="0" y="0" width="100%" height="100%" fill="hsla(0,0%,100%,0)"/><path d="M10-5v20M-5 10h20" strokeWidth="0.5" stroke="hsl(var(--primary))" fill="none"/></pattern></defs><rect width="800%" height="800%" transform="translate(0,0)" fill={`url(#pattern-${index})`}/></svg>
                 </div>
                 <div className="relative z-10">
                   <div className="p-4 bg-primary/10 rounded-full mb-4 w-fit">
