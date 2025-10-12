@@ -12,14 +12,24 @@ export default function Linkify({ text }: LinkifyProps) {
     return null;
   }
   
-  const urlRegex = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])|(\bwww\.[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
-  const parts = text.split(urlRegex);
+  // This regex is more comprehensive and handles URLs (http, https, www), emails, and links like t.me/
+  const urlRegex = /((?:https?:\/\/|www\.|ftp\.|t\.me\/)[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/\/=]*))|([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/ig;
+  
+  const parts = text.split(urlRegex).filter(part => part !== undefined);
 
   return (
     <p className="text-foreground/80 whitespace-pre-wrap">
       {parts.map((part, index) => {
         if (part && part.match(urlRegex)) {
-          const href = part.startsWith('www.') ? `http://${part}` : part;
+          let href = part;
+          if (part.startsWith('www.')) {
+            href = `http://${part}`;
+          } else if (part.includes('@')) {
+            href = `mailto:${part}`;
+          } else if (!part.match(/^(https?|ftp):\/\//)) {
+            href = `http://${part}`;
+          }
+          
           return (
             <a
               key={index}
