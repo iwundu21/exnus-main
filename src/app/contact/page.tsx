@@ -30,6 +30,7 @@ import {
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
 import Image from "next/image";
+import Link from "next/link";
 
 const faqItems = [
     {
@@ -195,21 +196,21 @@ export default function ContactPage() {
                          <h3 className="text-2xl font-bold text-primary mb-4">Join Our Community</h3>
                          <p className="text-foreground/70 mb-6">Stay updated and engage with the community on our social platforms:</p>
                          <div className="flex flex-wrap gap-6">
-                            <a href="https://x.com/exnusprotocol?t=erRcFQecZLsl-pW3MGFC9g&s=09" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground hover:text-primary transition-colors">
+                            <Link href="https://x.com/exnusprotocol?t=erRcFQecZLsl-pW3MGFC9g&s=09" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground hover:text-primary transition-colors">
                                 <Image src="/x.jpg" alt="X" width={20} height={20} />
                                 <span className="text-foreground">X</span>
-                            </a>
-                            <a href="https://t.me/Exnusprotocol" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground hover:text-primary transition-colors">
+                            </Link>
+                            <Link href="https://t.me/Exnusprotocol" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground hover:text-primary transition-colors">
                                 <Image src="/tg.jpg" alt="Telegram" width={20} height={20} />
                                 <span className="text-foreground">Telegram</span>
-                            </a>
-                            <a href="https://discord.gg/v8MpYYFdP8" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground hover:text-primary transition-colors">
+                            </Link>
+                            <Link href="https://discord.gg/v8MpYYFdP8" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground hover:text-primary transition-colors">
                                 <Image src="/discord.jpg" alt="Discord" width={20} height={20} />
                                 <span className="text-foreground">Discord</span>
-                            </a>
-                             <a href="mailto:contact@exnus.xyz" className="flex items-center gap-2 text-foreground hover:text-primary transition-colors">
+                            </Link>
+                             <Link href="mailto:contact@exnus.xyz" className="flex items-center gap-2 text-foreground hover:text-primary transition-colors">
                                 <span>contact@exnus.xyz</span>
-                            </a>
+                            </Link>
                          </div>
                      </div>
                 </div>

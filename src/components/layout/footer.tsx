@@ -2,6 +2,7 @@
 'use client';
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -11,18 +12,18 @@ export default function Footer() {
           © {new Date().getFullYear()} Exnus Protocol. All rights reserved.
         </p>
         <div className="flex items-center gap-6">
-            <a href="https://x.com/exnusprotocol?t=erRcFQecZLsl-pW3MGFC9g&s=09" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+            <Link href="https://x.com/exnusprotocol?t=erRcFQecZLsl-pW3MGFC9g&s=09" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                 <Image src="/x.jpg" alt="X" width={20} height={20} />
                 <span className="sr-only">X</span>
-            </a>
-            <a href="https://t.me/Exnusprotocol" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+            </Link>
+            <Link href="https://t.me/Exnusprotocol" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                 <Image src="/tg.jpg" alt="Telegram" width={20} height={20} />
                 <span className="sr-only">Telegram</span>
-            </a>
-            <a href="https://discord.gg/v8MpYYFdP8" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+            </Link>
+            <Link href="https://discord.gg/v8MpYYFdP8" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                 <Image src="/discord.jpg" alt="Discord" width={20} height={20} />
                 <span className="sr-only">Discord</span>
-            </a>
+            </Link>
         </div>
       </div>
     </footer>
