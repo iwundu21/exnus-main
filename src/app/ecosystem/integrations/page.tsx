@@ -66,7 +66,7 @@ export default function IntegrationsPage() {
       <section className="py-12 px-4 md:px-6">
           <ScrollReveal>
             <div className="max-w-3xl mx-auto p-8 border rounded-lg border-border/50 text-center">
-              <h3 className="font-bold text-xl text-primary">Start Building with Exnus</h3>
+              <h3 className="font-bold text-xl gradient-text">Start Building with Exnus</h3>
               <p className="mt-4 text-foreground/70">
                   Ready to integrate the next generation of decentralized incentives into your project? Explore our technical documentation to get started.
               </p>

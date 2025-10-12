@@ -46,7 +46,7 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
               <ScrollReveal>
                   <div>
-                      <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">Beyond Instant Gratification</h2>
+                      <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">Beyond Instant Gratification</h2>
                       <p className="text-foreground/80 text-lg mb-6">
                         In a Web3 landscape often dominated by hype and short-term incentives, we are taking a different approach. We believe that the key to building a resilient and thriving decentralized future lies in creating systems that encourage and reward long-term commitment.
                       </p>
@@ -69,7 +69,7 @@ export default function AboutPage() {
       <section className="py-12 px-4 md:px-6">
         <div className="text-center">
           <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-bold text-primary">
+            <h2 className="text-3xl md:text-4xl font-bold gradient-text">
               The Principles of a Sustainable Ecosystem
             </h2>
             <p className="mt-4 text-foreground/80 max-w-3xl mx-auto">
@@ -101,7 +101,7 @@ export default function AboutPage() {
       <section className="py-12 px-4 md:px-6">
           <ScrollReveal>
             <div className="max-w-3xl mx-auto p-8 border rounded-lg border-border/50 text-center">
-              <h3 className="font-bold text-xl text-primary">Join a Protocol Built for the Future</h3>
+              <h3 className="font-bold text-xl gradient-text">Join a Protocol Built for the Future</h3>
               <p className="mt-4 text-foreground/70">
                   If you believe in building a decentralized world that rewards commitment and fosters sustainable growth, we invite you to join our mission. Together, we can create a more stable and equitable future for Web3.
               </p>

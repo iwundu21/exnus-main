@@ -34,7 +34,7 @@ export default function EcosystemSection() {
       <div className="relative z-10 p-8 md:p-12">
         <div className="text-center">
           <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-primary">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 gradient-text">
               Explore Our Growing Ecosystem
             </h2>
             <p className="max-w-3xl mx-auto text-center text-foreground/80 mb-12">

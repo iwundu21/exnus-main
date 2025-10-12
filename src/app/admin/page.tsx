@@ -83,7 +83,7 @@ function AdminDashboard() {
       <ScrollReveal delay={200}>
         <div>
           <CardHeader>
-            <CardTitle>Contact Form Submissions</CardTitle>
+            <CardTitle className="gradient-text">Contact Form Submissions</CardTitle>
             <CardDescription>Messages sent from the contact form.</CardDescription>
           </CardHeader>
           <CardContent>

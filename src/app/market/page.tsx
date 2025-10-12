@@ -29,7 +29,7 @@ export default function MarketPage() {
       <section className="py-12 px-4 md:px-6">
           <ScrollReveal>
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary">
+              <h2 className="text-3xl md:text-4xl font-bold gradient-text">
                 Navigating the Crypto Market
               </h2>
               <p className="mt-4 text-foreground/70">

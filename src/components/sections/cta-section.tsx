@@ -7,7 +7,7 @@ export default function CtaSection() {
     <section className="container mx-auto">
       <div className="text-center">
         <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-primary">Explore the Exnus Ecosystem</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 gradient-text">Explore the Exnus Ecosystem</h2>
             <p className="max-w-2xl mx-auto text-center text-foreground/70 mb-12">
                 Dive deep into the technical architecture, smart contracts, and strategic vision of our protocol.
             </p>

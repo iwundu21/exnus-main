@@ -107,7 +107,7 @@ export default function StakingPage() {
              <section>
                 <div className="text-center">
                     <ScrollReveal>
-                    <h2 className="text-3xl md:text-4xl font-bold text-primary">
+                    <h2 className="text-3xl md:text-4xl font-bold gradient-text">
                         Why Stake with Exnus?
                     </h2>
                     <p className="mt-4 text-foreground/70">
@@ -146,7 +146,7 @@ export default function StakingPage() {
                 <div className="grid md:grid-cols-2 gap-12 items-center">
                     <ScrollReveal>
                          <div>
-                            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">Staking Calculator</h2>
+                            <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">Staking Calculator</h2>
                             <p className="text-foreground/80 text-lg mb-6">
                                 Estimate your potential rewards by entering the amount of Exnus tokens you wish to stake. See how your contribution can grow over time.
                             </p>
@@ -190,7 +190,7 @@ export default function StakingPage() {
              <section>
                 <div className="text-center">
                     <ScrollReveal>
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">
+                        <h2 className="text-3xl md:text-4xl font-bold gradient-text">
                             Frequently Asked Questions
                         </h2>
                         <p className="mt-4 text-foreground/70 max-w-2xl mx-auto">

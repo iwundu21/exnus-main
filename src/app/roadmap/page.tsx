@@ -12,7 +12,7 @@ export default function RoadmapPage() {
         <div>
           <ScrollReveal>
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary">
+              <h2 className="text-3xl md:text-4xl font-bold gradient-text">
                 Beyond the Roadmap: Our Vision for the Future
               </h2>
               <p className="mt-4 text-foreground/70">

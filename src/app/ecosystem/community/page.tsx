@@ -49,7 +49,7 @@ export default function CommunityProjectsPage() {
           {projects.map((project, index) => (
             <ScrollReveal key={project.name} delay={index * 150}>
               <div className="p-8 border rounded-lg h-full bg-card/50">
-                <h3 className="font-bold text-2xl text-primary mb-2">{project.name}</h3>
+                <h3 className="font-bold text-2xl gradient-text mb-2">{project.name}</h3>
                 <p className="text-foreground/80">
                   {project.description}
                 </p>
@@ -63,7 +63,7 @@ export default function CommunityProjectsPage() {
       <section className="py-12 px-4 md:px-6">
           <ScrollReveal>
             <div className="max-w-3xl mx-auto p-8 border rounded-lg border-border/50 text-center">
-              <h3 className="font-bold text-xl text-primary">Get Your Project Featured</h3>
+              <h3 className="font-bold text-xl gradient-text">Get Your Project Featured</h3>
               <p className="mt-4 text-foreground/70">
                   Have you built something with the Exnus protocol? We would love to see it. Share your project with our community for a chance to be featured here.
               </p>

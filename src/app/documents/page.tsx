@@ -41,23 +41,23 @@ const SectionContent = ({ id }: { id: string }) => {
                     <p>
                       The blockchain and Web3 sectors are witnessing unprecedented growth, with decentralized applications (dApps) and ecosystems expanding rapidly. However, despite this growth, many projects face significant challenges in cultivating active and engaged user bases. User retention and meaningful participation remain critical hurdles, often limiting the potential for sustained network effects and long-term success.
                     </p>
-                    <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">Current Landscape</h3>
+                    <h3 className="text-2xl font-semibold gradient-text mt-6 mb-3">Current Landscape</h3>
                     <ul className="list-disc pl-6 space-y-2">
                       <li><strong>User Engagement Deficit:</strong> Many decentralized platforms struggle to maintain high levels of user activity beyond initial onboarding phases. Passive users contribute little to network development, resulting in stagnation.</li>
                       <li><strong>Inadequate Incentive Models:</strong> Existing reward systems frequently focus on token distribution without adequately tying incentives to impactful contributions. This can lead to reward dilution and diminished motivation.</li>
                       <li><strong>Fragmented Ecosystems:</strong> The lack of integrated reward mechanisms that encompass development, governance, and community engagement leads to fragmented user experiences and limited cross-functional collaboration.</li>
                     </ul>
-                    <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">Opportunity for Exnus</h3>
+                    <h3 className="text-2xl font-semibold gradient-text mt-6 mb-3">Opportunity for Exnus</h3>
                     <p>
                       The Exnus protocol is positioned to address these challenges by introducing a comprehensive reward system that incentivizes active, quality contributions across multiple facets of the ecosystem. By leveraging Solana’s high-performance blockchain, Exnus can deliver fast, cost-effective transactions that support scalable reward distribution.
                     </p>
-                    <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">Competitive Advantage</h3>
+                    <h3 className="text-2xl font-semibold gradient-text mt-6 mb-3">Competitive Advantage</h3>
                       <ul className="list-disc pl-6 space-y-2">
                           <li><strong>Holistic Reward Framework:</strong> Unlike many platforms that focus solely on staking or liquidity provision, Exnus rewards a broad spectrum of activities including development, governance, and community building.</li>
                           <li><strong>User Ownership and Empowerment:</strong> By aligning incentives with user contributions, Exnus fosters a sense of ownership that encourages ongoing participation and loyalty.</li>
                           <li><strong>Scalability and Security:</strong> Integration with Solana ensures that the protocol can support a growing user base without compromising security or transaction efficiency.</li>
                       </ul>
-                      <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">Market Potential</h3>
+                      <h3 className="text-2xl font-semibold gradient-text mt-6 mb-3">Market Potential</h3>
                       <p>
                           As decentralized ecosystems continue to mature, protocols that effectively engage and reward their communities will capture significant market share. Exnus’s innovative approach positions it to become a leading model for sustainable network growth, driving value for presale investors and community members.
                       </p>
@@ -106,7 +106,7 @@ const SectionContent = ({ id }: { id: string }) => {
                       </div>
                       <p className="text-center text-sm text-foreground/60 mt-2">Diagram: High-level overview of the Exnus technical architecture.</p>
                     </div>
-                      <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">Core Components</h3>
+                      <h3 className="text-2xl font-semibold gradient-text mt-6 mb-3">Core Components</h3>
                        <ul className="list-disc pl-6 space-y-2">
                           <li><strong>User Contribution Tracking Module:</strong> This module continuously monitors and validates user activities across multiple domains such as development commits, governance votes, and community engagement. It employs cryptographic verification and on-chain/off-chain data aggregation to ensure authenticity and prevent fraudulent claims.</li>
                           <li><strong>Reward Calculation Engine:</strong> The engine dynamically computes rewards based on predefined metrics that consider the type, frequency, and impact of contributions. It supports configurable parameters allowing the protocol to adapt reward models over time to align with evolving ecosystem goals.</li>
@@ -114,13 +114,13 @@ const SectionContent = ({ id }: { id: string }) => {
                           <li><strong>Governance Interface:</strong> A decentralized governance module enables token holders to propose and vote on protocol upgrades, reward adjustments, and ecosystem initiatives, ensuring community-driven development.</li>
                           <li><strong>Analytics and Reporting Dashboard:</strong> Provides real-time insights into user contributions, reward distributions, staking statistics, and overall network health. Transparency is maintained through accessible on-chain data and user-friendly interfaces.</li>
                       </ul>
-                      <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">Integration Layers</h3>
+                      <h3 className="text-2xl font-semibold gradient-text mt-6 mb-3">Integration Layers</h3>
                        <ul className="list-disc pl-6 space-y-2">
                           <li><strong>Blockchain Layer:</strong> Utilizes Solana’s high-throughput blockchain to ensure secure, fast, and low-cost transaction processing.</li>
                           <li><strong>Off-Chain Services:</strong> Includes APIs and oracles that facilitate data aggregation, off-chain computations, and integration with external platforms within the ecosystem.</li>
                           <li><strong>User Interface Layer:</strong> Web and mobile applications that allow users to interact with the protocol, track their contributions, claim rewards, and participate in governance.</li>
                       </ul>
-                       <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">Security Measures</h3>
+                       <h3 className="text-2xl font-semibold gradient-text mt-6 mb-3">Security Measures</h3>
                        <ul className="list-disc pl-6 space-y-2">
                           <li><strong>Immutable Smart Contract Logic:</strong> Ensures that reward mechanisms cannot be tampered with post-deployment.</li>
                           <li><strong>Permissioned Access Controls:</strong> Restricts critical functions to authorized entities to prevent unauthorized manipulation.</li>
@@ -138,20 +138,20 @@ const SectionContent = ({ id }: { id: string }) => {
                         </div>
                         <p className="text-center text-sm text-foreground/60 mt-2">Diagram: An overview of the multi-layered security approach for Exnus smart contracts.</p>
                     </div>
-                    <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">Smart Contract Design Principles</h3>
+                    <h3 className="text-2xl font-semibold gradient-text mt-6 mb-3">Smart Contract Design Principles</h3>
                      <ul className="list-disc pl-6 space-y-2">
                         <li><strong>Modularity:</strong> The protocol is structured into discrete contract modules, each responsible for specific functions such as reward calculation, token distribution, staking management, and governance. This modularity facilitates easier upgrades, maintenance, and auditing.</li>
                         <li><strong>Transparency:</strong> All contract logic and transactions are publicly verifiable on the Solana blockchain, promoting trust and accountability among users and stakeholders.</li>
                         <li><strong>Efficiency:</strong> Contracts are optimized for Solana’s architecture, leveraging parallel processing and Proof of History (PoH) to minimize gas costs and latency.</li>
                     </ul>
-                    <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">Key Contract Modules</h3>
+                    <h3 className="text-2xl font-semibold gradient-text mt-6 mb-3">Key Contract Modules</h3>
                      <ul className="list-disc pl-6 space-y-2">
                         <li><strong>Reward Distribution Contract:</strong> Automates the calculation and transfer of native tokens to users based on validated contributions. It incorporates dynamic reward algorithms to fairly allocate tokens according to contribution type and impact.</li>
                         <li><strong>Staking Contract:</strong> Enables users to lock their tokens to earn additional rewards and governance rights. It manages staking periods, reward accrual, and withdrawal mechanisms with built-in safeguards against premature unlocking.</li>
                         <li><strong>Governance Contract:</strong> Facilitates decentralized decision-making by allowing token holders to submit proposals, vote, and implement changes to protocol parameters or upgrades. Our governance module is built upon the trusted and battle-tested Realms framework, ensuring a secure and feature-rich DAO experience.</li>
                         <li><strong>Access Control Contract:</strong> Implements role-based permissions to restrict administrative functions and protect against unauthorized contract interactions.</li>
                     </ul>
-                    <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">Security Measures</h3>
+                    <h3 className="text-2xl font-semibold gradient-text mt-6 mb-3">Security Measures</h3>
                      <ul className="list-disc pl-6 space-y-2">
                         <li><strong>Comprehensive Audits:</strong> All smart contracts undergo multiple rounds of security audits by reputable third-party firms specializing in blockchain vulnerabilities.</li>
                         <li><strong>Formal Verification:</strong> Critical contract logic is subjected to formal verification processes to mathematically prove correctness and absence of common vulnerabilities.</li>
@@ -171,26 +171,26 @@ const SectionContent = ({ id }: { id: string }) => {
                         </div>
                         <p className="text-center text-sm text-foreground/60 mt-2">Diagram: An overview of the types of contributions rewarded by the Exnus Protocol.</p>
                     </div>
-                    <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">Core Principles of the Rewarding System</h3>
+                    <h3 className="text-2xl font-semibold gradient-text mt-6 mb-3">Core Principles of the Rewarding System</h3>
                      <ul className="list-disc pl-6 space-y-2">
                         <li><strong>Inclusivity:</strong> Rewards are designed to encompass a wide range of contributions, from technical development to community engagement and governance participation.</li>
                         <li><strong>Fairness:</strong> The system employs transparent algorithms that assess the quality, frequency, and impact of user actions to allocate rewards equitably.</li>
                         <li><strong>Transparency:</strong> Users can track their contributions and corresponding rewards in real-time via the protocol’s analytics dashboard, ensuring clarity and trust.</li>
                     </ul>
-                    <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">Types of Rewarded Contributions</h3>
+                    <h3 className="text-2xl font-semibold gradient-text mt-6 mb-3">Types of Rewarded Contributions</h3>
                      <ul className="list-disc pl-6 space-y-2">
                         <li><strong>Development Contributions:</strong> Users who contribute code commits, bug fixes, feature proposals, and documentation improvements receive tokens proportional to the significance and impact of their work.</li>
                         <li><strong>Community Engagement:</strong> Activities such as moderating forums, creating educational content, organizing events, and supporting new users are rewarded to encourage a supportive ecosystem.</li>
                         <li><strong>Governance Participation:</strong> Voting on proposals, submitting governance initiatives, and active involvement in decision-making processes earn users additional rewards.</li>
                         <li><strong>Staking Participation:</strong> Users who stake their tokens to support network security and stability gain rewards that compound their holdings and enhance governance influence.</li>
                     </ul>
-                     <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">Reward Distribution Mechanism</h3>
+                     <h3 className="text-2xl font-semibold gradient-text mt-6 mb-3">Reward Distribution Mechanism</h3>
                      <ul className="list-disc pl-6 space-y-2">
                         <li><strong>Dynamic Reward Calculation:</strong> The protocol’s reward engine uses weighted algorithms that factor in contribution type, consistency, and community impact, enabling adaptive incentives aligned with evolving ecosystem priorities.</li>
                         <li><strong>Automated Payouts:</strong> Rewards are distributed automatically through smart contracts on the Solana blockchain, ensuring timely and secure token transfers without manual intervention.</li>
                         <li><strong>Bonus Incentives:</strong> Periodic reward multipliers and special grants are issued to recognize exceptional contributions or to incentivize participation during critical development phases.</li>
                     </ul>
-                     <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">Creating a Positive Feedback Loop</h3>
+                     <h3 className="text-2xl font-semibold gradient-text mt-6 mb-3">Creating a Positive Feedback Loop</h3>
                      <p>By rewarding meaningful participation, Exnus cultivates a self-reinforcing cycle where engaged users are motivated to contribute more, attracting new members and accelerating ecosystem growth. This approach not only benefits individual users through token earnings but also enhances the overall health and innovation capacity of the network.</p>
                 </div>
             );
@@ -198,21 +198,21 @@ const SectionContent = ({ id }: { id: string }) => {
             return (
                 <div className="prose max-w-none prose-invert text-foreground/80">
                     <p>The Exnus protocol’s integration with the Solana blockchain is a strategic choice that enhances its performance, security, and scalability within the ecosystem. Solana’s cutting-edge technology provides the foundational infrastructure that enables Exnus to deliver a seamless and efficient user experience.</p>
-                     <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">Benefits of Solana Integration</h3>
+                     <h3 className="text-2xl font-semibold gradient-text mt-6 mb-3">Benefits of Solana Integration</h3>
                      <ul className="list-disc pl-6 space-y-2">
                         <li><strong>High Throughput and Low Latency:</strong> Solana’s architecture supports over 65,000 transactions per second (TPS) with sub-second finality, allowing Exnus to process reward distributions, staking operations, and governance votes rapidly and without bottlenecks.</li>
                         <li><strong>Low Transaction Costs:</strong> Minimal gas fees on Solana make frequent user interactions economically viable, encouraging active participation without prohibitive costs.</li>
                         <li><strong>Robust Security Model:</strong> Solana’s Proof of History (PoH) combined with Proof of Stake (PoS) consensus ensures a secure and decentralized environment that safeguards user assets and protocol integrity.</li>
                         <li><strong>Interoperability and Composability:</strong> By building on Solana, Exnus integrates with leading platforms like Realms for governance. This allows us to leverage Realms' secure, battle-tested, and feature-rich framework for DAO operations, providing our users with a trusted and powerful governance experience from day one.</li>
                     </ul>
-                     <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">Technical Integration Details</h3>
+                     <h3 className="text-2xl font-semibold gradient-text mt-6 mb-3">Technical Integration Details</h3>
                      <ul className="list-disc pl-6 space-y-2">
                         <li><strong>Smart Contract Deployment:</strong> Exnus smart contracts are written in Rust and deployed on Solana’s Sealevel runtime, which supports parallel transaction processing for enhanced scalability.</li>
                         <li><strong>Token Standards:</strong> The native Exnus token adheres to Solana’s SPL token standard, ensuring compatibility with wallets, exchanges, and DeFi platforms.</li>
                         <li><strong>Oracles and Off-Chain Data:</strong> Solana-compatible oracles facilitate secure off-chain data feeds, enabling accurate tracking of user contributions and external metrics essential for reward calculations.</li>
                         <li><strong>Cross-Program Invocations (CPI):</strong> Exnus utilizes Solana’s CPI feature to interact with other on-chain programs, such as the Realms governance contracts, enabling modular functionality and extensibility.</li>
                     </ul>
-                    <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">Impact on User Experience</h3>
+                    <h3 className="text-2xl font-semibold gradient-text mt-6 mb-3">Impact on User Experience</h3>
                     <p>By leveraging Solana, Exnus offers users fast, cost-effective, and reliable interactions with the protocol. This integration removes common barriers such as high fees and slow confirmations, making participation in rewarding, staking, and governance processes smooth and accessible.</p>
                 </div>
             );
@@ -227,7 +227,7 @@ const SectionContent = ({ id }: { id: string }) => {
                         </div>
                         <p className="text-center text-sm text-foreground/60 mt-2">Diagram: An overview of the token allocation for the Exnus Protocol.</p>
                     </div>
-                    <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">Allocation Breakdown</h3>
+                    <h3 className="text-2xl font-semibold gradient-text mt-6 mb-3">Allocation Breakdown</h3>
                     <ul className="list-disc pl-6 space-y-2 mt-6">
                         <li><strong>Staking Rewards (75.8%):</strong> 1.895 Billion Tokens. The largest portion of tokens is set aside for staking rewards, encouraging token holders to participate in network validation and governance while earning additional tokens.</li>
                         <li><strong>Liquidity Provision (10%):</strong> 250 Million Tokens. A substantial allocation to liquidity provision ensures that there will be sufficient tokens available in the market, enhancing trading efficiency and stability.</li>
@@ -238,7 +238,7 @@ const SectionContent = ({ id }: { id: string }) => {
                         <li><strong>Advisors Allocation (0.8%):</strong> 20 Million Tokens. This allocation rewards strategic advisors for their guidance and expertise in the project's development and market strategy.</li>
                     </ul>
 
-                    <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">Staking Reward Distribution Schedule</h3>
+                    <h3 className="text-2xl font-semibold gradient-text mt-6 mb-3">Staking Reward Distribution Schedule</h3>
                     <p>
                         The 1.895 billion tokens allocated for staking rewards are subject to a structured vesting schedule to ensure the long-term health and stability of the network. The rewards will be distributed linearly over a period of ten years (120 months) starting from the Token Generation Event (TGE).
                     </p>
@@ -256,7 +256,7 @@ const SectionContent = ({ id }: { id: string }) => {
                         This linear distribution model is designed to create a predictable and sustainable rewards flow, preventing market inflation while consistently incentivizing long-term stakers. By aligning rewards with the protocol's growth over an extended period, we ensure that our most committed community members are continuously recognized and compensated for their role in securing the network and participating in governance.
                     </p>
                     
-                    <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">Team Allocation Vesting Schedule</h3>
+                    <h3 className="text-2xl font-semibold gradient-text mt-6 mb-3">Team Allocation Vesting Schedule</h3>
                     <p>
                         To ensure long-term commitment and alignment with the project's success, the 100 million tokens allocated to the team are subject to a strategic vesting schedule. This structure is designed to foster confidence among our community and stakeholders.
                     </p>
@@ -269,7 +269,7 @@ const SectionContent = ({ id }: { id: string }) => {
                         This vesting schedule ensures that the team is incentivized to focus on the long-term growth and stability of the Exnus Protocol, aligning their interests with those of our entire community.
                     </p>
 
-                    <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">Community Airdrop Vesting Schedule</h3>
+                    <h3 className="text-2xl font-semibold gradient-text mt-6 mb-3">Community Airdrop Vesting Schedule</h3>
                     <p>
                         To ensure a fair and stable market entry, the 100 million tokens allocated for the community airdrop will be distributed with a structured vesting schedule. This approach rewards early participants while promoting long-term ecosystem health.
                     </p>
@@ -401,7 +401,7 @@ export default function ProtocolPage() {
                             <div className="my-8 p-8 md:p-12 rounded-lg text-card-foreground border" key={activeSection.id}>
                                 <ScrollReveal>
                                     <section id={activeSection.id}>
-                                        <h2 className="text-3xl font-bold text-primary mb-6">
+                                        <h2 className="text-3xl font-bold gradient-text mb-6">
                                             {activeSection.title}
                                         </h2>
                                         <SectionContent id={activeSection.id} />

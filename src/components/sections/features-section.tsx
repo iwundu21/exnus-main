@@ -29,7 +29,7 @@ export default function FeaturesSection() {
       <div className="relative z-10 p-8 md:p-12 lg:p-20">
         <div className="text-center">
           <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-primary">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 gradient-text">
               Overcoming Web3's Core Challenges
             </h2>
             <p className="max-w-3xl mx-auto text-center text-foreground/80 mb-12">

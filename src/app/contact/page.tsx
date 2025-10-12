@@ -139,7 +139,7 @@ export default function ContactPage() {
             <ScrollReveal>
                 <div className="p-8 border rounded-lg h-full">
                     <div className="text-left mb-8">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary mb-2">Get in Touch</h2>
+                        <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-2">Get in Touch</h2>
                         <p className="text-foreground/70">Fill out the form below and we'll get back to you as soon as possible.</p>
                     </div>
                     <Form {...form}>
@@ -193,7 +193,7 @@ export default function ContactPage() {
             <ScrollReveal delay={200}>
                 <div className="space-y-8">
                      <div className="p-8 border rounded-lg">
-                         <h3 className="text-2xl font-bold text-primary mb-4">Join Our Community</h3>
+                         <h3 className="text-2xl font-bold gradient-text mb-4">Join Our Community</h3>
                          <p className="text-foreground/70 mb-6">Stay updated and engage with the community on our social platforms:</p>
                          <div className="flex flex-wrap gap-6">
                             <Link href="https://x.com/exnusprotocol?t=erRcFQecZLsl-pW3MGFC9g&s=09" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground hover:text-primary transition-colors">
@@ -221,7 +221,7 @@ export default function ContactPage() {
       <section className="py-12 px-4 md:px-6">
         <div className="text-center">
             <ScrollReveal>
-                <h2 className="text-3xl md:text-4xl font-bold text-primary">
+                <h2 className="text-3xl md:text-4xl font-bold gradient-text">
                     Frequently Asked Questions
                 </h2>
                 <p className="mt-4 text-foreground/70">
@@ -252,7 +252,7 @@ export default function ContactPage() {
       <section className="py-12 px-4 md:px-6">
           <div className="text-center">
               <ScrollReveal>
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-primary">
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 gradient-text">
                   Our Commitment to Open Communication
               </h2>
               <p className="max-w-3xl mx-auto text-center text-foreground/70 mb-8">
