@@ -1,51 +1,32 @@
 
 import ScrollReveal from "@/components/scroll-reveal";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Lightbulb, Rocket, Users, Shield, Handshake, GitCommit, Scale, Zap, ThumbsUp, Puzzle } from "lucide-react";
-import Image from "next/image";
-import { RewardingDiagram } from "@/components/sections/diagrams/rewarding-diagram";
+import { ArrowRight, Recycle, ShieldCheck, TrendingUp, Users } from "lucide-react";
+import { StakingRewardsDiagram } from "@/components/sections/diagrams/staking-rewards-diagram";
 
-const values = [
+
+const principles = [
     {
-      icon: <GitCommit className="w-8 h-8 text-primary" />,
-      title: "Innovation",
-      description: "We are committed to pushing the boundaries of what's possible in Web3, constantly exploring new ideas and technologies to drive the ecosystem forward."
+      icon: <TrendingUp className="w-8 h-8 text-primary" />,
+      title: "Long-Term Value Creation",
+      description: "Our model is designed to reward sustained participation, not short-term speculation. We believe that true ecosystem health comes from a community that is invested in the protocol's future success."
     },
     {
-      icon: <Scale className="w-8 h-8 text-primary" />,
-      title: "Transparency",
-      description: "We operate with openness and integrity, ensuring that our community is always informed and involved in the decisions that shape our future."
+      icon: <Recycle className="w-8 h-8 text-primary" />,
+      title: "Sustainable Tokenomics",
+      description: "We employ a carefully planned vesting and distribution schedule to prevent token inflation and ensure that rewards remain meaningful over the long run, fostering a stable and predictable economic environment."
     },
     {
       icon: <Users className="w-8 h-8 text-primary" />,
-      title: "Community",
-      description: "We believe in the power of collaboration and strive to build a supportive and inclusive environment where everyone has a voice and an opportunity to contribute."
+      title: "Community-Centric Governance",
+      description: "A sustainable ecosystem is one that is governed by its users. We empower our community with the tools and voting power necessary to guide the protocol's evolution and collectively manage its resources."
     },
     {
-      icon: <Shield className="w-8 h-8 text-primary" />,
-      title: "Security",
-      description: "The safety of our users' assets and the integrity of our protocol are our top priorities. We adhere to the highest security standards in everything we build."
+      icon: <ShieldCheck className="w-8 h-8 text-primary" />,
+      title: "Fair and Transparent Distribution",
+      description: "All rewards are calculated and distributed through transparent, auditable smart contracts. Our system is designed to be fair, inclusive, and resistant to manipulation, building trust within our community."
     }
 ];
-
-const philosophyPoints = [
-    {
-        icon: <ThumbsUp className="w-8 h-8 text-primary" />,
-        title: "Solving Low Engagement",
-        description: "Many platforms struggle with passive users. Exnus introduces a dynamic reward system that incentivizes meaningful contributions, turning users into active stakeholders who drive ecosystem growth."
-    },
-    {
-        icon: <Puzzle className="w-8 h-8 text-primary" />,
-        title: "Unifying Fragmented Incentives",
-        description: "We replace siloed and confusing reward models with a single, comprehensive framework. All valuable contributions—from development to governance—are recognized and rewarded, creating a cohesive and motivating environment."
-    },
-    {
-        icon: <Zap className="w-8 h-8 text-primary" />,
-        title: "Fostering True Ownership",
-        description: "We believe the future of the web is user-owned. By aligning rewards with the network's success, Exnus gives users a tangible stake in the ecosystem, fostering long-term loyalty and a shared sense of purpose."
-    }
-]
 
 export default function AboutPage() {
   return (
@@ -54,12 +35,12 @@ export default function AboutPage() {
         <div className="header-card text-center">
             <ScrollReveal>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-primary">
-                About Exnus Protocol
+                Our Mission: A Sustainable Reward Ecosystem
             </h1>
             </ScrollReveal>
             <ScrollReveal delay={200}>
             <p className="max-w-3xl mx-auto text-lg text-foreground/80">
-                We are a passionate team of builders, innovators, and decentralization advocates dedicated to creating a more equitable and participatory Web3.
+                At Exnus Protocol, our mission is to build the incentive layer for a decentralized world that values long-term commitment over fleeting engagement. We are creating a sustainable reward ecosystem designed to foster a dedicated community and drive lasting innovation.
             </p>
             </ScrollReveal>
         </div>
@@ -70,20 +51,19 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
               <ScrollReveal>
                   <div>
-                      <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">Our Mission</h2>
+                      <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">Beyond Instant Gratification</h2>
                       <p className="text-foreground/80 text-lg mb-6">
-                        Our mission is to build the incentive layer for the decentralized world. We empower Web3 projects to cultivate vibrant, engaged, and loyal communities by creating a universal framework that rewards all forms of meaningful participation—from core development to community governance.
+                        In a Web3 landscape often dominated by hype and short-term incentives, we are taking a different approach. We believe that the key to building a resilient and thriving decentralized future lies in creating systems that encourage and reward long-term commitment.
                       </p>
-                       <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">Our Vision</h2>
                       <p className="text-foreground/80 text-lg">
-                        We envision a future where digital ecosystems are built, owned, and governed by their users. By aligning incentives and a true sense of ownership, we aim to unlock the full potential of decentralized collaboration and create a more innovative, transparent, and equitable internet for everyone.
+                        Our protocol is engineered to ensure that rewards are not just a fleeting bonus, but a continuous stream of value that recognizes sustained participation. By aligning the interests of our users with the long-term health of the network, we are building a community of true stakeholders, not speculators.
                       </p>
                   </div>
               </ScrollReveal>
               <ScrollReveal delay={200}>
                 <div className="not-prose my-8 relative overflow-hidden rounded-lg shadow-inner border border-border/50 bg-card/50 backdrop-blur-sm">
                     <div className="relative z-10 p-6 md:p-8">
-                        <RewardingDiagram />
+                        <StakingRewardsDiagram />
                     </div>
                 </div>
               </ScrollReveal>
@@ -95,15 +75,15 @@ export default function AboutPage() {
         <div className="text-center">
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl font-bold text-primary">
-              Our Core Values
+              The Principles of a Sustainable Ecosystem
             </h2>
-            <p className="mt-4 text-foreground/80">
-              These principles guide every decision we make and every line of code we write, ensuring we stay true to our mission and our community.
+            <p className="mt-4 text-foreground/80 max-w-3xl mx-auto">
+              Our mission is guided by a core set of principles designed to ensure fairness, transparency, and long-term stability.
             </p>
           </ScrollReveal>
         </div>
         <div className="max-w-5xl mx-auto mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
-          {values.map((value, index) => (
+          {principles.map((value, index) => (
             <ScrollReveal key={value.title} delay={index * 150}>
               <div className="p-6 border rounded-lg flex flex-col items-center text-center h-full bg-card/80 backdrop-blur-sm border-border/50">
                  <div className="p-4 bg-primary/10 rounded-full w-fit mb-4">
@@ -121,46 +101,18 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section id="philosophy" className="py-12 px-4 md:px-6">
-          <div className="text-center">
-              <ScrollReveal>
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-primary">
-                  The Exnus Philosophy
-              </h2>
-              <p className="max-w-3xl mx-auto text-center text-foreground/80 mb-8">
-                  We built Exnus to solve the fundamental challenges that hold back the growth of decentralized ecosystems. Our philosophy is rooted in three core solutions.
-              </p>
-              </ScrollReveal>
-              <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                  {philosophyPoints.map((point, index) => (
-                      <ScrollReveal key={point.title} delay={index * 150}>
-                          <div className="h-full p-6 text-center border rounded-lg bg-card/80 backdrop-blur-sm border-border/50">
-                              <div className="flex justify-center mb-4">
-                                  <div className="p-4 bg-primary/10 rounded-full w-fit">
-                                      {point.icon}
-                                  </div>
-                              </div>
-                              <h3 className="text-xl font-bold text-foreground">{point.title}</h3>
-                              <p className="text-foreground/70 mt-2">{point.description}</p>
-                          </div>
-                      </ScrollReveal>
-                  ))}
-              </div>
-          </div>
-      </section>
-
-
       <section className="py-12 px-4 md:px-6">
           <ScrollReveal>
             <div className="max-w-3xl mx-auto p-8 border rounded-lg bg-card/80 backdrop-blur-sm border-border/50 text-center">
-              <h3 className="font-bold text-xl text-primary">Join Our Mission</h3>
+              <h3 className="font-bold text-xl text-primary">Join a Protocol Built for the Future</h3>
               <p className="mt-4 text-foreground/70">
-                  The future of Web3 is collaborative. If you share our vision and want to contribute to a more decentralized world, we invite you to join our community and help us build the future of incentivized participation.
+                  If you believe in building a decentralized world that rewards commitment and fosters sustainable growth, we invite you to join our mission. Together, we can create a more stable and equitable future for Web3.
               </p>
                <div className="mt-8">
-                  <Button asChild>
-                    <a href="/contact">
-                      Get In Touch
+                  <Button asChild size="lg">
+                    <a href="/documents">
+                      Learn More in Our Documents
+                      <ArrowRight className="ml-2" />
                     </a>
                   </Button>
                 </div>
