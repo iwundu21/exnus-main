@@ -1,8 +1,31 @@
 
 'use client';
 
-import Image from 'next/image';
-import ScrollReveal from '../scroll-reveal';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { HowItWorksDiagram } from "./diagrams/how-it-works-diagram";
+import ScrollReveal from "../scroll-reveal";
+
+
+const howItWorksSteps = [
+    {
+        value: "contribute",
+        title: "1. Contribute & Participate",
+        description: "Engage with the ecosystem through development, governance, or community building. The protocol tracks all meaningful contributions, from code commits to forum moderation, ensuring all efforts are recognized.",
+        diagram: <HowItWorksDiagram variant="contribute" />
+    },
+    {
+        value: "rewards",
+        title: "2. Earn Rewards",
+        description: "Based on your verified contributions, the protocol's smart contracts automatically calculate and distribute Exnus tokens to your wallet. The more you contribute, the more you earn.",
+        diagram: <HowItWorksDiagram variant="rewards" />
+    },
+    {
+        value: "govern",
+        title: "3. Shape the Future",
+        description: "Stake your earned tokens to gain voting power in the DAO. Participate in governance to influence the protocol's development, manage the treasury, and guide its long-term strategy.",
+        diagram: <HowItWorksDiagram variant="govern" />
+    }
+];
 
 export default function HowItWorksSection() {
   return (
@@ -18,15 +41,26 @@ export default function HowItWorksSection() {
           </ScrollReveal>
         </div>
       <ScrollReveal delay={200}>
-        <div className="relative w-full rounded-lg overflow-hidden border">
-            <Image
-                src="/7.jpeg"
-                alt="How it works diagram"
-                width={1200}
-                height={800}
-                className="w-full h-auto object-cover"
-            />
-        </div>
+        <Tabs defaultValue="contribute" className="w-full">
+            <TabsList className="grid w-full grid-cols-3">
+                <TabsTrigger value="contribute">Contribute</TabsTrigger>
+                <TabsTrigger value="rewards">Earn</TabsTrigger>
+                <TabsTrigger value="govern">Govern</TabsTrigger>
+            </TabsList>
+            {howItWorksSteps.map((step) => (
+                 <TabsContent key={step.value} value={step.value}>
+                    <div className="flex flex-col gap-8 items-center border rounded-lg p-6">
+                        <div className="text-center">
+                            <h3 className="text-2xl font-bold text-primary">{step.title}</h3>
+                            <p className="text-foreground/70 mt-2 max-w-xl mx-auto">{step.description}</p>
+                        </div>
+                        <div className="w-full max-w-md">
+                           {step.diagram}
+                        </div>
+                    </div>
+                </TabsContent>
+            ))}
+        </Tabs>
       </ScrollReveal>
     </section>
   );
