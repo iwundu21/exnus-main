@@ -27,7 +27,7 @@ export default function AboutPage() {
   return (
     <div>
       <section className="py-12 px-4 md:px-6">
-        <div className="header-card text-center">
+        <div className="text-center">
             <ScrollReveal>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 gradient-text">
                 Our Mission: A Sustainable Reward Ecosystem
@@ -42,7 +42,7 @@ export default function AboutPage() {
       </section>
 
       <section className="py-12 px-4 md:px-6">
-        <div className="bg-card/80 backdrop-blur-sm p-6 md:p-8 rounded-lg border border-border/50">
+        <div className="p-6 md:p-8 rounded-lg">
           <div className="grid md:grid-cols-2 gap-12 items-center">
               <ScrollReveal>
                   <div>
@@ -56,7 +56,7 @@ export default function AboutPage() {
                   </div>
               </ScrollReveal>
               <ScrollReveal delay={200}>
-                <div className="not-prose my-8 relative overflow-hidden rounded-lg shadow-inner border border-border/50 bg-card/50 backdrop-blur-sm">
+                <div className="not-prose my-8 relative overflow-hidden rounded-lg shadow-inner border border-border/50">
                     <div className="relative z-10 p-6 md:p-8">
                         <StakingRewardsDiagram />
                     </div>
@@ -80,7 +80,7 @@ export default function AboutPage() {
         <div className="max-w-5xl mx-auto mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
           {principles.map((value, index) => (
             <ScrollReveal key={value.title} delay={index * 150}>
-              <div className="p-6 border rounded-lg flex flex-col items-center text-center h-full bg-card/80 backdrop-blur-sm border-border/50">
+              <div className="p-6 border rounded-lg flex flex-col items-center text-center h-full border-border/50">
                  <div className="p-4 bg-primary/10 rounded-full w-fit mb-4">
                     <svg className="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -100,7 +100,7 @@ export default function AboutPage() {
 
       <section className="py-12 px-4 md:px-6">
           <ScrollReveal>
-            <div className="max-w-3xl mx-auto p-8 border rounded-lg bg-card/80 backdrop-blur-sm border-border/50 text-center">
+            <div className="max-w-3xl mx-auto p-8 border rounded-lg border-border/50 text-center">
               <h3 className="font-bold text-xl text-primary">Join a Protocol Built for the Future</h3>
               <p className="mt-4 text-foreground/70">
                   If you believe in building a decentralized world that rewards commitment and fosters sustainable growth, we invite you to join our mission. Together, we can create a more stable and equitable future for Web3.

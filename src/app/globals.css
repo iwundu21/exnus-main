@@ -63,21 +63,9 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-headline;
   }
-   .document-section {
-    @apply bg-card/80 backdrop-blur-sm shadow-lg my-8 p-8 md:p-12 rounded-lg text-card-foreground border;
-  }
-
-  @media (max-width: 768px) {
-    .document-section {
-      @apply p-4 my-2;
-    }
-  }
 }
 
 @layer components {
-  .header-card {
-    @apply bg-transparent p-8 rounded-lg border-0;
-  }
   .gradient-text {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-teal-300 via-purple-300 to-orange-300;
   }

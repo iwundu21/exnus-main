@@ -12,7 +12,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import ScrollReveal from "@/components/scroll-reveal";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -122,7 +122,7 @@ function AdminDashboard() {
   if (accessCode !== correctCode) {
     return (
       <div className="w-full">
-        <div className="header-card text-center mb-10">
+        <div className="text-center mb-10">
           <ScrollReveal>
             <h1 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
               Admin Access
@@ -136,16 +136,14 @@ function AdminDashboard() {
         </div>
         <ScrollReveal delay={200}>
           <div className="max-w-sm mx-auto">
-            <Card>
-              <CardContent className="pt-6">
+            <div className="pt-6">
                 <form className="flex flex-col gap-4">
                   <Input name="code" placeholder="Enter access code" type="password" />
                   <Button type="submit">
                     View Dashboard
                   </Button>
                 </form>
-              </CardContent>
-            </Card>
+            </div>
           </div>
         </ScrollReveal>
       </div>
@@ -154,7 +152,7 @@ function AdminDashboard() {
 
   return (
     <div className="w-full space-y-8">
-       <div className="header-card text-center">
+       <div className="text-center">
         <ScrollReveal>
             <h1 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
             Admin Dashboard
@@ -166,7 +164,7 @@ function AdminDashboard() {
       </div>
       <div className="grid lg:grid-cols-2 gap-8">
         <ScrollReveal>
-            <Card>
+            <div>
                 <CardHeader>
                     <CardTitle>Post News</CardTitle>
                     <CardDescription>Create and publish a new announcement.</CardDescription>
@@ -239,10 +237,10 @@ function AdminDashboard() {
                         </form>
                     </Form>
                 </CardContent>
-            </Card>
+            </div>
         </ScrollReveal>
          <ScrollReveal delay={200}>
-            <Card>
+            <div>
                 <CardHeader>
                     <CardTitle>Manage News</CardTitle>
                     <CardDescription>Review and delete existing news posts.</CardDescription>
@@ -297,11 +295,11 @@ function AdminDashboard() {
                         )}
                     </div>
                 </CardContent>
-            </Card>
+            </div>
         </ScrollReveal>
       </div>
       <ScrollReveal delay={200}>
-        <Card>
+        <div>
           <CardHeader>
             <CardTitle>Contact Form Submissions</CardTitle>
             <CardDescription>Messages sent from the contact form.</CardDescription>
@@ -336,7 +334,7 @@ function AdminDashboard() {
                 )}
             </div>
           </CardContent>
-        </Card>
+        </div>
       </ScrollReveal>
     </div>
   );

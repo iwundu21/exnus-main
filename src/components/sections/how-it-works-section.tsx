@@ -54,7 +54,7 @@ export default function HowItWorksSection() {
       </div>
 
       {/* Desktop Content */}
-      <div className="hidden md:block relative bg-card/50 backdrop-blur-sm border rounded-lg p-8 overflow-hidden">
+      <div className="hidden md:block relative border rounded-lg p-8 overflow-hidden">
            <div className="absolute inset-0 opacity-[0.03]">
               <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="a" patternUnits="userSpaceOnUse" width="40" height="40" patternTransform="scale(2) rotate(0)"><rect x="0" y="0" width="100%" height="100%" fill="hsla(0,0%,100%,0)"/><path d="M0 10h40M10 0v40M0 30h40M30 0v40" strokeWidth="0.8" stroke="hsl(var(--primary))" fill="none"/></pattern></defs><rect width="800%" height="800%" transform="translate(0,0)" fill="url(#a)"/></svg>
           </div>
@@ -87,7 +87,7 @@ export default function HowItWorksSection() {
       <div className="md:hidden space-y-8">
         {steps.map((step, index) => (
            <ScrollReveal key={step.title} delay={index * 150}>
-             <div className="flex flex-col gap-8 items-center bg-card/50 backdrop-blur-sm border rounded-lg p-6">
+             <div className="flex flex-col gap-8 items-center border rounded-lg p-6">
                 <div className="w-full">
                   <h3 className="text-2xl font-bold mb-4 text-primary">{step.title}</h3>
                   <p className="text-foreground/80 text-lg">{step.description}</p>

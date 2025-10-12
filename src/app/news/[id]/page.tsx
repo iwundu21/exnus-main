@@ -3,7 +3,7 @@
 
 import { getNewsById, getComments, addComment, type Comment as CommentType } from "@/app/admin/actions";
 import ScrollReveal from "@/components/scroll-reveal";
-import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
+import { CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { format } from "date-fns";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -149,7 +149,7 @@ function NewsDetailClient({ id }: { id: string }) {
   return (
     <div>
       <section className="py-12 px-4 md:px-6">
-        <div className="header-card text-center">
+        <div className="text-center">
           <ScrollReveal>
             <h1 className="text-3xl md:text-4xl font-bold gradient-text mb-2">
               {newsItem.title}
@@ -163,7 +163,7 @@ function NewsDetailClient({ id }: { id: string }) {
 
       <section className="py-12 px-4 md:px-6">
         <ScrollReveal delay={200}>
-          <div className="bg-card/80 backdrop-blur-sm rounded-lg border">
+          <div className="rounded-lg border">
             {newsItem.imageUrl && (
               <div className="aspect-video relative w-full rounded-t-lg overflow-hidden">
                   <Image 
@@ -194,7 +194,7 @@ function NewsDetailClient({ id }: { id: string }) {
 
       <section className="py-12 px-4 md:px-6">
         <ScrollReveal delay={300}>
-          <div className="bg-card/80 backdrop-blur-sm rounded-lg border">
+          <div className="rounded-lg border">
             <div className="p-6">
               <h2 className="text-2xl font-bold text-primary">Comments ({comments.length})</h2>
             </div>

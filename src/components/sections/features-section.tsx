@@ -41,7 +41,7 @@ export default function FeaturesSection() {
           {features.map((feature, index) => (
             <ScrollReveal key={feature.title} delay={index * 150}>
               <div 
-                className="relative h-full p-6 border rounded-lg overflow-hidden bg-card/80 backdrop-blur-sm transition-all duration-300 hover:border-primary/50 hover:shadow-lg"
+                className="relative h-full p-6 border rounded-lg overflow-hidden transition-all duration-300 hover:border-primary/50 hover:shadow-lg"
               >
                 <div className="absolute inset-0 opacity-[0.02]">
                     <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><defs><pattern id={`pattern-${index}`} patternUnits="userSpaceOnUse" width="40" height="40" patternTransform={`scale(1) rotate(${index * 45})`}><rect x="0" y="0" width="100%" height="100%" fill="hsla(0,0%,100%,0)"/><path d="M10-5v20M-5 10h20" strokeWidth="0.5" stroke="hsl(var(--primary))" fill="none"/></pattern></defs><rect width="800%" height="800%" transform="translate(0,0)" fill={`url(#pattern-${index})`}/></svg>

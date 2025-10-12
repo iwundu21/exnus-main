@@ -2,7 +2,7 @@
 import { getNews } from "@/app/admin/actions";
 import ScrollReveal from "@/components/scroll-reveal";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { format } from "date-fns";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,7 +13,7 @@ export default async function NewsPage() {
     return (
         <div>
             <section className="py-12 px-4 md:px-6">
-                <div className="header-card text-center">
+                <div className="text-center">
                     <div className="relative z-10">
                         <ScrollReveal>
                             <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 gradient-text">
@@ -33,7 +33,7 @@ export default async function NewsPage() {
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {news.map((post, index) => (
                             <ScrollReveal key={post.id} delay={index * 150}>
-                                <Card className="h-full flex flex-col bg-card/80 backdrop-blur-sm">
+                                <div className="h-full flex flex-col border rounded-lg">
                                     {post.imageUrl && (
                                         <div className="aspect-video relative w-full rounded-t-lg overflow-hidden">
                                             <Image
@@ -56,12 +56,12 @@ export default async function NewsPage() {
                                             <Link href={`/news/${post.id}`}>Read More</Link>
                                         </Button>
                                     </CardFooter>
-                                </Card>
+                                </div>
                             </ScrollReveal>
                         ))}
                     </div>
                 ) : (
-                    <div className="text-center py-20 bg-card/80 backdrop-blur-sm rounded-lg border">
+                    <div className="text-center py-20 rounded-lg border">
                         <h2 className="text-2xl font-bold text-primary">No News Yet</h2>
                         <p className="mt-2 text-foreground/70">Check back soon for the latest announcements.</p>
                     </div>

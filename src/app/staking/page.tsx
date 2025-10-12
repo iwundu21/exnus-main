@@ -6,7 +6,7 @@ import { StakingDiagram } from "@/components/sections/diagrams/staking-diagram";
 import { StakingModelDiagram } from "@/components/sections/diagrams/staking-model-diagram";
 import ScrollReveal from "@/components/scroll-reveal";
 import { Button } from "@/components/ui/button";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
@@ -78,7 +78,7 @@ export default function StakingPage() {
 
     return (
         <div className="space-y-12">
-            <section className="header-card text-center">
+            <section className="text-center">
                 <ScrollReveal>
                 <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-primary">
                     Stake Exnus Tokens
@@ -112,7 +112,7 @@ export default function StakingPage() {
                 <div className="max-w-5xl mx-auto mt-8 grid md:grid-cols-3 gap-8 text-left">
                     {benefits.map((benefit, index) => (
                         <ScrollReveal key={benefit.title} delay={index * 150}>
-                        <div className="p-6 border rounded-lg flex flex-col items-center text-center h-full bg-card/80 backdrop-blur-sm border-border/50">
+                        <div className="p-6 border rounded-lg flex flex-col items-center text-center h-full border-border/50">
                             <div className="p-4 bg-primary/10 rounded-full w-fit mb-4">
                                 {benefit.icon}
                             </div>
@@ -128,7 +128,7 @@ export default function StakingPage() {
                 </div>
             </section>
 
-            <section className="bg-card/80 backdrop-blur-sm p-6 md:p-8 rounded-lg border border-border/50">
+            <section className="p-6 md:p-8 rounded-lg border border-border/50">
                 <ScrollReveal>
                     <div className="not-prose relative overflow-hidden">
                         <StakingDiagram />
@@ -136,7 +136,7 @@ export default function StakingPage() {
                 </ScrollReveal>
             </section>
             
-            <section id="staking-calculator" className="bg-card/80 backdrop-blur-sm p-6 md:p-8 rounded-lg border border-border/50">
+            <section id="staking-calculator" className="p-6 md:p-8 rounded-lg border border-border/50">
                 <div className="grid md:grid-cols-2 gap-12 items-center">
                     <ScrollReveal>
                          <div>
@@ -144,7 +144,7 @@ export default function StakingPage() {
                             <p className="text-foreground/80 text-lg mb-6">
                                 Estimate your potential rewards by entering the amount of Exnus tokens you wish to stake. See how your contribution can grow over time.
                             </p>
-                            <Card className="bg-background/50">
+                            <div>
                                 <CardContent className="pt-6">
                                      <div className="space-y-4">
                                         <div className="space-y-2">
@@ -168,7 +168,7 @@ export default function StakingPage() {
                                         </div>
                                      </div>
                                 </CardContent>
-                            </Card>
+                            </div>
                              <Button size="lg" className="w-full mt-6">Connect Wallet & Stake</Button>
                              <p className="text-xs text-center text-muted-foreground mt-2">Note: This is an estimate. Actual rewards may vary based on network conditions.</p>
                         </div>
@@ -195,7 +195,7 @@ export default function StakingPage() {
                 <div className="max-w-4xl mx-auto mt-8 grid md:grid-cols-2 gap-6">
                     {faqs.map((faq, index) => (
                         <ScrollReveal key={index} delay={index * 100}>
-                            <Card className="bg-card/80 backdrop-blur-sm h-full">
+                            <div className="h-full">
                                 <CardHeader className="flex-row items-center gap-4">
                                     <svg className="w-6 h-6 text-primary flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
@@ -206,7 +206,7 @@ export default function StakingPage() {
                                 <CardContent>
                                     <p className="text-foreground/80">{faq.answer}</p>
                                 </CardContent>
-                            </Card>
+                            </div>
                         </ScrollReveal>
                     ))}
                 </div>
