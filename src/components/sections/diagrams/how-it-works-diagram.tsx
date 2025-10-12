@@ -1,8 +1,12 @@
 
-const DiagramNode = ({ label, className }: { label: string, className?: string }) => (
+'use client';
+
+import { Code, Users, FileText, CheckCircle, Gift, Box, Vote } from "lucide-react";
+
+const DiagramNode = ({ label, className, icon }: { label: string, className?: string, icon: React.ReactNode }) => (
     <div className={`flex flex-col items-center justify-center text-center gap-2 p-3 bg-card/80 backdrop-blur-sm border-primary/20 rounded-lg ${className}`}>
         <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center">
-            
+            {icon}
         </div>
         <span className="text-xs font-medium text-foreground">{label}</span>
     </div>
@@ -19,26 +23,26 @@ const Arrow = () => (
 const ContributeDiagram = () => (
     <div className="w-full flex flex-col items-center justify-center gap-4">
         <div className="grid grid-cols-3 gap-4 w-full">
-             <DiagramNode label="Development" />
-             <DiagramNode label="Community" />
-             <DiagramNode label="Content" />
+             <DiagramNode label="Development" icon={<Code className="w-6 h-6" />} />
+             <DiagramNode label="Community" icon={<Users className="w-6 h-6" />} />
+             <DiagramNode label="Content" icon={<FileText className="w-6 h-6" />} />
         </div>
     </div>
 );
 
 const RewardsDiagram = () => (
     <div className="w-full grid grid-cols-3 items-center justify-items-center gap-2">
-        <DiagramNode label="Contribution Validated" />
+        <DiagramNode label="Contribution Validated" icon={<CheckCircle className="w-6 h-6" />} />
         <Arrow />
-        <DiagramNode label="Rewards Distributed" />
+        <DiagramNode label="Rewards Distributed" icon={<Gift className="w-6 h-6" />} />
     </div>
 );
 
 const GovernDiagram = () => (
     <div className="w-full grid grid-cols-3 items-center justify-items-center gap-2">
-        <DiagramNode label="Stake Tokens" />
+        <DiagramNode label="Stake Tokens" icon={<Box className="w-6 h-6" />} />
         <Arrow />
-        <DiagramNode label="Gain Voting Power" />
+        <DiagramNode label="Gain Voting Power" icon={<Vote className="w-6 h-6" />} />
     </div>
 );
 
