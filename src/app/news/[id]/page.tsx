@@ -109,7 +109,6 @@ const Comment = ({ comment, postId, onCommentAdded }: { comment: CommentType, po
 };
 
 function NewsDetailClient({ post, initialComments }: { post: NewsPost, initialComments: CommentType[] }) {
-  const [newsItem] = useState<NewsPost | null>(post);
   const [comments, setComments] = useState<CommentType[]>(initialComments);
   const [loading, setLoading] = useState(false);
   const { toast } = useToast();
@@ -131,20 +130,16 @@ function NewsDetailClient({ post, initialComments }: { post: NewsPost, initialCo
     }
   };
 
-  if (!newsItem) {
-    return <div className="p-12 text-center">Post not found.</div>;
-  }
-
   return (
     <div>
       <section className="py-12 px-4 md:px-6">
         <div className="text-center">
           <ScrollReveal>
             <h1 className="text-3xl md:text-4xl font-bold gradient-text mb-2">
-              {newsItem.title}
+              {post.title}
             </h1>
             <p className="text-sm text-foreground/70">
-              Posted on {format(new Date(newsItem.createdAt), "MMMM d, yyyy")}
+              Posted on {format(new Date(post.createdAt), "MMMM d, yyyy")}
             </p>
           </ScrollReveal>
         </div>
@@ -153,28 +148,28 @@ function NewsDetailClient({ post, initialComments }: { post: NewsPost, initialCo
       <section className="py-12 px-4 md:px-6">
         <ScrollReveal delay={200}>
           <div className="rounded-lg border">
-            {newsItem.imageUrl && (
+            {post.imageUrl && (
               <div className="aspect-video relative w-full rounded-t-lg overflow-hidden bg-muted/30">
                   <Image 
-                      src={newsItem.imageUrl}
-                      alt={newsItem.title}
+                      src={post.imageUrl}
+                      alt={post.title}
                       fill
                       className="object-contain"
                   />
               </div>
             )}
             <div className="p-6 md:p-8">
-              {newsItem.audioUrl && (
+              {post.audioUrl && (
                 <div className="mb-6">
                   <h2 className="text-xl font-bold text-primary mb-3">Listen to this announcement</h2>
                   <audio controls className="w-full">
-                    <source src={newsItem.audioUrl} type="audio/wav" />
+                    <source src={post.audioUrl} type="audio/wav" />
                     Your browser does not support the audio element.
                   </audio>
                 </div>
               )}
               <div className="prose prose-invert max-w-none">
-                 <Linkify text={newsItem.content} />
+                 <Linkify text={post.content} />
               </div>
             </div>
           </div>
@@ -189,7 +184,7 @@ function NewsDetailClient({ post, initialComments }: { post: NewsPost, initialCo
             </div>
             <div className="p-6 pt-0 space-y-6">
               {comments.length > 0 ? (
-                      comments.map(comment => <Comment key={comment.id} comment={comment} postId={newsItem.id} onCommentAdded={() => fetchComments(newsItem.id)} />)
+                      comments.map(comment => <Comment key={comment.id} comment={comment} postId={post.id} onCommentAdded={() => fetchComments(post.id)} />)
                   ) : (
                       <p className="text-foreground/70">Be the first to comment.</p>
                   )}
@@ -197,7 +192,7 @@ function NewsDetailClient({ post, initialComments }: { post: NewsPost, initialCo
             <div className="p-6 border-t">
               <div className="w-full">
                   <h3 className="font-bold text-lg mb-2">Leave a Comment</h3>
-                  <CommentForm postId={newsItem.id} onCommentAdded={() => fetchComments(newsItem.id)} />
+                  <CommentForm postId={post.id} onCommentAdded={() => fetchComments(post.id)} />
               </div>
             </div>
           </div>
@@ -210,11 +205,12 @@ function NewsDetailClient({ post, initialComments }: { post: NewsPost, initialCo
 
 export default async function NewsDetailPage({ params }: { params: { id: string } }) {
     const postData = await getNewsById(params.id);
-    const commentsData = postData ? await getComments(postData.id) : [];
-
+    
     if (!postData) {
         return <div className="p-12 text-center">Post not found.</div>;
     }
+    
+    const commentsData = await getComments(postData.id);
     
     return (
         <Suspense fallback={<div>Loading...</div>}>
