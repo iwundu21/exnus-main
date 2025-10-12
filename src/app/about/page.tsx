@@ -49,8 +49,8 @@ const philosophyPoints = [
 
 export default function AboutPage() {
   return (
-    <div className="space-y-12">
-      <section>
+    <div>
+      <section className="py-12 px-4 md:px-6">
         <div className="header-card text-center">
             <ScrollReveal>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-primary">
@@ -65,7 +65,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-card/80 backdrop-blur-sm p-6 md:p-8 rounded-lg border border-border/50">
+      <section className="py-12 px-4 md:px-6">
+        <div className="bg-card/80 backdrop-blur-sm p-6 md:p-8 rounded-lg border border-border/50">
           <div className="grid md:grid-cols-2 gap-12 items-center">
               <ScrollReveal>
                   <div>
@@ -87,9 +88,10 @@ export default function AboutPage() {
                 </div>
               </ScrollReveal>
           </div>
+        </div>
       </section>
 
-      <section>
+      <section className="py-12 px-4 md:px-6">
         <div className="text-center">
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl font-bold text-primary">
@@ -119,7 +121,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section id="philosophy">
+      <section id="philosophy" className="py-12 px-4 md:px-6">
           <div className="text-center">
               <ScrollReveal>
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-primary">
@@ -148,7 +150,7 @@ export default function AboutPage() {
       </section>
 
 
-      <section>
+      <section className="py-12 px-4 md:px-6">
           <ScrollReveal>
             <div className="max-w-3xl mx-auto p-8 border rounded-lg bg-card/80 backdrop-blur-sm border-border/50 text-center">
               <h3 className="font-bold text-xl text-primary">Join Our Mission</h3>

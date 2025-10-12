@@ -4,10 +4,12 @@ import ScrollReveal from "@/components/scroll-reveal";
 
 export default function RoadmapPage() {
   return (
-    <div className="space-y-12">
-      <RoadmapSection />
-      <section>
-        <div className="container px-4 md:px-6 py-12">
+    <div>
+      <div className="py-12 px-4 md:px-6">
+        <RoadmapSection />
+      </div>
+      <section className="container px-4 md:px-6 py-12">
+        <div>
           <ScrollReveal>
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-primary">

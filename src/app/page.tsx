@@ -5,11 +5,17 @@ import CtaSection from '@/components/sections/cta-section';
 
 export default function Home() {
   return (
-    <div className="space-y-20">
+    <div>
       <HeroSection />
-      <FeaturesSection />
-      <HowItWorksSection />
-      <CtaSection />
+      <div className="py-20 px-4 md:px-6">
+        <FeaturesSection />
+      </div>
+      <div className="py-20 px-4 md:px-6">
+        <HowItWorksSection />
+      </div>
+      <div className="py-20 px-4 md:px-6">
+        <CtaSection />
+      </div>
     </div>
   );
 }

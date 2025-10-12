@@ -141,7 +141,7 @@ function NewsDetailClient({ id }: { id: string }) {
 
 
   if (loading) {
-      return <div>Loading...</div>
+      return <div className="p-12 text-center">Loading...</div>
   }
 
   if (!newsItem) {
@@ -149,67 +149,73 @@ function NewsDetailClient({ id }: { id: string }) {
   }
 
   return (
-    <div className="space-y-8">
-      <div className="header-card text-center">
-        <ScrollReveal>
-          <h1 className="text-3xl md:text-4xl font-bold text-primary mb-2">
-            {newsItem.title}
-          </h1>
-          <p className="text-sm text-foreground/70">
-            Posted on {format(new Date(newsItem.createdAt), "MMMM d, yyyy")}
-          </p>
-        </ScrollReveal>
-      </div>
+    <div>
+      <section className="py-12 px-4 md:px-6">
+        <div className="header-card text-center">
+          <ScrollReveal>
+            <h1 className="text-3xl md:text-4xl font-bold text-primary mb-2">
+              {newsItem.title}
+            </h1>
+            <p className="text-sm text-foreground/70">
+              Posted on {format(new Date(newsItem.createdAt), "MMMM d, yyyy")}
+            </p>
+          </ScrollReveal>
+        </div>
+      </section>
 
-      <ScrollReveal delay={200}>
-        <div className="bg-card/80 backdrop-blur-sm rounded-lg border">
-          {newsItem.imageUrl && (
-            <div className="aspect-video relative w-full rounded-t-lg overflow-hidden">
-                <Image 
-                    src={newsItem.imageUrl}
-                    alt={newsItem.title}
-                    fill
-                    className="object-cover"
-                />
-            </div>
-          )}
-          <div className="p-6 md:p-8">
-            {newsItem.audioUrl && (
-              <div className="mb-6">
-                <h2 className="text-xl font-bold text-primary mb-3">Listen to this announcement</h2>
-                <audio controls className="w-full">
-                  <source src={newsItem.audioUrl} type="audio/wav" />
-                  Your browser does not support the audio element.
-                </audio>
+      <section className="py-12 px-4 md:px-6">
+        <ScrollReveal delay={200}>
+          <div className="bg-card/80 backdrop-blur-sm rounded-lg border">
+            {newsItem.imageUrl && (
+              <div className="aspect-video relative w-full rounded-t-lg overflow-hidden">
+                  <Image 
+                      src={newsItem.imageUrl}
+                      alt={newsItem.title}
+                      fill
+                      className="object-cover"
+                  />
               </div>
             )}
-            <div className="prose prose-invert max-w-none text-foreground/80 whitespace-pre-wrap">
-              <p>{newsItem.content}</p>
+            <div className="p-6 md:p-8">
+              {newsItem.audioUrl && (
+                <div className="mb-6">
+                  <h2 className="text-xl font-bold text-primary mb-3">Listen to this announcement</h2>
+                  <audio controls className="w-full">
+                    <source src={newsItem.audioUrl} type="audio/wav" />
+                    Your browser does not support the audio element.
+                  </audio>
+                </div>
+              )}
+              <div className="prose prose-invert max-w-none text-foreground/80 whitespace-pre-wrap">
+                <p>{newsItem.content}</p>
+              </div>
             </div>
           </div>
-        </div>
-      </ScrollReveal>
+        </ScrollReveal>
+      </section>
 
-      <ScrollReveal delay={300}>
-        <div className="bg-card/80 backdrop-blur-sm rounded-lg border">
-          <div className="p-6">
-            <h2 className="text-2xl font-bold text-primary">Comments ({comments.length})</h2>
-          </div>
-          <div className="p-6 pt-0 space-y-6">
-             {comments.length > 0 ? (
-                    comments.map(comment => <Comment key={comment.id} comment={comment} postId={newsItem.id} onCommentAdded={() => fetchPostAndComments(id)} />)
-                ) : (
-                    <p className="text-foreground/70">Be the first to comment.</p>
-                )}
-          </div>
-          <div className="p-6 border-t">
-            <div className="w-full">
-                <h3 className="font-bold text-lg mb-2">Leave a Comment</h3>
-                <CommentForm postId={newsItem.id} onCommentAdded={() => fetchPostAndComments(id)} />
+      <section className="py-12 px-4 md:px-6">
+        <ScrollReveal delay={300}>
+          <div className="bg-card/80 backdrop-blur-sm rounded-lg border">
+            <div className="p-6">
+              <h2 className="text-2xl font-bold text-primary">Comments ({comments.length})</h2>
+            </div>
+            <div className="p-6 pt-0 space-y-6">
+              {comments.length > 0 ? (
+                      comments.map(comment => <Comment key={comment.id} comment={comment} postId={newsItem.id} onCommentAdded={() => fetchPostAndComments(id)} />)
+                  ) : (
+                      <p className="text-foreground/70">Be the first to comment.</p>
+                  )}
+            </div>
+            <div className="p-6 border-t">
+              <div className="w-full">
+                  <h3 className="font-bold text-lg mb-2">Leave a Comment</h3>
+                  <CommentForm postId={newsItem.id} onCommentAdded={() => fetchPostAndComments(id)} />
+              </div>
             </div>
           </div>
-        </div>
-      </ScrollReveal>
+        </ScrollReveal>
+      </section>
     </div>
   );
 }

@@ -127,8 +127,8 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="space-y-12">
-      <section>
+    <div>
+      <section className="py-12 px-4 md:px-6">
         <div className="header-card text-center">
             <ScrollReveal>
                 <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-primary">
@@ -143,7 +143,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section>
+      <section className="py-12 px-4 md:px-6">
         <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
             <ScrollReveal>
                 <div className="p-8 border rounded-lg bg-card/80 backdrop-blur-sm h-full">
@@ -229,7 +229,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section>
+      <section className="py-12 px-4 md:px-6">
         <div className="text-center">
             <ScrollReveal>
                 <h2 className="text-3xl md:text-4xl font-bold text-primary">
@@ -261,7 +261,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section>
+      <section className="py-12 px-4 md:px-6">
           <div className="text-center">
               <ScrollReveal>
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-primary">

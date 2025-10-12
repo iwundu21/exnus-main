@@ -4,25 +4,29 @@ import ScrollReveal from "@/components/scroll-reveal";
 
 export default function MarketPage() {
   return (
-    <div className="w-full space-y-8">
-      <div className="header-card text-center">
-        <div className="relative z-10">
-          <ScrollReveal>
-              <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-              Crypto Market
-              </h1>
-              <p className="text-lg text-foreground/80 max-w-4xl mx-auto">
-              Stay updated with the latest cryptocurrency prices and market trends.
-              </p>
-          </ScrollReveal>
+    <div>
+      <section className="py-12 px-4 md:px-6">
+        <div className="header-card text-center">
+          <div className="relative z-10">
+            <ScrollReveal>
+                <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">
+                Crypto Market
+                </h1>
+                <p className="text-lg text-foreground/80 max-w-4xl mx-auto">
+                Stay updated with the latest cryptocurrency prices and market trends.
+                </p>
+            </ScrollReveal>
+          </div>
         </div>
-      </div>
-      <ScrollReveal delay={200}>
-        <div className="bg-card/80 backdrop-blur-sm rounded-lg border p-4 md:p-6">
-            <MarketTable />
-        </div>
-      </ScrollReveal>
-      <section>
+      </section>
+      <section className="py-12 px-4 md:px-6">
+        <ScrollReveal delay={200}>
+          <div className="bg-card/80 backdrop-blur-sm rounded-lg border p-4 md:p-6">
+              <MarketTable />
+          </div>
+        </ScrollReveal>
+      </section>
+      <section className="py-12 px-4 md:px-6">
           <ScrollReveal>
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-primary">

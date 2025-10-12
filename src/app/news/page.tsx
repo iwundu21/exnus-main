@@ -11,8 +11,8 @@ export default async function NewsPage() {
     const news = await getNews();
 
     return (
-        <div className="space-y-12">
-            <section>
+        <div>
+            <section className="py-12 px-4 md:px-6">
                 <div className="header-card text-center">
                     <div className="relative z-10">
                         <ScrollReveal>
@@ -28,7 +28,7 @@ export default async function NewsPage() {
                     </div>
                 </div>
             </section>
-            <section>
+            <section className="py-12 px-4 md:px-6">
                 {news.length > 0 ? (
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {news.map((post, index) => (

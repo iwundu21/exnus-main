@@ -9,7 +9,7 @@ const pageLinks = [
 
 export default function CtaSection() {
   return (
-    <section>
+    <section className="container mx-auto">
       <div className="text-center">
         <ScrollReveal>
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-primary">Explore the Exnus Ecosystem</h2>
