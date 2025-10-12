@@ -29,8 +29,10 @@ export default function EcosystemSection() {
   return (
     <section 
       id="ecosystem"
-      className="relative"
+      className="relative overflow-hidden bg-cover bg-center"
+      style={{ backgroundImage: "url('/4.jpeg')" }}
     >
+      <div className="absolute inset-0 bg-background/70 backdrop-blur-sm"></div>
       <div className="relative z-10 p-8 md:p-12">
         <div className="text-center">
           <ScrollReveal>
