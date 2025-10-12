@@ -9,19 +9,17 @@ import { TokenomicsDiagram } from "@/components/sections/diagrams/tokenomics-dia
 import { StakingRewardsDiagram } from "@/components/sections/diagrams/staking-rewards-diagram";
 import ScrollReveal from "@/components/scroll-reveal";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ArrowRight, BookText, GitCommit, FileText, Share2, ShieldCheck, Database, PieChart, TrendingUp, ThumbsUp, Zap } from "lucide-react";
-import { Card } from "@/components/ui/card";
 
 const documentSections = [
-    { id: "introduction", title: "Introduction", icon: <FileText /> },
-    { id: "market-analysis", title: "Market Analysis", icon: <TrendingUp /> },
-    { id: "challenges-solutions", title: "Challenges & Solutions", icon: <ThumbsUp /> },
-    { id: "technical-architecture", title: "Technical Architecture", icon: <GitCommit /> },
-    { id: "smart-contracts", title: "Smart Contracts & Security", icon: <ShieldCheck /> },
-    { id: "rewarding-system", title: "Rewarding System", icon: <Zap /> },
-    { id: "solana-integration", title: "Solana Integration", icon: <Share2 /> },
-    { id: "tokenomics-details", title: "Tokenomics", icon: <PieChart /> },
-    { id: "conclusion", title: "Conclusion", icon: <BookText /> },
+    { id: "introduction", title: "Introduction" },
+    { id: "market-analysis", title: "Market Analysis" },
+    { id: "challenges-solutions", title: "Challenges & Solutions" },
+    { id: "technical-architecture", title: "Technical Architecture" },
+    { id: "smart-contracts", title: "Smart Contracts & Security" },
+    { id: "rewarding-system", title: "Rewarding System" },
+    { id: "solana-integration", title: "Solana Integration" },
+    { id: "tokenomics-details", title: "Tokenomics" },
+    { id: "conclusion", title: "Conclusion" },
 ];
 
 const SectionContent = ({ id }: { id: string }) => {
@@ -306,7 +304,6 @@ const SectionNavigation = ({ currentIndex, onNavigate }: { currentIndex: number,
             {prevSection ? (
                 <Button variant="outline" asChild>
                     <a href={`#${prevSection.id}`} onClick={() => onNavigate(prevSection.id)}>
-                        <ArrowLeft className="mr-2 h-4 w-4" />
                         <div>
                             <div className="text-xs text-foreground/70">Previous</div>
                             <div className="text-foreground font-semibold">{prevSection.title}</div>
@@ -321,7 +318,6 @@ const SectionNavigation = ({ currentIndex, onNavigate }: { currentIndex: number,
                             <div className="text-xs text-foreground/70">Next</div>
                             <div className="text-foreground font-semibold">{nextSection.title}</div>
                         </div>
-                        <ArrowRight className="ml-2 h-4 w-4" />
                     </a>
                 </Button>
             ) : <div></div>}
@@ -393,7 +389,6 @@ export default function ProtocolPage() {
                                             : "text-foreground/70 hover:bg-secondary hover:text-foreground"
                                         }`}
                                     >
-                                        {section.icon}
                                         {section.title}
                                     </a>
                                 ))}

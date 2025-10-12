@@ -1,28 +1,23 @@
 
 import ScrollReveal from "@/components/scroll-reveal";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Recycle, ShieldCheck, TrendingUp, Users } from "lucide-react";
 import { StakingRewardsDiagram } from "@/components/sections/diagrams/staking-rewards-diagram";
 
 
 const principles = [
     {
-      icon: <TrendingUp className="w-8 h-8 text-primary" />,
       title: "Long-Term Value Creation",
       description: "Our model is designed to reward sustained participation, not short-term speculation. We believe that true ecosystem health comes from a community that is invested in the protocol's future success."
     },
     {
-      icon: <Recycle className="w-8 h-8 text-primary" />,
       title: "Sustainable Tokenomics",
       description: "We employ a carefully planned vesting and distribution schedule to prevent token inflation and ensure that rewards remain meaningful over the long run, fostering a stable and predictable economic environment."
     },
     {
-      icon: <Users className="w-8 h-8 text-primary" />,
       title: "Community-Centric Governance",
       description: "A sustainable ecosystem is one that is governed by its users. We empower our community with the tools and voting power necessary to guide the protocol's evolution and collectively manage its resources."
     },
     {
-      icon: <ShieldCheck className="w-8 h-8 text-primary" />,
       title: "Fair and Transparent Distribution",
       description: "All rewards are calculated and distributed through transparent, auditable smart contracts. Our system is designed to be fair, inclusive, and resistant to manipulation, building trust within our community."
     }
@@ -87,7 +82,9 @@ export default function AboutPage() {
             <ScrollReveal key={value.title} delay={index * 150}>
               <div className="p-6 border rounded-lg flex flex-col items-center text-center h-full bg-card/80 backdrop-blur-sm border-border/50">
                  <div className="p-4 bg-primary/10 rounded-full w-fit mb-4">
-                  {value.icon}
+                    <svg className="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
                 </div>
                 <div>
                   <h3 className="font-bold text-xl text-primary">{value.title}</h3>
@@ -112,7 +109,6 @@ export default function AboutPage() {
                   <Button asChild size="lg">
                     <a href="/documents">
                       Learn More in Our Documents
-                      <ArrowRight className="ml-2" />
                     </a>
                   </Button>
                 </div>

@@ -18,7 +18,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import ScrollReveal from "@/components/scroll-reveal";
 import { sendMessage } from "./actions";
-import { ArrowRight, MessageSquare, User, HelpCircle, Briefcase, Gift, Info, Star, MessageCircle, HeartHandshake, Zap, Volume2, Mail } from "lucide-react";
 import { useState } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import {
@@ -37,53 +36,44 @@ const faqItems = [
       value: "item-1",
       question: "What is Exnus Protocol?",
       answer: "Exnus Protocol is a decentralized incentive layer built on Solana. Our mission is to empower Web3 projects to build vibrant, engaged communities by rewarding all forms of meaningful participation—from development contributions to community governance.",
-      icon: <Info className="w-5 h-5 text-primary" />
     },
     {
       value: "item-2",
       question: "How can I partner with Exnus Protocol?",
       answer: "We are always open to collaborating with innovative projects. Please fill out the contact form with your partnership proposal, and our team will get back to you to discuss potential synergies.",
-      icon: <Briefcase className="w-5 h-5 text-primary" />
     },
     {
       value: "item-3",
       question: "Where can I find support if I have a technical issue?",
       answer: "For technical support, we recommend joining our official Discord or Telegram channels, where our community and support staff are available to help you. For specific inquiries, you can also use the contact form.",
-      icon: <HelpCircle className="w-5 h-5 text-primary" />
     },
     {
       value: "item-4",
       question: "When will the airdrop rewards be distributed?",
       answer: "Airdrop rewards will be distributed after the Token Generation Event (TGE). Please follow our official social media channels for the latest announcements on dates and procedures.",
-      icon: <Gift className="w-5 h-5 text-primary" />
     },
     {
       value: "item-5",
       question: "How can I get involved in the community?",
       answer: "The best way to get involved is by joining our community channels like Telegram and Discord. You can also participate in our airdrop campaign, contribute to discussions, and follow our social media for the latest updates and events.",
-      icon: <Star className="w-5 h-5 text-primary" />
     },
     {
       value: "item-6",
       question: "How can I stay updated with the latest news?",
       answer: "Follow our official Twitter account and join our Telegram announcement channel. We regularly post updates on our development progress, partnerships, and upcoming events.",
-      icon: <MessageCircle className="w-5 h-5 text-primary" />
     }
 ];
 
 const commitmentPoints = [
     {
-        icon: <Volume2 className="w-8 h-8 text-primary" />,
         title: "Transparency",
         description: "We believe in open dialogue. Whether you have feedback, questions, or concerns, we are here to listen and provide clear, honest answers."
     },
     {
-        icon: <Zap className="w-8 h-8 text-primary" />,
         title: "Responsiveness",
         description: "We are committed to addressing your inquiries promptly. Our team monitors all channels to ensure you receive timely and helpful support."
     },
     {
-        icon: <HeartHandshake className="w-8 h-8 text-primary" />,
         title: "Community Focus",
         description: "Our community is at the heart of everything we do. Your input is invaluable in shaping the future of the Exnus Protocol, and we are dedicated to fostering a collaborative environment."
     }
@@ -158,7 +148,7 @@ export default function ContactPage() {
                             name="name"
                             render={({ field }) => (
                             <FormItem>
-                                <FormLabel className="flex items-center gap-2 text-foreground"><User className="w-4 h-4" /> Name</FormLabel>
+                                <FormLabel className="flex items-center gap-2 text-foreground">Name</FormLabel>
                                 <FormControl>
                                 <Input placeholder="Enter your name" {...field} />
                                 </FormControl>
@@ -171,7 +161,7 @@ export default function ContactPage() {
                             name="email"
                             render={({ field }) => (
                             <FormItem>
-                                <FormLabel className="flex items-center gap-2 text-foreground"><Mail className="w-4 h-4" /> Email</FormLabel>
+                                <FormLabel className="flex items-center gap-2 text-foreground">Email</FormLabel>
                                 <FormControl>
                                 <Input placeholder="Enter your email address" {...field} />
                                 </FormControl>
@@ -184,7 +174,7 @@ export default function ContactPage() {
                             name="message"
                             render={({ field }) => (
                             <FormItem>
-                                <FormLabel className="flex items-center gap-2 text-foreground"><MessageSquare className="w-4 h-4" /> Message</FormLabel>
+                                <FormLabel className="flex items-center gap-2 text-foreground">Message</FormLabel>
                                 <FormControl>
                                 <Textarea placeholder="Type your message here..." {...field} rows={6} />
                                 </FormControl>
@@ -194,7 +184,6 @@ export default function ContactPage() {
                         />
                         <Button type="submit" disabled={isSubmitting} className="w-full">
                             {isSubmitting ? 'Sending...' : 'Send Message'}
-                            {!isSubmitting && <ArrowRight className="ml-2 h-5 w-5" />}
                         </Button>
                         </form>
                     </Form>
@@ -219,7 +208,6 @@ export default function ContactPage() {
                                 <span className="text-foreground">Discord</span>
                             </a>
                              <a href="mailto:contact@exnus.xyz" className="flex items-center gap-2 text-foreground hover:text-primary transition-colors">
-                                <Mail className="w-5 h-5" />
                                 <span>contact@exnus.xyz</span>
                             </a>
                          </div>
@@ -246,7 +234,6 @@ export default function ContactPage() {
                     <AccordionItem value={item.value} key={item.value} className="border-b last:border-b-0">
                         <AccordionTrigger className="text-lg font-semibold text-foreground/90 hover:text-primary text-left">
                           <div className="flex items-center gap-4">
-                            {item.icon}
                             {item.question}
                           </div>
                         </AccordionTrigger>
@@ -277,7 +264,10 @@ export default function ContactPage() {
                           <div className="h-full p-6 text-center border rounded-lg bg-card/80 backdrop-blur-sm">
                               <div className="flex justify-center mb-4">
                                   <div className="p-4 bg-primary/10 rounded-full w-fit">
-                                      {point.icon}
+                                    <svg className="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
+                                        <path d="M12 6v6l4 2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                    </svg>
                                   </div>
                               </div>
                               <h3 className="text-xl font-bold text-primary">{point.title}</h3>

@@ -13,7 +13,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useToast } from "@/hooks/use-toast";
-import { Send } from "lucide-react";
 
 
 const CommentForm = ({ postId, parentId, onCommentAdded }: { postId: string, parentId?: string | null, onCommentAdded: () => void }) => {
@@ -62,7 +61,6 @@ const CommentForm = ({ postId, parentId, onCommentAdded }: { postId: string, par
             <Textarea name="content" placeholder={parentId ? "Write your reply..." : "Write a comment..."} required disabled={isPending} />
             <Button type="submit" disabled={isPending} className="self-end">
                 {isPending ? 'Submitting...' : 'Submit'}
-                 <Send className="ml-2 h-4 w-4" />
             </Button>
         </form>
     )

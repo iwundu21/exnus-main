@@ -1,6 +1,5 @@
 
 'use client';
-import { Search, Bell, Menu, Moon, Sun } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect, useRef } from "react";
@@ -97,7 +96,7 @@ export default function NewHeader({ onMenuClick, theme, toggleTheme }: NewHeader
 
             <div className="flex-1 flex justify-end items-center gap-4">
                 <div className="relative flex-1 max-w-xs" ref={searchRef}>
-                    <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+                    <span className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground">Search</span>
                     <Input
                         type="search"
                         placeholder="Search..."
@@ -112,7 +111,6 @@ export default function NewHeader({ onMenuClick, theme, toggleTheme }: NewHeader
                                 {searchResults.map(link => (
                                     <li key={link.href}>
                                         <a href={link.href} className="flex items-center gap-3 px-4 py-2 hover:bg-accent">
-                                            {link.icon}
                                             <span>{link.label}</span>
                                         </a>
                                     </li>
@@ -124,7 +122,7 @@ export default function NewHeader({ onMenuClick, theme, toggleTheme }: NewHeader
                  <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                         <Button variant="ghost" size="icon" className="relative">
-                            <Bell className="h-5 w-5" />
+                            <span className="h-5 w-5">News</span>
                             {hasRecentNews && <span className="absolute top-1 right-1 h-2 w-2 rounded-full bg-destructive" />}
                         </Button>
                     </DropdownMenuTrigger>
@@ -154,7 +152,7 @@ export default function NewHeader({ onMenuClick, theme, toggleTheme }: NewHeader
                     <Tooltip>
                       <TooltipTrigger asChild>
                         <Button onClick={toggleTheme} variant="ghost" size="icon" className="h-10 w-10 rounded-lg text-muted-foreground">
-                            {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+                            {theme === 'light' ? <span>Light</span> : <span>Dark</span>}
                             <span className="sr-only">Toggle theme</span>
                         </Button>
                       </TooltipTrigger>
@@ -165,8 +163,8 @@ export default function NewHeader({ onMenuClick, theme, toggleTheme }: NewHeader
                 </TooltipProvider>
 
                 <Button variant="outline" size="icon" className="lg:hidden flex-shrink-0" onClick={onMenuClick}>
-                    <Menu className="h-6 w-6" />
                     <span className="sr-only">Toggle Menu</span>
+                    Menu
                 </Button>
             </div>
         </header>

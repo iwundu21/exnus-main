@@ -1,19 +1,17 @@
 
-import { Home, FileText, GitBranch, BarChart, Mail, Newspaper, Target } from 'lucide-react';
 import type { ReactNode } from 'react';
 
 export interface NavLink {
     href: string;
     label: string;
-    icon: ReactNode;
 }
 
 export const navLinks: NavLink[] = [
-  { href: '/', label: 'Home', icon: <Home className="w-5 h-5" /> },
-  { href: '/about', label: 'Our Mission', icon: <Target className="w-5 h-5" /> },
-  { href: '/documents', label: 'Documents', icon: <FileText className="w-5 h-5" /> },
-  { href: '/roadmap', label: 'Roadmap', icon: <GitBranch className="w-5 h-5" /> },
-  { href: '/news', label: 'News', icon: <Newspaper className="w-5 h-5" /> },
-  { href: '/market', label: 'Market', icon: <BarChart className="w-5 h-5" /> },
-  { href: '/contact', label: 'Contact', icon: <Mail className="w-5 h-5" /> },
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'Our Mission' },
+  { href: '/documents', label: 'Documents' },
+  { href: '/roadmap', label: 'Roadmap' },
+  { href: '/news', label: 'News' },
+  { href: '/market', label: 'Market' },
+  { href: '/contact', label: 'Contact' },
 ];

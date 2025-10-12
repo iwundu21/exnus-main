@@ -1,25 +1,20 @@
 
-import { Zap, ShieldCheck, Users, Award } from "lucide-react";
 import ScrollReveal from "../scroll-reveal";
 
 const features = [
   {
-    icon: <Award className="w-10 h-10 text-primary" />,
     title: "Holistic Reward Framework",
     description: "Exnus rewards a broad spectrum of activities—including development, governance, and community building—to foster a well-rounded, engaged user base that drives sustainable growth.",
   },
   {
-    icon: <Users className="w-10 h-10 text-primary" />,
     title: "User Ownership and Empowerment",
     description: "By aligning incentives with meaningful contributions, Exnus cultivates a strong sense of ownership that encourages long-term participation and transforms users into true stakeholders.",
   },
   {
-    icon: <Zap className="w-10 h-10 text-primary" />,
     title: "Scalability and Efficiency",
     description: "Built on Solana, Exnus leverages rapid transaction speeds and low costs to support a growing, active user base without compromising performance or security.",
   },
   {
-    icon: <ShieldCheck className="w-10 h-10 text-primary" />,
     title: "Robust Security",
     description: "With rigorous smart contract audits, permissioned functions, and immutable logic, Exnus ensures a secure and reliable reward distribution system that protects against vulnerabilities.",
   },
@@ -53,7 +48,9 @@ export default function FeaturesSection() {
                 </div>
                 <div className="relative z-10">
                   <div className="p-4 bg-primary/10 rounded-full mb-4 w-fit">
-                    {feature.icon}
+                    <svg className="w-10 h-10 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
                   </div>
                   <h3 className="text-xl text-primary font-bold">{feature.title}</h3>
                   <p className="text-foreground/80 mt-2">{feature.description}</p>

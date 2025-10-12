@@ -6,7 +6,6 @@ import { cn } from '@/lib/utils';
 import { usePathname } from 'next/navigation';
 import { navLinks } from '@/lib/nav-links.tsx';
 import Image from 'next/image';
-import { Moon, Sun } from 'lucide-react';
 import { Button } from '../ui/button';
 
 interface SidebarProps {
@@ -43,14 +42,12 @@ export default function Sidebar({ isMobileMenuOpen, setMobileMenuOpen, theme, to
           <nav className="flex-1 overflow-auto p-4 space-y-2">
             {navLinks.map((link) => (
               <a key={link.href} href={link.href} className={getLinkClass(link.href)} onClick={() => setMobileMenuOpen(false)}>
-                {link.icon}
                 {link.label}
               </a>
             ))}
           </nav>
           <div className="p-4 mt-auto border-t border-white/10">
               <Button onClick={toggleTheme} variant="ghost" className="w-full justify-start gap-3">
-                  {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
                   <span>{theme === 'light' ? 'Dark Mode' : 'Light Mode'}</span>
               </Button>
           </div>

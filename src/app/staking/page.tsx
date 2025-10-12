@@ -7,24 +7,36 @@ import { StakingModelDiagram } from "@/components/sections/diagrams/staking-mode
 import ScrollReveal from "@/components/scroll-reveal";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { ArrowRight, Zap, ShieldCheck, GitPullRequest, TrendingUp, HelpCircle } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 
 const benefits = [
     {
-        icon: <TrendingUp className="w-8 h-8 text-primary" />,
+        icon: (
+            <svg className="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 3v18h18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M7 17l5-5 4 4 5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+        ),
         title: "Maximize Your Earnings",
         description: "Earn competitive yields on your staked Exnus tokens. Our model is designed to reward long-term holders with attractive APYs."
     },
     {
-        icon: <GitPullRequest className="w-8 h-8 text-primary" />,
+        icon: (
+             <svg className="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 8l-6 6-6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+        ),
         title: "Shape the Future",
         description: "Staking grants you voting power in our Realms-powered DAO. Participate in key decisions and influence the protocol's direction."
     },
     {
-        icon: <ShieldCheck className="w-8 h-8 text-primary" />,
+        icon: (
+            <svg className="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+        ),
         title: "Strengthen the Network",
         description: "By staking, you contribute to the security and stability of the Exnus ecosystem, making it more robust and decentralized."
     }
@@ -81,7 +93,6 @@ export default function StakingPage() {
                     <Button size="lg" asChild>
                         <a href="#staking-calculator">
                             Start Staking
-                            <ArrowRight className="ml-2 h-5 w-5" />
                         </a>
                     </Button>
                 </ScrollReveal>
@@ -186,7 +197,10 @@ export default function StakingPage() {
                         <ScrollReveal key={index} delay={index * 100}>
                             <Card className="bg-card/80 backdrop-blur-sm h-full">
                                 <CardHeader className="flex-row items-center gap-4">
-                                    <HelpCircle className="w-6 h-6 text-primary flex-shrink-0" />
+                                    <svg className="w-6 h-6 text-primary flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
+                                        <path d="M12 16v-4m0-4h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                                    </svg>
                                     <CardTitle className="text-lg">{faq.question}</CardTitle>
                                 </CardHeader>
                                 <CardContent>

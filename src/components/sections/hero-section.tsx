@@ -1,7 +1,6 @@
 
 import { Button } from "@/components/ui/button";
 import ScrollReveal from "@/components/scroll-reveal";
-import { ArrowRight } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -40,7 +39,6 @@ export default function HeroSection() {
                 <DialogTrigger asChild>
                   <Button size="lg" variant="outline" className="bg-white/10 text-white border-white/20 hover:bg-white/20">
                     Explore Protocol
-                    <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-[625px]">
@@ -72,7 +70,6 @@ export default function HeroSection() {
                     <Button asChild>
                       <a href="/documents">
                         Read Full Whitepaper
-                        <ArrowRight className="ml-2 h-4 w-4" />
                       </a>
                     </Button>
                   </div>
