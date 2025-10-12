@@ -33,12 +33,22 @@ export default function Sidebar({ isMobileMenuOpen, setMobileMenuOpen }: Sidebar
               </a>
               <SheetTitle className="sr-only">Main Menu</SheetTitle>
           </SheetHeader>
-          <nav className="flex-1 overflow-auto p-4 space-y-2">
-            {navLinks.map((link) => (
-              <a key={link.href} href={link.href} className={getLinkClass(link.href)} onClick={() => setMobileMenuOpen(false)}>
-                {link.label}
-              </a>
-            ))}
+          <nav className="flex-1 overflow-auto p-4 space-y-2 flex flex-col">
+            <div className="flex-grow">
+              {navLinks.map((link) => (
+                <a key={link.href} href={link.href} className={getLinkClass(link.href)} onClick={() => setMobileMenuOpen(false)}>
+                  {link.label}
+                </a>
+              ))}
+            </div>
+             <div className="mt-auto pt-4 border-t border-border/50">
+                <a href="/terms" className={getLinkClass("/terms")} onClick={() => setMobileMenuOpen(false)}>
+                    Terms
+                </a>
+                <a href="/privacy-policy" className={getLinkClass("/privacy-policy")} onClick={() => setMobileMenuOpen(false)}>
+                    Privacy Policy
+                </a>
+            </div>
           </nav>
       </SheetContent>
     </Sheet>
