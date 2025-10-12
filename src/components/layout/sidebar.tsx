@@ -26,15 +26,11 @@ export default function Sidebar({ isMobileMenuOpen, setMobileMenuOpen }: Sidebar
   return (
     <Sheet open={isMobileMenuOpen} onOpenChange={setMobileMenuOpen}>
       <SheetContent side="left" className="p-0 w-64 flex flex-col bg-background border-r lg:hidden">
-          <SheetHeader className='border-b'>
-            <SheetTitle asChild>
-              <div className="flex items-center justify-between h-16 px-4">
-                <a href="/" className="flex items-center gap-2 font-bold text-lg">
-                   <Image src="/logo.png" alt="Exnus Protocol" width={32} height={32} className="h-8 w-8" />
-                  <span>Exnus Protocol</span>
-                </a>
-              </div>
-            </SheetTitle>
+          <SheetHeader className='border-b h-16 flex items-center px-4'>
+              <a href="/" className="flex items-center gap-2 font-bold text-lg">
+                 <Image src="/logo.png" alt="Exnus Protocol" width={32} height={32} className="h-8 w-8" />
+                <span>Exnus Protocol</span>
+              </a>
           </SheetHeader>
           <nav className="flex-1 overflow-auto p-4 space-y-2">
             {navLinks.map((link) => (

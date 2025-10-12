@@ -28,7 +28,7 @@ export default function NewHeader({ onMenuClick }: NewHeaderProps) {
             <div className="flex items-center gap-6">
                 <a href="/" className="flex items-center gap-2 font-bold text-lg">
                    <Image src="/logo.png" alt="Exnus Protocol" width={32} height={32} className="h-8 w-8" />
-                   <span className="hidden sm:inline">Exnus Protocol</span>
+                   <span>Exnus Protocol</span>
                 </a>
                 <nav className="hidden items-center gap-6 lg:flex">
                      {navLinks.map((link) => (
