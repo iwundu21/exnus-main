@@ -3,16 +3,6 @@ import ScrollReveal from "../scroll-reveal";
 
 const ecosystemLinks = [
   {
-    title: "Strategic Partners",
-    description: "Collaborations with leading projects to enhance the capabilities and reach of our ecosystem.",
-    href: "/ecosystem/partners",
-    icon: (
-        <svg className="w-10 h-10 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-    )
-  },
-  {
     title: "Integrations",
     description: "A growing list of platforms and services that have integrated the Exnus protocol.",
     href: "/ecosystem/integrations",
@@ -51,7 +41,7 @@ export default function EcosystemSection() {
             </p>
           </ScrollReveal>
         </div>
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           {ecosystemLinks.map((item, index) => (
             <ScrollReveal key={item.title} delay={index * 150}>
               <a href={item.href} className="block h-full">
