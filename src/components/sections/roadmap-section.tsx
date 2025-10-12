@@ -1,5 +1,4 @@
 
-import { CheckCircle, Loader, Milestone } from "lucide-react";
 import ScrollReveal from "../scroll-reveal";
 
 const roadmapData = [
@@ -66,12 +65,12 @@ const getQuarterStatus = (quarter: string) => {
 const RoadmapIcon = ({ status }: { status: 'complete' | 'current' | 'future' }) => {
     switch (status) {
         case "complete":
-            return <CheckCircle className="w-5 h-5 text-green-500 bg-background/0" />;
+            return <svg className="w-5 h-5 text-green-500 bg-background/0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>;
         case "current":
-            return <Loader className="w-5 h-5 text-primary animate-spin bg-background/0" />;
+            return <svg className="w-5 h-5 text-primary animate-spin bg-background/0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>;
         case "future":
         default:
-            return <Milestone className="w-5 h-5 text-muted-foreground bg-background/0" />;
+            return <svg className="w-5 h-5 text-muted-foreground bg-background/0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" /></svg>;
     }
 };
 

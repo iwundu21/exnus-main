@@ -3,7 +3,6 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { Menu } from "lucide-react";
 import { navLinks } from "@/lib/nav-links";
 import { usePathname } from "next/navigation";
 
@@ -26,7 +25,7 @@ export default function NewHeader({ onMenuClick }: NewHeaderProps) {
         <header className="sticky top-0 z-30 flex h-16 items-center justify-between gap-4 border-b bg-background px-4 sm:px-6">
             <a href="/" className="flex items-center gap-2 font-bold text-lg">
                 <Image src="/logo.png" alt="Exnus Protocol" width={32} height={32} className="h-8 w-8" />
-                <span>Exnus Protocol</span>
+                <span className="">Exnus Protocol</span>
             </a>
             
             <div className="flex items-center gap-4">
@@ -38,7 +37,22 @@ export default function NewHeader({ onMenuClick }: NewHeaderProps) {
                     ))}
                 </nav>
                 <Button variant="outline" size="icon" className="lg:hidden" onClick={onMenuClick}>
-                    <Menu className="h-5 w-5"/>
+                    <svg
+                        className="h-5 w-5"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                    >
+                        <line x1="4" x2="20" y1="12" y2="12" />
+                        <line x1="4" x2="20" y1="6" y2="6" />
+                        <line x1="4" x2="20" y1="18" y2="18" />
+                    </svg>
                     <span className="sr-only">Toggle Menu</span>
                 </Button>
             </div>
