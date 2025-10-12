@@ -9,6 +9,8 @@ import { Button } from "@/components/ui/button";
 import { CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 
 
 const benefits = [
@@ -77,8 +79,12 @@ export default function StakingPage() {
 
 
     return (
-        <div className="space-y-12">
-            <section className="text-center">
+        <div className="space-y-12 relative py-12 px-4 md:px-6">
+             <Link href="/" className="absolute top-4 left-4 md:top-8 md:left-8 flex items-center gap-2 text-foreground/80 hover:text-foreground transition-colors">
+                <ArrowLeft className="w-5 h-5" />
+                <span>Back to Home</span>
+            </Link>
+            <section className="text-center pt-12">
                 <ScrollReveal>
                 <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 gradient-text">
                     Stake Exnus Tokens
