@@ -1,19 +1,18 @@
 
 import { ArrowRight, Lock, Calendar, TrendingUp } from "lucide-react";
-import { Card } from "@/components/ui/card";
 
 const FlowStep = ({ icon, title, description, isArrow = false }: { icon?: React.ReactNode, title: string, description: string, isArrow?: boolean }) => (
   <div className="flex flex-col items-center text-center w-full">
     {isArrow ? (
       <div className="h-full flex items-center justify-center">{icon}</div>
     ) : (
-      <Card className="bg-card/80 backdrop-blur-sm border-primary/20 p-4 h-full flex flex-col items-center justify-center text-card-foreground">
+      <div className="bg-card/80 backdrop-blur-sm border-primary/20 p-4 h-full flex flex-col items-center justify-center text-card-foreground rounded-lg">
         <div className="p-3 bg-primary/10 rounded-full mb-3 w-fit">
           {icon}
         </div>
         <p className="font-bold text-sm text-foreground">{title}</p>
         <p className="text-xs text-muted-foreground">{description}</p>
-      </Card>
+      </div>
     )}
   </div>
 );

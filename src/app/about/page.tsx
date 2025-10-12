@@ -49,9 +49,9 @@ const philosophyPoints = [
 
 export default function AboutPage() {
   return (
-    <div className="space-y-12 p-4 md:p-8">
+    <div className="space-y-12">
       <section>
-        <div className="header-card text-center bg-card border-border">
+        <div className="header-card text-center">
             <ScrollReveal>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-primary">
                 About Exnus Protocol
@@ -65,7 +65,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-card p-6 md:p-8 rounded-lg border border-border/50">
+      <section className="bg-card/80 backdrop-blur-sm p-6 md:p-8 rounded-lg border border-border/50">
           <div className="grid md:grid-cols-2 gap-12 items-center">
               <ScrollReveal>
                   <div>
@@ -80,7 +80,7 @@ export default function AboutPage() {
                   </div>
               </ScrollReveal>
               <ScrollReveal delay={200}>
-                <div className="not-prose my-8 relative overflow-hidden rounded-lg shadow-inner border border-border/50 bg-card">
+                <div className="not-prose my-8 relative overflow-hidden rounded-lg shadow-inner border border-border/50 bg-card/50 backdrop-blur-sm">
                     <div className="relative z-10 p-6 md:p-8">
                         <RewardingDiagram />
                     </div>
@@ -103,7 +103,7 @@ export default function AboutPage() {
         <div className="max-w-5xl mx-auto mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
           {values.map((value, index) => (
             <ScrollReveal key={value.title} delay={index * 150}>
-              <div className="p-6 border rounded-lg flex flex-col items-center text-center h-full bg-card/80 border-border/50">
+              <div className="p-6 border rounded-lg flex flex-col items-center text-center h-full bg-card/80 backdrop-blur-sm border-border/50">
                  <div className="p-4 bg-primary/10 rounded-full w-fit mb-4">
                   {value.icon}
                 </div>
@@ -132,7 +132,7 @@ export default function AboutPage() {
               <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                   {philosophyPoints.map((point, index) => (
                       <ScrollReveal key={point.title} delay={index * 150}>
-                          <div className="h-full p-6 text-center border rounded-lg bg-card/80 border-border/50">
+                          <div className="h-full p-6 text-center border rounded-lg bg-card/80 backdrop-blur-sm border-border/50">
                               <div className="flex justify-center mb-4">
                                   <div className="p-4 bg-primary/10 rounded-full w-fit">
                                       {point.icon}
@@ -150,7 +150,7 @@ export default function AboutPage() {
 
       <section>
           <ScrollReveal>
-            <div className="max-w-3xl mx-auto p-8 border rounded-lg bg-card/80 border-border/50 text-center">
+            <div className="max-w-3xl mx-auto p-8 border rounded-lg bg-card/80 backdrop-blur-sm border-border/50 text-center">
               <h3 className="font-bold text-xl text-primary">Join Our Mission</h3>
               <p className="mt-4 text-foreground/70">
                   The future of Web3 is collaborative. If you share our vision and want to contribute to a more decentralized world, we invite you to join our community and help us build the future of incentivized participation.

@@ -1,14 +1,13 @@
 import { Code, Users, Vote, Database, Star } from "lucide-react";
-import { Card } from "@/components/ui/card";
 
 const DiagramNode = ({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) => (
-  <Card className="bg-card/80 backdrop-blur-sm border-primary/20 p-4 text-center flex flex-col items-center justify-center text-card-foreground h-full">
+  <div className="bg-card/80 backdrop-blur-sm border-primary/20 p-4 text-center flex flex-col items-center justify-center text-card-foreground h-full rounded-lg">
     <div className="p-3 bg-primary/10 rounded-full mb-3 w-fit">
       {icon}
     </div>
     <p className="font-bold text-sm text-foreground">{title}</p>
     <p className="text-xs text-muted-foreground mt-1">{description}</p>
-  </Card>
+  </div>
 );
 
 export function RewardingDiagram() {
@@ -38,7 +37,7 @@ export function RewardingDiagram() {
         />
       </div>
       <div className="flex justify-center mt-6">
-        <div className="flex items-center gap-3 text-center p-3 rounded-lg bg-primary/10">
+        <div className="flex items-center gap-3 text-center p-3 rounded-lg bg-primary/10 backdrop-blur-sm">
             <Star className="w-5 h-5 text-primary" />
             <p className="font-semibold text-sm text-primary">All contributions are valued and rewarded to foster a vibrant ecosystem.</p>
         </div>

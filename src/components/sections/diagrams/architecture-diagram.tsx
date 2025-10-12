@@ -1,14 +1,13 @@
 import { Share2, Database, Users, GitBranch, ShieldCheck, FileText, Zap, ArrowDown } from "lucide-react";
-import { Card } from "@/components/ui/card";
 
 const DiagramNode = ({ icon, title, description, className }: { icon: React.ReactNode, title: string, description: string, className?: string }) => (
-  <Card className={`bg-card/80 backdrop-blur-sm border-primary/20 p-4 text-center flex flex-col items-center justify-center text-card-foreground ${className}`}>
+  <div className={`bg-card/80 backdrop-blur-sm border-primary/20 p-4 text-center flex flex-col items-center justify-center text-card-foreground rounded-lg ${className}`}>
     <div className="p-2 bg-primary/10 rounded-full mb-2 w-fit">
       {icon}
     </div>
     <p className="font-bold text-sm text-foreground">{title}</p>
     <p className="text-xs text-muted-foreground">{description}</p>
-  </Card>
+  </div>
 );
 
 const DiagramGroup = ({ title, children }: { title: string, children: React.ReactNode }) => (

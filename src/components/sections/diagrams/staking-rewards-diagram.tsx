@@ -1,14 +1,13 @@
 import { ArrowRight, Calendar, Coins, Users, TrendingUp } from "lucide-react";
-import { Card } from "@/components/ui/card";
 
 const FlowStep = ({ icon, title, description, className }: { icon?: React.ReactNode, title: string, description: string, className?: string }) => (
-  <Card className={`bg-card/80 backdrop-blur-sm border-primary/20 p-4 text-center flex flex-col items-center justify-center text-card-foreground h-full ${className}`}>
+  <div className={`bg-card/80 backdrop-blur-sm border-primary/20 p-4 text-center flex flex-col items-center justify-center text-card-foreground h-full rounded-lg ${className}`}>
     <div className="p-3 bg-primary/10 rounded-full mb-3 w-fit">
       {icon}
     </div>
     <p className="font-bold text-sm text-foreground">{title}</p>
     <p className="text-xs text-muted-foreground">{description}</p>
-  </Card>
+  </div>
 );
 
 const Arrow = () => (
@@ -41,7 +40,7 @@ export function StakingRewardsDiagram() {
         />
       </div>
       <div className="flex justify-center mt-6">
-        <div className="flex items-center gap-3 text-center p-3 rounded-lg bg-primary/10">
+        <div className="flex items-center gap-3 text-center p-3 rounded-lg bg-primary/10 backdrop-blur-sm">
             <TrendingUp className="w-5 h-5 text-primary" />
             <p className="font-semibold text-sm text-foreground">This ensures long-term, sustainable rewards for community participation.</p>
         </div>

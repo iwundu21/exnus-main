@@ -66,12 +66,12 @@ const getQuarterStatus = (quarter: string) => {
 const RoadmapIcon = ({ status }: { status: 'complete' | 'current' | 'future' }) => {
     switch (status) {
         case "complete":
-            return <CheckCircle className="w-5 h-5 text-green-500 bg-background" />;
+            return <CheckCircle className="w-5 h-5 text-green-500 bg-background/0" />;
         case "current":
-            return <Loader className="w-5 h-5 text-primary animate-spin bg-background" />;
+            return <Loader className="w-5 h-5 text-primary animate-spin bg-background/0" />;
         case "future":
         default:
-            return <Milestone className="w-5 h-5 text-muted-foreground bg-background" />;
+            return <Milestone className="w-5 h-5 text-muted-foreground bg-background/0" />;
     }
 };
 
@@ -82,7 +82,7 @@ export default function RoadmapSection() {
       className="relative"
     >
       <div className="relative z-10">
-        <div className="header-card text-center mb-12 bg-card border-border">
+        <div className="header-card text-center mb-12">
           <ScrollReveal>
           <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Roadmap</h2>
           <p className="max-w-2xl mx-auto text-foreground/80 mt-4">

@@ -128,8 +128,8 @@ export default function ContactPage() {
 
   return (
     <div className="space-y-12">
-      <section className="rounded-lg">
-        <div className="p-8 md:p-12 lg:p-20 text-center bg-card border-border">
+      <section>
+        <div className="header-card text-center">
             <ScrollReveal>
                 <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-primary">
                     Contact Us
@@ -146,7 +146,7 @@ export default function ContactPage() {
       <section>
         <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
             <ScrollReveal>
-                <div className="p-8 border rounded-lg bg-card h-full">
+                <div className="p-8 border rounded-lg bg-card/80 backdrop-blur-sm h-full">
                     <div className="text-left mb-8">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary mb-2">Get in Touch</h2>
                         <p className="text-foreground/70">Fill out the form below and we'll get back to you as soon as possible.</p>
@@ -202,7 +202,7 @@ export default function ContactPage() {
             </ScrollReveal>
             <ScrollReveal delay={200}>
                 <div className="space-y-8">
-                     <div className="p-8 border rounded-lg bg-card">
+                     <div className="p-8 border rounded-lg bg-card/80 backdrop-blur-sm">
                          <h3 className="text-2xl font-bold text-primary mb-4">Join Our Community</h3>
                          <p className="text-foreground/70 mb-6">Stay updated and engage with the community on our social platforms:</p>
                          <div className="flex flex-wrap gap-6">
@@ -241,7 +241,7 @@ export default function ContactPage() {
             </ScrollReveal>
             <ScrollReveal delay={200}>
                 <div className="max-w-3xl mx-auto mt-8">
-                <Accordion type="single" collapsible className="w-full bg-card p-4 rounded-lg border">
+                <Accordion type="single" collapsible className="w-full bg-card/80 backdrop-blur-sm p-4 rounded-lg border">
                     {faqItems.map((item) => (
                     <AccordionItem value={item.value} key={item.value} className="border-b last:border-b-0">
                         <AccordionTrigger className="text-lg font-semibold text-foreground/90 hover:text-primary text-left">
@@ -274,7 +274,7 @@ export default function ContactPage() {
               <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                   {commitmentPoints.map((point, index) => (
                       <ScrollReveal key={point.title} delay={index * 150}>
-                          <div className="h-full p-6 text-center border rounded-lg bg-card">
+                          <div className="h-full p-6 text-center border rounded-lg bg-card/80 backdrop-blur-sm">
                               <div className="flex justify-center mb-4">
                                   <div className="p-4 bg-primary/10 rounded-full w-fit">
                                       {point.icon}

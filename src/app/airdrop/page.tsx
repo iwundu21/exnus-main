@@ -46,9 +46,9 @@ const airdropDetails = [
 
 export default function AirdropPage() {
   return (
-    <div className="space-y-12 p-4 md:p-8">
-      <section className="rounded-lg">
-          <div className="header-card text-center bg-card border-border text-foreground">
+    <div className="space-y-12">
+      <section>
+          <div className="header-card text-center text-foreground">
               <ScrollReveal>
               <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-primary">
                   Join the Exnus Protocol Airdrop
@@ -83,7 +83,7 @@ export default function AirdropPage() {
               <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                   {steps.map((step, index) => (
                       <ScrollReveal key={step.title} delay={index * 150}>
-                        <div className="relative h-full p-6 text-center border rounded-lg overflow-hidden theme-gold bg-card">
+                        <div className="relative h-full p-6 text-center border rounded-lg overflow-hidden theme-gold bg-card/80 backdrop-blur-sm">
                           <div className="relative z-10">
                             <div className="flex justify-center mb-4">
                                 <div className="p-4 bg-primary/10 rounded-full w-fit">
@@ -113,7 +113,7 @@ export default function AirdropPage() {
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 text-left">
           {airdropDetails.map((detail, index) => (
             <ScrollReveal key={detail.title} delay={index * 150}>
-              <div className="relative p-6 border rounded-lg flex items-start gap-4 h-full overflow-hidden theme-gold bg-card">
+              <div className="relative p-6 border rounded-lg flex items-start gap-4 h-full overflow-hidden theme-gold bg-card/80 backdrop-blur-sm">
                 <div className="relative z-10 flex items-start gap-4">
                   <div className="p-2 bg-primary/10 rounded-full mt-1">
                     {detail.icon}
@@ -132,7 +132,7 @@ export default function AirdropPage() {
       </section>
       <section>
           <ScrollReveal>
-            <div className="relative max-w-3xl mx-auto p-8 border rounded-lg text-center overflow-hidden theme-gold bg-card">
+            <div className="relative max-w-3xl mx-auto p-8 border rounded-lg text-center overflow-hidden theme-gold bg-card/80 backdrop-blur-sm">
               <div className="relative z-10">
                 <h3 className="font-bold text-xl text-primary">Important Notice</h3>
                 <p className="mt-4 text-foreground/80">

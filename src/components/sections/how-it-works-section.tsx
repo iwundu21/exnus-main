@@ -54,7 +54,7 @@ export default function HowItWorksSection() {
       </div>
 
       {/* Desktop Content */}
-      <div className="hidden md:block relative">
+      <div className="hidden md:block relative bg-card/50 backdrop-blur-sm border rounded-lg p-8">
           {steps.map((step, index) => (
               <div
                 key={step.title}
@@ -69,36 +69,8 @@ export default function HowItWorksSection() {
                       <p className="text-foreground/80 text-lg">{step.description}</p>
                     </div>
                     <div className="md:w-1/2 w-full">
-                        <div className="w-full rounded-lg border overflow-hidden">
-                           {index === 0 ? (
-                                <div className="w-full h-auto bg-card flex items-center justify-center p-4">{step.diagram}</div>
-                            ) : index === 1 ? (
-                                <div className="relative w-full h-full p-8 flex items-center justify-center min-h-[220px] bg-card overflow-hidden">
-                                    <div 
-                                      className="absolute inset-0"
-                                      style={{
-                                        backgroundImage: `url(/3.jpeg)`,
-                                        backgroundSize: 'cover',
-                                        backgroundPosition: 'center',
-                                      }}
-                                    />
-                                    <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
-                                    <div className="relative z-10">{step.diagram}</div>
-                                </div>
-                            ) : (
-                                <div className="relative w-full h-full p-8 flex items-center justify-center min-h-[220px] bg-card overflow-hidden">
-                                    <div 
-                                      className="absolute inset-0"
-                                      style={{
-                                        backgroundImage: `url(/4.jpeg)`,
-                                        backgroundSize: 'cover',
-                                        backgroundPosition: 'center',
-                                      }}
-                                    />
-                                    <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
-                                    <div className="relative z-10">{step.diagram}</div>
-                                </div>
-                            )}
+                        <div className="w-full rounded-lg">
+                           {step.diagram}
                         </div>
                     </div>
                 </div>
@@ -107,45 +79,17 @@ export default function HowItWorksSection() {
       </div>
 
       {/* Mobile Accordion/List */}
-      <div className="md:hidden space-y-12">
+      <div className="md:hidden space-y-8">
         {steps.map((step, index) => (
            <ScrollReveal key={step.title} delay={index * 150}>
-             <div className="flex flex-col gap-8 items-center">
+             <div className="flex flex-col gap-8 items-center bg-card/50 backdrop-blur-sm border rounded-lg p-6">
                 <div className="w-full">
                   <h3 className="text-2xl font-bold mb-4 text-primary">{step.title}</h3>
                   <p className="text-foreground/80 text-lg">{step.description}</p>
                 </div>
                 <div className="w-full">
-                    <div className="w-full rounded-lg border overflow-hidden">
-                       {index === 0 ? (
-                            <div className="w-full h-auto bg-card flex items-center justify-center">{step.diagram}</div>
-                        ) : index === 1 ? (
-                           <div className="relative w-full h-full p-8 flex items-center justify-center min-h-[220px] bg-card overflow-hidden">
-                                <div 
-                                    className="absolute inset-0"
-                                    style={{
-                                    backgroundImage: `url(/3.jpeg)`,
-                                    backgroundSize: 'cover',
-                                    backgroundPosition: 'center',
-                                    }}
-                                />
-                                <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
-                               <div className="relative z-10">{step.diagram}</div>
-                           </div>
-                        ) : (
-                            <div className="relative w-full h-full p-8 flex items-center justify-center min-h-[220px] bg-card overflow-hidden">
-                                <div 
-                                  className="absolute inset-0"
-                                  style={{
-                                    backgroundImage: `url(/4.jpeg)`,
-                                    backgroundSize: 'cover',
-                                    backgroundPosition: 'center',
-                                  }}
-                                />
-                                <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
-                                <div className="relative z-10">{step.diagram}</div>
-                            </div>
-                        )}
+                    <div className="w-full rounded-lg">
+                       {step.diagram}
                     </div>
                 </div>
             </div>

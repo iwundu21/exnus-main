@@ -13,7 +13,7 @@ export default async function NewsPage() {
     return (
         <div className="space-y-12">
             <section>
-                <div className="header-card text-center bg-card border-border">
+                <div className="header-card text-center">
                     <div className="relative z-10">
                         <ScrollReveal>
                             <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-primary">
@@ -33,7 +33,7 @@ export default async function NewsPage() {
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {news.map((post, index) => (
                             <ScrollReveal key={post.id} delay={index * 150}>
-                                <Card className="h-full flex flex-col">
+                                <Card className="h-full flex flex-col bg-card/80 backdrop-blur-sm">
                                     {post.imageUrl && (
                                         <div className="aspect-video relative w-full rounded-t-lg overflow-hidden">
                                             <Image
@@ -61,7 +61,7 @@ export default async function NewsPage() {
                         ))}
                     </div>
                 ) : (
-                    <div className="text-center py-20 bg-card rounded-lg border">
+                    <div className="text-center py-20 bg-card/80 backdrop-blur-sm rounded-lg border">
                         <h2 className="text-2xl font-bold text-primary">No News Yet</h2>
                         <p className="mt-2 text-foreground/70">Check back soon for the latest announcements.</p>
                     </div>

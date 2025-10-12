@@ -1,13 +1,12 @@
 import { Users, GitCommit, MessageSquare, Award, Cpu, ShieldCheck, Scale, Vote, ArrowRight } from 'lucide-react';
-import { Card } from '@/components/ui/card';
 
 const DiagramNode = ({ icon: Icon, label, className }: { icon: React.ElementType, label: string, className?: string }) => (
-    <Card className={`flex flex-col items-center justify-center text-center gap-2 p-3 bg-card/80 border-primary/20 ${className}`}>
+    <div className={`flex flex-col items-center justify-center text-center gap-2 p-3 bg-card/80 backdrop-blur-sm border-primary/20 rounded-lg ${className}`}>
         <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center">
             <Icon className="w-6 h-6" />
         </div>
         <span className="text-xs font-medium text-foreground">{label}</span>
-    </Card>
+    </div>
 );
 
 const Arrow = () => (

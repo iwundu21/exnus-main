@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import Sidebar from '@/components/layout/sidebar';
 import NewHeader from '@/components/layout/new-header';
 import Footer from './footer';
+import GlassmorphismBackground from './glassmorphism-background';
 
 export default function ClientLayout({
   children,
@@ -35,7 +36,8 @@ export default function ClientLayout({
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background/0">
+      <GlassmorphismBackground />
       <Sidebar 
         isMobileMenuOpen={isMobileMenuOpen} 
         setMobileMenuOpen={setMobileMenuOpen}

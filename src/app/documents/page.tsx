@@ -103,7 +103,7 @@ const SectionContent = ({ id }: { id: string }) => {
                 <div className="prose max-w-none prose-invert text-foreground/80">
                     <p>The Exnus protocol is engineered with a modular and scalable architecture designed to efficiently manage user contributions, reward calculations, and secure token distribution. Its technical framework ensures high performance, security, and seamless integration with the Solana blockchain.</p>
                     <div className="not-prose my-8">
-                      <div className="overflow-hidden p-0 md:p-4 bg-background rounded-lg">
+                      <div className="overflow-hidden p-0 md:p-4 bg-background/50 backdrop-blur-sm rounded-lg">
                           <ArchitectureDiagram />
                       </div>
                       <p className="text-center text-sm text-foreground/60 mt-2">Diagram: High-level overview of the Exnus technical architecture.</p>
@@ -135,7 +135,7 @@ const SectionContent = ({ id }: { id: string }) => {
                  <div className="prose max-w-none prose-invert text-foreground/80">
                     <p>The Exnus protocol’s smart contract framework is central to its ability to securely and transparently manage user rewards, staking, and governance. Designed with a multi-layered security approach, the contracts ensure trustless interactions and immutable enforcement of protocol rules.</p>
                     <div className="not-prose my-8">
-                        <div className="overflow-hidden p-6 md:p-8 bg-background rounded-lg">
+                        <div className="overflow-hidden p-6 md:p-8 bg-background/50 backdrop-blur-sm rounded-lg">
                            <SecurityDiagram />
                         </div>
                         <p className="text-center text-sm text-foreground/60 mt-2">Diagram: An overview of the multi-layered security approach for Exnus smart contracts.</p>
@@ -168,7 +168,7 @@ const SectionContent = ({ id }: { id: string }) => {
                 <div className="prose max-w-none prose-invert text-foreground/80">
                     <p>The Exnus protocol’s rewarding system is a cornerstone of its strategy to drive active participation and sustained growth within the ecosystem. By recognizing and compensating diverse user contributions, Exnus fosters a vibrant, collaborative community where every effort is valued.</p>
                     <div className="not-prose my-8">
-                        <div className="overflow-hidden p-6 md:p-8 bg-background rounded-lg">
+                        <div className="overflow-hidden p-6 md:p-8 bg-background/50 backdrop-blur-sm rounded-lg">
                            <RewardingDiagram />
                         </div>
                         <p className="text-center text-sm text-foreground/60 mt-2">Diagram: An overview of the types of contributions rewarded by the Exnus Protocol.</p>
@@ -224,7 +224,7 @@ const SectionContent = ({ id }: { id: string }) => {
                     <p>Total Supply: 2.5 Billion Tokens.</p>
                     <p>The total supply of Exnus tokens is strategically allocated to ensure sustainability, community engagement, and rewards for stakeholders. Below is the detailed breakdown of the token allocation:</p>
                     <div className="not-prose my-8">
-                        <div className="overflow-hidden p-6 md:p-8 bg-background rounded-lg">
+                        <div className="overflow-hidden p-6 md:p-8 bg-background/50 backdrop-blur-sm rounded-lg">
                            <TokenomicsDiagram />
                         </div>
                         <p className="text-center text-sm text-foreground/60 mt-2">Diagram: An overview of the token allocation for the Exnus Protocol.</p>
@@ -245,7 +245,7 @@ const SectionContent = ({ id }: { id: string }) => {
                         The 1.895 billion tokens allocated for staking rewards are subject to a structured vesting schedule to ensure the long-term health and stability of the network. The rewards will be distributed linearly over a period of ten years (120 months) starting from the Token Generation Event (TGE).
                     </p>
                     <div className="not-prose my-8">
-                        <div className="overflow-hidden p-6 md:p-8 bg-background rounded-lg">
+                        <div className="overflow-hidden p-6 md:p-8 bg-background/50 backdrop-blur-sm rounded-lg">
                            <StakingRewardsDiagram />
                         </div>
                         <p className="text-center text-sm text-foreground/60 mt-2">Diagram: An overview of the staking rewards distribution model.</p>
@@ -361,8 +361,8 @@ export default function ProtocolPage() {
 
     return (
         <div className="space-y-8">
-            <div className="header-card text-center bg-card border-border">
-                <div className="relative z-10 p-8">
+            <div className="header-card text-center">
+                <div className="relative z-10">
                     <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">
                     Technical Documents
                     </h1>
@@ -372,10 +372,10 @@ export default function ProtocolPage() {
                 </div>
             </div>
 
-            <div className="flex gap-8">
-                <aside className="hidden lg:block w-1/4">
-                    <Card className="sticky top-24 p-4">
-                        <nav className="flex flex-col gap-2">
+            <div className="flex flex-col lg:flex-row gap-8">
+                <aside className="w-full lg:w-1/4">
+                    <div className="lg:sticky lg:top-24 bg-card/80 backdrop-blur-sm rounded-lg border p-4">
+                        <nav className="flex flex-row lg:flex-col gap-2 overflow-x-auto lg:overflow-x-visible pb-2 lg:pb-0">
                             {documentSections.map(section => (
                                 <a
                                     key={section.id}
@@ -384,7 +384,7 @@ export default function ProtocolPage() {
                                         e.preventDefault();
                                         handleNavigate(section.id);
                                     }}
-                                    className={`flex items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors ${
+                                    className={`flex items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors whitespace-nowrap ${
                                         activeSectionId === section.id
                                         ? "bg-secondary text-foreground font-medium"
                                         : "text-foreground/70 hover:bg-secondary hover:text-foreground"
@@ -395,12 +395,12 @@ export default function ProtocolPage() {
                                 </a>
                             ))}
                         </nav>
-                    </Card>
+                    </div>
                 </aside>
 
                 <div className="w-full lg:w-3/4">
                      {activeSection && (
-                        <Card className="p-6 md:p-8" key={activeSection.id}>
+                        <div className="document-section" key={activeSection.id}>
                             <ScrollReveal>
                                 <section id={activeSection.id}>
                                     <h2 className="text-3xl font-bold text-primary mb-6">
@@ -410,7 +410,7 @@ export default function ProtocolPage() {
                                     <SectionNavigation currentIndex={activeIndex} onNavigate={handleNavigate}/>
                                 </section>
                             </ScrollReveal>
-                        </Card>
+                        </div>
                     )}
                 </div>
             </div>

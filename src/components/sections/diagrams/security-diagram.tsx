@@ -1,14 +1,13 @@
 import { ShieldCheck, Layers, Bot, AlertTriangle, ScrollText } from "lucide-react";
-import { Card } from "@/components/ui/card";
 
 const DiagramNode = ({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) => (
-  <Card className="bg-card/80 backdrop-blur-sm border-primary/20 p-4 text-center flex flex-col items-center justify-center text-card-foreground h-full">
+  <div className="bg-card/80 backdrop-blur-sm border-primary/20 p-4 text-center flex flex-col items-center justify-center text-card-foreground h-full rounded-lg">
     <div className="p-3 bg-primary/10 rounded-full mb-3 w-fit">
       {icon}
     </div>
     <p className="font-bold text-sm text-foreground">{title}</p>
     <p className="text-xs text-muted-foreground mt-1">{description}</p>
-  </Card>
+  </div>
 );
 
 export function SecurityDiagram() {
@@ -31,11 +30,11 @@ export function SecurityDiagram() {
 
         <div className="flex flex-col items-center justify-center gap-4">
              <div className="w-px h-full bg-border/50 hidden md:block"></div>
-             <Card className="bg-primary/10 border-primary/50 p-4 text-center flex flex-col items-center justify-center text-card-foreground">
+             <div className="bg-primary/10 border-primary/50 p-4 text-center flex flex-col items-center justify-center text-card-foreground rounded-lg">
                 <ShieldCheck className="w-10 h-10 text-primary mb-2"/>
                 <p className="font-bold text-base text-primary">Secure Core</p>
                 <p className="text-xs text-muted-foreground">Exnus Protocol Smart Contracts</p>
-            </Card>
+            </div>
              <div className="w-px h-full bg-border/50 hidden md:block"></div>
         </div>
 

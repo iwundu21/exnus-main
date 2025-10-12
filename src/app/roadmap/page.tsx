@@ -20,7 +20,7 @@ export default function RoadmapPage() {
           </ScrollReveal>
           <ScrollReveal delay={200}>
             <div className="max-w-5xl mx-auto mt-12 grid md:grid-cols-2 gap-8 text-left">
-              <div className="relative p-6 border rounded-lg bg-card overflow-hidden">
+              <div className="relative p-6 border rounded-lg bg-card/80 backdrop-blur-sm overflow-hidden">
                 <div className="relative z-10 theme-gold">
                   <h3 className="font-bold text-xl text-primary">Ecosystem Expansion</h3>
                   <p className="mt-2 text-foreground/80">
@@ -28,7 +28,7 @@ export default function RoadmapPage() {
                   </p>
                 </div>
               </div>
-              <div className="relative p-6 border rounded-lg bg-card overflow-hidden">
+              <div className="relative p-6 border rounded-lg bg-card/80 backdrop-blur-sm overflow-hidden">
                 <div className="relative z-10 theme-gold">
                   <h3 className="font-bold text-xl text-primary">Decentralization & Autonomy</h3>
                   <p className="mt-2 text-foreground/80">

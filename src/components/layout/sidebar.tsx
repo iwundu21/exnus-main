@@ -34,16 +34,16 @@ export default function Sidebar({ isMobileMenuOpen, setMobileMenuOpen, theme, to
   const getLinkClass = (href: string) => {
     const isActive = activePath === href;
     return cn(
-      'flex items-center gap-3 rounded-md px-3 py-2 text-foreground/70 transition-all hover:bg-secondary hover:text-foreground',
-      isActive && 'bg-secondary text-foreground font-medium'
+      'flex items-center gap-3 rounded-md px-3 py-2 text-foreground/70 transition-all hover:bg-white/10 hover:text-foreground',
+      isActive && 'bg-white/10 text-foreground font-medium'
     );
   };
   
   const getDesktopLinkClass = (href: string) => {
     const isActive = activePath === href;
     return cn(
-      'flex h-10 w-10 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground hover:bg-secondary',
-      isActive && 'bg-secondary text-foreground'
+      'flex h-10 w-10 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground hover:bg-white/10',
+      isActive && 'bg-white/10 text-foreground'
     );
   };
 
@@ -57,7 +57,7 @@ export default function Sidebar({ isMobileMenuOpen, setMobileMenuOpen, theme, to
           </a>
         ))}
       </nav>
-      <div className="p-4 mt-auto border-t">
+      <div className="p-4 mt-auto border-t border-white/10">
           <Button onClick={toggleTheme} variant="ghost" className="w-full justify-start gap-3">
               {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
               <span>{theme === 'light' ? 'Dark Mode' : 'Light Mode'}</span>
@@ -103,8 +103,8 @@ export default function Sidebar({ isMobileMenuOpen, setMobileMenuOpen, theme, to
     <>
       {/* Mobile Sidebar */}
       <Sheet open={isMobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-        <SheetContent side="left" className="p-0 w-64 flex flex-col">
-            <SheetHeader className='border-b'>
+        <SheetContent side="left" className="p-0 w-64 flex flex-col bg-background/80 backdrop-blur-sm border-r border-white/10">
+            <SheetHeader className='border-b border-white/10'>
               <SheetTitle asChild>
                 <div className="flex items-center justify-between h-14 px-4">
                   <a href="/" className="flex items-center gap-2 font-bold text-lg">
@@ -120,8 +120,8 @@ export default function Sidebar({ isMobileMenuOpen, setMobileMenuOpen, theme, to
 
 
       {/* Desktop Sidebar */}
-      <aside className="hidden md:flex md:flex-col w-20 border-r bg-card fixed inset-y-0 z-50">
-        <div className="flex h-20 items-center justify-center border-b">
+      <aside className="hidden md:flex md:flex-col w-20 border-r bg-background/50 backdrop-blur-sm border-white/10 fixed inset-y-0 z-50">
+        <div className="flex h-20 items-center justify-center border-b border-white/10">
           <a href="/" className="flex items-center justify-center">
              <Image src="/logo.png" alt="Exnus Protocol" width={56} height={56} className="h-14 w-14" />
              <span className="sr-only">Exnus</span>

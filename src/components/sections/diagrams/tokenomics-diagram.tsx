@@ -1,6 +1,6 @@
 'use client';
 
-import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts';
+import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 
 const data = [
   { name: 'Staking Rewards', value: 75.8 },
@@ -25,51 +25,38 @@ const CustomTooltip = ({ active, payload }: any) => {
   return null;
 };
 
-const RADIAN = Math.PI / 180;
-const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, name }: any) => {
-  const labelRadius = outerRadius + 30;
-  const x = cx + labelRadius * Math.cos(-midAngle * RADIAN);
-  const y = cy + labelRadius * Math.sin(-midAngle * RADIAN);
-  const sx = cx + (outerRadius + 10) * Math.cos(-midAngle * RADIAN);
-  const sy = cy + (outerRadius + 10) * Math.sin(-midAngle * RADIAN);
-  const textAnchor = x > cx ? 'start' : 'end';
-
-  return (
-    <g>
-      <path d={`M${sx},${sy}L${x},${y}`} stroke="hsl(var(--muted-foreground))" fill="none" />
-      <circle cx={x} cy={y} r={2} fill="hsl(var(--muted-foreground))" />
-      <text x={x + (x > cx ? 1 : -1) * 8} y={y} textAnchor={textAnchor} fill="hsl(var(--foreground))" fontSize="12px" dominantBaseline="central">
-        {`${name} ${(percent * 100).toFixed(1)}%`}
-      </text>
-    </g>
-  );
-};
-
-
 export function TokenomicsDiagram() {
   return (
     <div className="relative w-full font-sans">
         <h3 className="text-center font-bold text-2xl mb-6 text-primary">Token Allocation Overview</h3>
-        <div className="w-full h-[500px]">
+        <div className="w-full h-[300px] md:h-[400px]">
             <ResponsiveContainer width="100%" height="100%">
-                <PieChart margin={{ top: 40, right: 50, left: 50, bottom: 40 }}>
+                <PieChart>
                     <Pie
                         data={data}
                         cx="50%"
                         cy="50%"
-                        outerRadius={80}
-                        innerRadius={40}
+                        outerRadius="80%"
+                        innerRadius="60%"
                         fill="#8884d8"
                         dataKey="value"
                         paddingAngle={2}
-                        labelLine={false}
-                        label={renderCustomizedLabel}
                     >
                         {data.map((entry, index) => (
                             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} stroke={"hsl(var(--background))"} />
                         ))}
                     </Pie>
                     <Tooltip content={<CustomTooltip />} />
+                     <Legend 
+                        iconType="circle" 
+                        layout="vertical" 
+                        verticalAlign="middle" 
+                        align="right"
+                        wrapperStyle={{
+                            paddingLeft: '20px',
+                            fontSize: '12px',
+                        }}
+                     />
                 </PieChart>
             </ResponsiveContainer>
         </div>

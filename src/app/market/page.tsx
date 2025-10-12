@@ -5,7 +5,7 @@ import ScrollReveal from "@/components/scroll-reveal";
 export default function MarketPage() {
   return (
     <div className="w-full space-y-8">
-      <div className="header-card text-center bg-card border-border">
+      <div className="header-card text-center">
         <div className="relative z-10">
           <ScrollReveal>
               <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">
@@ -18,7 +18,7 @@ export default function MarketPage() {
         </div>
       </div>
       <ScrollReveal delay={200}>
-        <div>
+        <div className="bg-card/80 backdrop-blur-sm rounded-lg border p-4 md:p-6">
             <MarketTable />
         </div>
       </ScrollReveal>
@@ -35,7 +35,7 @@ export default function MarketPage() {
           </ScrollReveal>
           <ScrollReveal delay={200}>
             <div className="max-w-5xl mx-auto mt-8 grid md:grid-cols-2 gap-8 text-left">
-              <div className="p-6 border rounded-lg bg-card relative overflow-hidden">
+              <div className="p-6 border rounded-lg bg-card/80 backdrop-blur-sm relative overflow-hidden">
                 <div className="relative z-10">
                   <h3 className="font-bold text-xl text-primary">Data Accuracy</h3>
                   <p className="mt-2 text-foreground/80">
@@ -43,7 +43,7 @@ export default function MarketPage() {
                   </p>
                 </div>
               </div>
-              <div className="p-6 border rounded-lg bg-card relative overflow-hidden">
+              <div className="p-6 border rounded-lg bg-card/80 backdrop-blur-sm relative overflow-hidden">
                 <div className="relative z-10">
                   <h3 className="font-bold text-xl text-primary">Investment Risk</h3>
                   <p className="mt-2 text-foreground/80">

@@ -162,7 +162,7 @@ function NewsDetailClient({ id }: { id: string }) {
       </div>
 
       <ScrollReveal delay={200}>
-        <Card>
+        <div className="bg-card/80 backdrop-blur-sm rounded-lg border">
           {newsItem.imageUrl && (
             <div className="aspect-video relative w-full rounded-t-lg overflow-hidden">
                 <Image 
@@ -173,7 +173,7 @@ function NewsDetailClient({ id }: { id: string }) {
                 />
             </div>
           )}
-          <CardContent className="p-6 md:p-8">
+          <div className="p-6 md:p-8">
             {newsItem.audioUrl && (
               <div className="mb-6">
                 <h2 className="text-xl font-bold text-primary mb-3">Listen to this announcement</h2>
@@ -186,29 +186,29 @@ function NewsDetailClient({ id }: { id: string }) {
             <div className="prose prose-invert max-w-none text-foreground/80 whitespace-pre-wrap">
               <p>{newsItem.content}</p>
             </div>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
       </ScrollReveal>
 
       <ScrollReveal delay={300}>
-        <Card>
-          <CardHeader>
+        <div className="bg-card/80 backdrop-blur-sm rounded-lg border">
+          <div className="p-6">
             <h2 className="text-2xl font-bold text-primary">Comments ({comments.length})</h2>
-          </CardHeader>
-          <CardContent className="space-y-6">
+          </div>
+          <div className="p-6 pt-0 space-y-6">
              {comments.length > 0 ? (
                     comments.map(comment => <Comment key={comment.id} comment={comment} postId={newsItem.id} onCommentAdded={() => fetchPostAndComments(id)} />)
                 ) : (
                     <p className="text-foreground/70">Be the first to comment.</p>
                 )}
-          </CardContent>
-          <CardFooter>
+          </div>
+          <div className="p-6 border-t">
             <div className="w-full">
                 <h3 className="font-bold text-lg mb-2">Leave a Comment</h3>
                 <CommentForm postId={newsItem.id} onCommentAdded={() => fetchPostAndComments(id)} />
             </div>
-          </CardFooter>
-        </Card>
+          </div>
+        </div>
       </ScrollReveal>
     </div>
   );
