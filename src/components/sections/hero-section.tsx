@@ -3,14 +3,13 @@
 
 import { Button } from "@/components/ui/button";
 import ScrollReveal from "@/components/scroll-reveal";
-import Image from "next/image";
 
 export default function HeroSection() {
   return (
     <section 
-      className="container mx-auto grid md:grid-cols-2 gap-12 items-center py-20"
+      className="container mx-auto flex flex-col items-center justify-center text-center py-20"
     >
-      <div className="text-left">
+      <div>
           <ScrollReveal>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
               The Incentive Layer for a
@@ -21,12 +20,12 @@ export default function HeroSection() {
             </h1>
           </ScrollReveal>
           <ScrollReveal delay={200}>
-            <p className="max-w-xl text-lg md:text-xl text-muted-foreground mb-10">
+            <p className="max-w-xl mx-auto text-lg md:text-xl text-muted-foreground mb-10">
               Exnus Protocol is building a sustainable reward ecosystem designed to foster long-term commitment and drive lasting innovation in Web3.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={400}>
-            <div className="flex flex-col items-start gap-6">
+            <div className="flex flex-col items-center gap-6">
                 <Button asChild size="lg" className="w-full max-w-xs text-lg rounded-full font-semibold relative overflow-hidden bg-slate-800 border border-slate-700 hover:bg-slate-700 transition-all duration-300">
                     <a href="/documents">
                         <span className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]"></span>
@@ -37,17 +36,6 @@ export default function HeroSection() {
                 </Button>
             </div>
           </ScrollReveal>
-      </div>
-      <div className="hidden md:block">
-        <ScrollReveal delay={200}>
-            <Image
-                src="/2.jpeg"
-                alt="Illustration of a decentralized network"
-                width={600}
-                height={600}
-                className="rounded-lg shadow-2xl"
-            />
-        </ScrollReveal>
       </div>
     </section>
   );
