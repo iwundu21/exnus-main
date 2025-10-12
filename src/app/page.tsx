@@ -11,7 +11,7 @@ export default function Home() {
     <div>
       <HeroSection />
       <div className="py-20 px-4 md:px-6">
-         <div className="p-4 md:p-8 rounded-lg border border-border/50">
+         <div className="rounded-lg border border-border/50 overflow-hidden">
             <FeaturesSection />
         </div>
       </div>
@@ -24,7 +24,7 @@ export default function Home() {
         </div>
       </div>
       <div className="py-20 px-4 md:px-6">
-        <div className="p-4 md:p-8 rounded-lg border border-border/50">
+        <div className="p-4 mdp-8 rounded-lg border border-border/50">
             <EcosystemSection />
         </div>
       </div>

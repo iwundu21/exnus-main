@@ -24,8 +24,10 @@ export default function FeaturesSection() {
   return (
     <section 
       id="features"
-      className="relative overflow-hidden"
+      className="relative overflow-hidden bg-cover bg-center"
+      style={{ backgroundImage: "url('/2.jpeg')" }}
     >
+      <div className="absolute inset-0 bg-background/80 backdrop-blur-sm"></div>
       <div className="relative z-10 p-8 md:p-12 lg:p-20">
         <div className="text-center">
           <ScrollReveal>
@@ -41,7 +43,7 @@ export default function FeaturesSection() {
           {features.map((feature, index) => (
             <ScrollReveal key={feature.title} delay={index * 150}>
               <div 
-                className="relative h-full p-6 border rounded-lg overflow-hidden transition-all duration-300 hover:border-primary/50 hover:shadow-lg"
+                className="relative h-full p-6 border rounded-lg overflow-hidden transition-all duration-300 hover:border-primary/50 hover:shadow-lg backdrop-blur-sm bg-card/50"
               >
                 <div className="absolute inset-0 opacity-[0.02]">
                     <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><defs><pattern id={`pattern-${index}`} patternUnits="userSpaceOnUse" width="40" height="40" patternTransform={`scale(1) rotate(${index * 45})`}><rect x="0" y="0" width="100%" height="100%" fill="hsla(0,0%,100%,0)"/><path d="M10-5v20M-5 10h20" strokeWidth="0.5" stroke="hsl(var(--primary))" fill="none"/></pattern></defs><rect width="800%" height="800%" transform="translate(0,0)" fill={`url(#pattern-${index})`}/></svg>
