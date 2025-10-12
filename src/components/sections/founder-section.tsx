@@ -26,12 +26,12 @@ export default function FounderSection() {
             </ScrollReveal>
             <ScrollReveal delay={200}>
                 <div>
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">A Message from Our Founder</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">A Message from Our Founders</h2>
                     <p className="text-foreground/80 text-lg mb-6">
                         "We started Exnus Protocol with a simple but powerful idea: to build a decentralized future that truly rewards commitment and collaboration. In a landscape often driven by short-term gains, we are dedicated to fostering a sustainable ecosystem where every contribution matters. Our mission is to empower builders, creators, and community members to become true stakeholders in the future of Web3."
                     </p>
                     <p className="text-foreground/70 font-semibold">
-                        - Rob, Founder of Exnus Protocol
+                        - neobubba and Ricky, Founders of Exnus Protocol
                     </p>
                 </div>
             </ScrollReveal>
