@@ -1,15 +1,22 @@
+
 'use client';
 
 import { Button } from "@/components/ui/button";
 import ScrollReveal from "@/components/scroll-reveal";
-import { HeroBackground } from "./hero-background";
+import Image from "next/image";
 
 export default function HeroSection() {
   return (
     <section 
       className="relative overflow-hidden min-h-[70vh] md:min-h-[80vh] flex items-center justify-center"
     >
-      <HeroBackground />
+      <Image
+        src="/2.jpeg"
+        alt="Background"
+        fill
+        className="object-cover -z-10"
+      />
+      <div className="absolute inset-0 bg-black/50 -z-10" />
       <div className="relative z-10 text-center px-4">
           <ScrollReveal>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
