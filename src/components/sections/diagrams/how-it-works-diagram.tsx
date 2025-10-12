@@ -5,7 +5,7 @@ import { Code, Users, FileText, CheckCircle, Gift, Box, Vote } from "lucide-reac
 
 const DiagramNode = ({ label, className, icon }: { label: string, className?: string, icon: React.ReactNode }) => (
     <div className={`flex flex-col items-center justify-center text-center gap-2 p-3 bg-card/90 backdrop-blur-sm border-primary/20 rounded-lg ${className}`}>
-        <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center">
+        <div className="w-12 h-12 border border-primary/20 text-primary rounded-full flex items-center justify-center">
             {icon}
         </div>
         <span className="text-xs font-medium text-foreground">{label}</span>
