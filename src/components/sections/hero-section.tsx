@@ -10,30 +10,22 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
+import { HeroBackground } from "./hero-background";
 
 export default function HeroSection() {
   return (
     <section 
-      className="relative overflow-hidden"
+      className="relative overflow-hidden min-h-screen flex items-center justify-center"
     >
-      <div 
-        className="absolute inset-0"
-        style={{
-          backgroundImage: `url(/3.jpeg)`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      />
-      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
-      <div className="relative z-10">
-        <div className="header-card text-center bg-transparent border-0 p-8 md:p-12 lg:p-20">
+      <HeroBackground />
+      <div className="relative z-10 text-center px-4">
           <ScrollReveal>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6 text-white">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6 text-foreground">
               <span className="text-primary">Exnus Protocol:</span> Fostering Innovation Through Incentivized Participation.
             </h1>
           </ScrollReveal>
           <ScrollReveal delay={200}>
-            <p className="max-w-3xl mx-auto text-lg md:text-xl text-white/80 mb-10">
+            <p className="max-w-3xl mx-auto text-lg md:text-xl text-foreground/80 mb-10">
               Exnus introduces a revolutionary reward system on Solana, designed to cultivate a vibrant, collaborative ecosystem by rewarding meaningful contributions from every community member.
             </p>
           </ScrollReveal>
@@ -88,7 +80,6 @@ export default function HeroSection() {
               </Dialog>
             </div>
           </ScrollReveal>
-        </div>
       </div>
     </section>
   );

@@ -11,7 +11,7 @@ const steps = [
   {
     title: '1. Contribute & Participate',
     description: 'Engage with the ecosystem through development, governance, or community building. The protocol tracks all meaningful contributions, from code commits to forum moderation, ensuring all efforts are recognized.',
-    diagram: <Image src="/7.jpeg" alt="Contribute" width={400} height={200} className="w-full h-auto object-contain" />
+    diagram: <HowItWorksDiagram variant="contribute" />
   },
   {
     title: '2. Earn Rewards',

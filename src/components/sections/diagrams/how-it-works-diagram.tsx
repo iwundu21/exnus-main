@@ -1,3 +1,4 @@
+
 import { Users, GitCommit, MessageSquare, Award, Cpu, ShieldCheck, Scale, Vote, ArrowRight } from 'lucide-react';
 
 const DiagramNode = ({ icon: Icon, label, className }: { icon: React.ElementType, label: string, className?: string }) => (
