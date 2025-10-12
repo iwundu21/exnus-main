@@ -15,6 +15,5 @@ export const navLinks: NavLink[] = [
   { href: '/roadmap', label: 'Roadmap', icon: <GitBranch className="w-5 h-5" /> },
   { href: '/news', label: 'News', icon: <Newspaper className="w-5 h-5" /> },
   { href: '/market', label: 'Market', icon: <BarChart className="w-5 h-5" /> },
-  { href: '/airdrop', label: 'Airdrop', icon: <Gift className="w-5 h-5" /> },
   { href: '/contact', label: 'Contact', icon: <Mail className="w-5 h-5" /> },
 ];

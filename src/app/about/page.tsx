@@ -157,8 +157,8 @@ export default function AboutPage() {
               </p>
                <div className="mt-8">
                   <Button asChild>
-                    <a href="/airdrop">
-                      Participate in Airdrop
+                    <a href="/contact">
+                      Get In Touch
                     </a>
                   </Button>
                 </div>
