@@ -19,13 +19,11 @@ export default function ClientLayout({
         isMobileMenuOpen={isMobileMenuOpen} 
         setMobileMenuOpen={setMobileMenuOpen}
       />
-      <div className="flex flex-col">
-        <NewHeader onMenuClick={() => setMobileMenuOpen(true)} />
-        <main className="flex-1 pb-16 lg:pb-0">
-          {children}
-        </main>
-        <Footer />
-      </div>
+      <NewHeader onMenuClick={() => setMobileMenuOpen(true)} />
+      <main className="flex-1 pb-16 lg:pb-0">
+        {children}
+      </main>
+      <Footer />
     </div>
   );
 }
