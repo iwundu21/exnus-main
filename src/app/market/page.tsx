@@ -9,7 +9,7 @@ export default function MarketPage() {
         <div className="header-card text-center">
           <div className="relative z-10">
             <ScrollReveal>
-                <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">
+                <h1 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
                 Crypto Market
                 </h1>
                 <p className="text-lg text-foreground/80 max-w-4xl mx-auto">

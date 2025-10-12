@@ -125,7 +125,7 @@ function AdminDashboard() {
       <div className="w-full">
         <div className="header-card text-center mb-10">
           <ScrollReveal>
-            <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
               Admin Access
             </h1>
           </ScrollReveal>
@@ -157,7 +157,7 @@ function AdminDashboard() {
     <div className="w-full space-y-8">
        <div className="header-card text-center">
         <ScrollReveal>
-            <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
             Admin Dashboard
             </h1>
             <p className="text-lg text-foreground/70 max-w-4xl mx-auto">

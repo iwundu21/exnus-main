@@ -16,7 +16,7 @@ export default async function NewsPage() {
                 <div className="header-card text-center">
                     <div className="relative z-10">
                         <ScrollReveal>
-                            <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-primary">
+                            <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 gradient-text">
                                 News & Announcements
                             </h1>
                         </ScrollReveal>

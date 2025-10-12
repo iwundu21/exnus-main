@@ -121,7 +121,7 @@ export default function ContactPage() {
       <section className="py-12 px-4 md:px-6">
         <div className="header-card text-center">
             <ScrollReveal>
-                <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-primary">
+                <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 gradient-text">
                     Contact Us
                 </h1>
             </ScrollReveal>

@@ -151,7 +151,7 @@ function NewsDetailClient({ id }: { id: string }) {
       <section className="py-12 px-4 md:px-6">
         <div className="header-card text-center">
           <ScrollReveal>
-            <h1 className="text-3xl md:text-4xl font-bold text-primary mb-2">
+            <h1 className="text-3xl md:text-4xl font-bold gradient-text mb-2">
               {newsItem.title}
             </h1>
             <p className="text-sm text-foreground/70">
