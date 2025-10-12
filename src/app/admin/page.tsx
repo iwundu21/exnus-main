@@ -55,7 +55,7 @@ function AdminDashboard() {
     const [news, setNews] = useState<NewsPost[]>([]);
     const [messages, setMessages] = useState<Message[]>([]);
     const [isSubmittingNews, setIsSubmittingNews] = useState(false);
-    const formRef = useRef<HTMLFormElement>(null);
+    const fileInputRef = useRef<HTMLInputElement>(null);
 
     const newsForm = useForm<z.infer<typeof newsFormSchema>>({
         resolver: zodResolver(newsFormSchema),
@@ -73,10 +73,16 @@ function AdminDashboard() {
         }
     }, [accessCode]);
 
-    async function onNewsSubmit() {
-        if (!formRef.current) return;
+    async function onNewsSubmit(values: z.infer<typeof newsFormSchema>) {
+        const formData = new FormData();
+        formData.append('title', values.title);
+        formData.append('content', values.content);
+        formData.append('generateAudio', values.generateAudio ? 'on' : 'off');
+        
+        if (fileInputRef.current?.files?.[0]) {
+            formData.append('image', fileInputRef.current.files[0]);
+        }
 
-        const formData = new FormData(formRef.current);
         setIsSubmittingNews(true);
         try {
             const result = await postNews(formData);
@@ -88,8 +94,8 @@ function AdminDashboard() {
                 description: "The announcement is now live.",
             });
             newsForm.reset();
-            if (formRef.current) {
-                formRef.current.reset();
+             if (fileInputRef.current) {
+                fileInputRef.current.value = "";
             }
         } catch (error) {
             toast({
@@ -171,7 +177,7 @@ function AdminDashboard() {
                 </CardHeader>
                 <CardContent>
                     <Form {...newsForm}>
-                        <form ref={formRef} action={onNewsSubmit} className="space-y-6">
+                        <form onSubmit={newsForm.handleSubmit(onNewsSubmit)} className="space-y-6">
                             <FormField
                                 control={newsForm.control}
                                 name="title"
@@ -192,7 +198,7 @@ function AdminDashboard() {
                                     <FormItem>
                                     <FormLabel>Image (Optional)</FormLabel>
                                     <FormControl>
-                                        <Input type="file" accept="image/*" name="image" />
+                                        <Input type="file" accept="image/*" ref={fileInputRef} />
                                     </FormControl>
                                     <FormMessage />
                                     </FormItem>
@@ -220,7 +226,6 @@ function AdminDashboard() {
                                         <Checkbox
                                             checked={field.value}
                                             onCheckedChange={field.onChange}
-                                            name="generateAudio"
                                         />
                                     </FormControl>
                                     <div className="space-y-1 leading-none">
