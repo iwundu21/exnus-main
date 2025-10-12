@@ -11,7 +11,6 @@ import { revalidatePath } from 'next/cache';
 const newsSchema = z.object({
   title: z.string().min(1, "Title is required."),
   content: z.string().min(1, "Content is required."),
-  generateAudio: z.string().optional(),
 });
 
 export type NewsPost = {
@@ -43,18 +42,19 @@ export async function getNews(): Promise<NewsPost[]> {
 }
 
 export async function postNews(formData: FormData) {
-    const values = Object.fromEntries(formData.entries());
-    
-    const validatedData = newsSchema.parse({
-        ...values,
-    });
+    const title = formData.get('title') as string;
+    const content = formData.get('content') as string;
+    const generateAudio = formData.get('generateAudio') === 'on';
+    const imageFile = formData.get('image') as File | null;
+
+    const validatedData = newsSchema.parse({ title, content });
     
     const news = await getNews();
     
     let audioDataUri: string | undefined = undefined;
     let imageDataUri: string | undefined = undefined;
 
-    if (validatedData.generateAudio === 'on' && validatedData.content) {
+    if (generateAudio && validatedData.content) {
         try {
             const ttsResponse = await generateSpeech({ text: validatedData.content });
             audioDataUri = ttsResponse.audioDataUri;
@@ -63,8 +63,7 @@ export async function postNews(formData: FormData) {
         }
     }
     
-    const imageFile = formData.get('image');
-    if (imageFile instanceof File && imageFile.size > 0) {
+    if (imageFile && imageFile.size > 0) {
         const imageBuffer = await imageFile.arrayBuffer();
         const imageBase64 = Buffer.from(imageBuffer).toString('base64');
         imageDataUri = `data:${imageFile.type};base64,${imageBase64}`;
@@ -204,3 +203,5 @@ export async function addComment(formData: FormData) {
 
     return { success: true, comment: newComment };
 }
+
+    

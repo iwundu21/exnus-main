@@ -77,7 +77,9 @@ function AdminDashboard() {
         const formData = new FormData();
         formData.append('title', values.title);
         formData.append('content', values.content);
-        formData.append('generateAudio', values.generateAudio ? 'on' : 'off');
+        if (values.generateAudio) {
+            formData.append('generateAudio', 'on');
+        }
         
         if (fileInputRef.current?.files?.[0]) {
             formData.append('image', fileInputRef.current.files[0]);
@@ -98,6 +100,7 @@ function AdminDashboard() {
                 fileInputRef.current.value = "";
             }
         } catch (error) {
+            console.error("Error posting news:", error);
             toast({
                 variant: "destructive",
                 title: "Uh oh! Something went wrong.",
@@ -198,7 +201,7 @@ function AdminDashboard() {
                                     <FormItem>
                                     <FormLabel>Image (Optional)</FormLabel>
                                     <FormControl>
-                                        <Input type="file" accept="image/*" ref={fileInputRef} />
+                                        <Input type="file" accept="image/*" ref={fileInputRef} onChange={(e) => field.onChange(e.target.files)} />
                                     </FormControl>
                                     <FormMessage />
                                     </FormItem>
@@ -352,3 +355,5 @@ export default function AdminPage() {
         </Suspense>
     );
 }
+
+    
