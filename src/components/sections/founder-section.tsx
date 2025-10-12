@@ -6,16 +6,17 @@ import ScrollReveal from "@/components/scroll-reveal";
 
 export default function FounderSection() {
   return (
-    <section className="py-20 px-4 md:px-6">
-        <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto p-8 border rounded-lg">
+    <section className="px-4 md:px-6">
+        <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <ScrollReveal>
-                <div className="relative aspect-square rounded-lg overflow-hidden border">
+                <div className="relative aspect-square rounded-lg overflow-hidden border group">
                     <Image 
                         src="/rob.jpeg"
                         alt="Founder of Exnus Protocol"
                         fill
-                        className="object-contain"
+                        className="object-contain group-hover:scale-105 transition-transform duration-300 ease-in-out"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent mix-blend-hard-light"></div>
                 </div>
             </ScrollReveal>
             <ScrollReveal delay={200}>

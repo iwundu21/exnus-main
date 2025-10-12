@@ -11,19 +11,27 @@ export default function Home() {
     <div>
       <HeroSection />
       <div className="py-20 px-4 md:px-6">
-        <FeaturesSection />
+         <div className="p-4 md:p-8 rounded-lg border border-border/50">
+            <FeaturesSection />
+        </div>
       </div>
       <div className="py-20 px-4 md:px-6">
         <HowItWorksSection />
       </div>
        <div className="py-20 px-4 md:px-6">
-        <FounderSection />
+        <div className="p-4 md:p-8 rounded-lg border border-border/50">
+            <FounderSection />
+        </div>
       </div>
       <div className="py-20 px-4 md:px-6">
-        <EcosystemSection />
+        <div className="p-4 md:p-8 rounded-lg border border-border/50">
+            <EcosystemSection />
+        </div>
       </div>
       <div className="py-20 px-4 md:px-6">
-        <CtaSection />
+        <div className="p-4 md:p-8 rounded-lg border border-border/50">
+            <CtaSection />
+        </div>
       </div>
     </div>
   );
