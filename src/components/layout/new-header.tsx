@@ -16,6 +16,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
+import { Bell, Menu, Search } from "lucide-react";
 
 interface NewHeaderProps {
     onMenuClick: () => void;
@@ -96,7 +97,7 @@ export default function NewHeader({ onMenuClick, theme, toggleTheme }: NewHeader
 
             <div className="flex-1 flex justify-end items-center gap-4">
                 <div className="relative flex-1 max-w-xs" ref={searchRef}>
-                    <span className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground">Search</span>
+                    <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
                     <Input
                         type="search"
                         placeholder="Search..."
@@ -122,7 +123,7 @@ export default function NewHeader({ onMenuClick, theme, toggleTheme }: NewHeader
                  <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                         <Button variant="ghost" size="icon" className="relative">
-                            <span className="h-5 w-5">News</span>
+                            <Bell className="h-5 w-5" />
                             {hasRecentNews && <span className="absolute top-1 right-1 h-2 w-2 rounded-full bg-destructive" />}
                         </Button>
                     </DropdownMenuTrigger>
@@ -149,8 +150,8 @@ export default function NewHeader({ onMenuClick, theme, toggleTheme }: NewHeader
                 </DropdownMenu>
 
                 <Button variant="outline" size="icon" className="lg:hidden flex-shrink-0" onClick={onMenuClick}>
+                    <Menu className="h-5 w-5"/>
                     <span className="sr-only">Toggle Menu</span>
-                    Menu
                 </Button>
             </div>
         </header>

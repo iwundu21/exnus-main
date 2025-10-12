@@ -25,7 +25,7 @@ export default function Footer() {
               <Image src="/x.jpg" alt="X" width={20} height={20} />
               <span>X</span>
             </a>
-            <a href="https://t.me/Exnusprotocol" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white/90 hover:text-white">
+            <a href="https.t.me/Exnusprotocol" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white/90 hover:text-white">
                <Image src="/tg.jpg" alt="Telegram" width={20} height={20} />
               <span>Telegram</span>
             </a>
