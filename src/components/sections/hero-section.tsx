@@ -8,36 +8,25 @@ import Image from "next/image";
 export default function HeroSection() {
   return (
     <section 
-      className="relative overflow-hidden min-h-[70vh] md:min-h-[80vh] flex items-center justify-center"
+      className="container mx-auto grid md:grid-cols-2 gap-12 items-center py-20"
     >
-      <Image
-        src="/2.jpeg"
-        alt="Background"
-        fill
-        className="object-cover -z-10"
-      />
-      <div className="absolute inset-0 bg-black/50 -z-10" />
-      <div className="relative z-10 text-center px-4">
+      <div className="text-left">
           <ScrollReveal>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
               The Incentive Layer for a
               <br />
               <span className="relative">
                 <span className="gradient-text">Decentralized World</span>
-                <span 
-                  className="absolute -right-4 -top-2 w-24 h-16 bg-primary/20 rounded-full blur-2xl"
-                  style={{ animation: 'pulse 2s infinite' }}
-                ></span>
               </span>
             </h1>
           </ScrollReveal>
           <ScrollReveal delay={200}>
-            <p className="max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground mb-10">
+            <p className="max-w-xl text-lg md:text-xl text-muted-foreground mb-10">
               Exnus Protocol is building a sustainable reward ecosystem designed to foster long-term commitment and drive lasting innovation in Web3.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={400}>
-            <div className="flex flex-col items-center gap-6">
+            <div className="flex flex-col items-start gap-6">
                 <Button asChild size="lg" className="w-full max-w-xs text-lg rounded-full font-semibold relative overflow-hidden bg-slate-800 border border-slate-700 hover:bg-slate-700 transition-all duration-300">
                     <a href="/documents">
                         <span className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]"></span>
@@ -49,18 +38,17 @@ export default function HeroSection() {
             </div>
           </ScrollReveal>
       </div>
-      <style jsx>{`
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-                opacity: 0.6;
-            }
-            50% {
-                transform: scale(1.2);
-                opacity: 0.9;
-            }
-        }
-      `}</style>
+      <div className="hidden md:block">
+        <ScrollReveal delay={200}>
+            <Image
+                src="/2.jpeg"
+                alt="Illustration of a decentralized network"
+                width={600}
+                height={600}
+                className="rounded-lg shadow-2xl"
+            />
+        </ScrollReveal>
+      </div>
     </section>
   );
 }
