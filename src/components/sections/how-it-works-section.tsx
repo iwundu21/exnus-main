@@ -29,7 +29,13 @@ const howItWorksSteps = [
 
 export default function HowItWorksSection() {
   return (
-    <section id="how-it-works">
+    <section 
+      id="how-it-works"
+      className="relative py-20 px-4 md:px-6 bg-cover bg-center"
+      style={{ backgroundImage: "url('/3.jpeg')" }}
+    >
+      <div className="absolute inset-0 bg-background/80 backdrop-blur-sm"></div>
+      <div className="relative z-10">
        <div className="text-center">
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 gradient-text">
@@ -40,28 +46,29 @@ export default function HowItWorksSection() {
             </p>
           </ScrollReveal>
         </div>
-      <ScrollReveal delay={200}>
-        <Tabs defaultValue="contribute" className="w-full">
-            <TabsList className="grid w-full grid-cols-3">
-                <TabsTrigger value="contribute">Contribute</TabsTrigger>
-                <TabsTrigger value="rewards">Earn</TabsTrigger>
-                <TabsTrigger value="govern">Govern</TabsTrigger>
-            </TabsList>
-            {howItWorksSteps.map((step) => (
-                 <TabsContent key={step.value} value={step.value}>
-                    <div className="flex flex-col gap-8 items-center border rounded-lg p-6 backdrop-blur-sm bg-background/50">
-                        <div className="text-center">
-                            <h3 className="text-2xl font-bold text-primary">{step.title}</h3>
-                            <p className="text-foreground/70 mt-2 max-w-xl mx-auto">{step.description}</p>
+        <ScrollReveal delay={200}>
+            <Tabs defaultValue="contribute" className="w-full max-w-4xl mx-auto">
+                <TabsList className="grid w-full grid-cols-3">
+                    <TabsTrigger value="contribute">Contribute</TabsTrigger>
+                    <TabsTrigger value="rewards">Earn</TabsTrigger>
+                    <TabsTrigger value="govern">Govern</TabsTrigger>
+                </TabsList>
+                {howItWorksSteps.map((step) => (
+                    <TabsContent key={step.value} value={step.value}>
+                        <div className="flex flex-col gap-8 items-center border rounded-lg p-6 bg-background/50">
+                            <div className="text-center">
+                                <h3 className="text-2xl font-bold text-primary">{step.title}</h3>
+                                <p className="text-foreground/70 mt-2 max-w-xl mx-auto">{step.description}</p>
+                            </div>
+                            <div className="w-full max-w-md">
+                            {step.diagram}
+                            </div>
                         </div>
-                        <div className="w-full max-w-md">
-                           {step.diagram}
-                        </div>
-                    </div>
-                </TabsContent>
-            ))}
-        </Tabs>
-      </ScrollReveal>
+                    </TabsContent>
+                ))}
+            </Tabs>
+        </ScrollReveal>
+      </div>
     </section>
   );
 }
