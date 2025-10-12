@@ -1,7 +1,6 @@
 
 'use client';
 import { Button } from "@/components/ui/button";
-import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Menu } from "lucide-react";
@@ -25,11 +24,12 @@ export default function NewHeader({ onMenuClick }: NewHeaderProps) {
 
     return (
         <header className="sticky top-0 z-30 flex h-16 items-center justify-between gap-4 border-b bg-background px-4 sm:px-6">
-            <div className="flex items-center gap-6">
-                <a href="/" className="flex items-center gap-2 font-bold text-lg">
-                   <Image src="/logo.png" alt="Exnus Protocol" width={32} height={32} className="h-8 w-8" />
-                   <span>Exnus Protocol</span>
-                </a>
+            <a href="/" className="flex items-center gap-2 font-bold text-lg">
+                <Image src="/logo.png" alt="Exnus Protocol" width={32} height={32} className="h-8 w-8" />
+                <span>Exnus Protocol</span>
+            </a>
+            
+            <div className="flex items-center gap-4">
                 <nav className="hidden items-center gap-6 lg:flex">
                      {navLinks.map((link) => (
                         <a key={link.href} href={link.href} className={getLinkClass(link.href)}>
@@ -37,9 +37,6 @@ export default function NewHeader({ onMenuClick }: NewHeaderProps) {
                         </a>
                     ))}
                 </nav>
-            </div>
-            
-            <div className="flex items-center gap-2">
                 <Button variant="outline" size="icon" className="lg:hidden" onClick={onMenuClick}>
                     <Menu className="h-5 w-5"/>
                     <span className="sr-only">Toggle Menu</span>
