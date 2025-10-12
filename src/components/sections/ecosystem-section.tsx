@@ -1,5 +1,6 @@
 
 import ScrollReveal from "../scroll-reveal";
+import { Button } from "../ui/button";
 
 const ecosystemLinks = [
   {
@@ -44,20 +45,25 @@ export default function EcosystemSection() {
         <div className="grid md:grid-cols-2 gap-8">
           {ecosystemLinks.map((item, index) => (
             <ScrollReveal key={item.title} delay={index * 150}>
-              <a href={item.href} className="block h-full">
+              <a href={item.href} className="block h-full group">
                 <div 
-                  className="relative h-full p-6 border rounded-lg overflow-hidden transition-all duration-300 hover:border-primary/50 hover:shadow-lg"
+                  className="relative h-full p-6 border rounded-lg overflow-hidden transition-all duration-300 group-hover:border-primary/50 group-hover:shadow-lg flex flex-col"
                 >
                   <div className="absolute inset-0 opacity-[0.02]">
                       <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><defs><pattern id={`pattern-eco-${index}`} patternUnits="userSpaceOnUse" width="40" height="40" patternTransform={`scale(1) rotate(${index * 60})`}><rect x="0" y="0" width="100%" height="100%" fill="hsla(0,0%,100%,0)"/><path d="M10-5v20M-5 10h20" strokeWidth="0.5" stroke="hsl(var(--primary))" fill="none"/></pattern></defs><rect width="800%" height="800%" transform="translate(0,0)" fill={`url(#pattern-eco-${index})`}/></svg>
                   </div>
-                  <div className="relative z-10 flex flex-col items-center text-center">
+                  <div className="relative z-10 flex flex-col items-center text-center flex-grow">
                     <div className="p-4 bg-primary/10 rounded-full mb-4 w-fit">
                       {item.icon}
                     </div>
                     <h3 className="text-xl text-primary font-bold">{item.title}</h3>
                     <p className="text-foreground/80 mt-2">{item.description}</p>
                   </div>
+                   <div className="relative z-10 mt-6 flex justify-center">
+                        <Button variant="outline" tabIndex={-1}>
+                            Learn More
+                        </Button>
+                    </div>
                 </div>
               </a>
             </ScrollReveal>
