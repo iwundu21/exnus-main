@@ -148,20 +148,6 @@ export default function NewHeader({ onMenuClick, theme, toggleTheme }: NewHeader
                     </DropdownMenuContent>
                 </DropdownMenu>
 
-                <TooltipProvider>
-                    <Tooltip>
-                      <TooltipTrigger asChild>
-                        <Button onClick={toggleTheme} variant="ghost" size="icon" className="h-10 w-10 rounded-lg text-muted-foreground">
-                            {theme === 'light' ? <span>Light</span> : <span>Dark</span>}
-                            <span className="sr-only">Toggle theme</span>
-                        </Button>
-                      </TooltipTrigger>
-                      <TooltipContent side="bottom">
-                        <p>{theme === 'light' ? 'Enable Dark Mode' : 'Enable Light Mode'}</p>
-                      </TooltipContent>
-                    </Tooltip>
-                </TooltipProvider>
-
                 <Button variant="outline" size="icon" className="lg:hidden flex-shrink-0" onClick={onMenuClick}>
                     <span className="sr-only">Toggle Menu</span>
                     Menu
