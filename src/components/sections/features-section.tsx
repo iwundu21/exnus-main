@@ -27,7 +27,7 @@ export default function FeaturesSection() {
       className="relative overflow-hidden bg-cover bg-center"
       style={{ backgroundImage: "url('/2.jpeg')" }}
     >
-      <div className="absolute inset-0 bg-background/90 backdrop-blur-sm"></div>
+      <div className="absolute inset-0 bg-background/70 backdrop-blur-sm"></div>
       <div className="relative z-10 p-8 md:p-12 lg:p-20">
         <div className="text-center">
           <ScrollReveal>

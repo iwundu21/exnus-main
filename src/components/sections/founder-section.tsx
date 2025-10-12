@@ -10,7 +10,7 @@ export default function FounderSection() {
       className="relative overflow-hidden bg-cover bg-center"
       style={{ backgroundImage: "url('/4.jpeg')" }}
     >
-      <div className="absolute inset-0 bg-background/90 backdrop-blur-sm"></div>
+      <div className="absolute inset-0 bg-background/70 backdrop-blur-sm"></div>
       <div className="relative z-10 p-8 md:p-12 lg:p-20">
         <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <ScrollReveal>
