@@ -14,13 +14,13 @@ export default function ClientLayout({
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background flex flex-col">
       <Sidebar 
         isMobileMenuOpen={isMobileMenuOpen} 
         setMobileMenuOpen={setMobileMenuOpen}
       />
       <NewHeader onMenuClick={() => setMobileMenuOpen(true)} />
-      <main className="flex-1 pb-16 lg:pb-0">
+      <main className="flex-1">
         {children}
       </main>
       <Footer />

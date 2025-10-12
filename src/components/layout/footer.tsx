@@ -1,30 +1,29 @@
 
 'use client';
 
-import { Home, Compass, BarChart2, Search, Settings } from "lucide-react";
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { cn } from '@/lib/utils';
-
-const footerLinks = [
-    { href: '/', icon: Home },
-    { href: '/market', icon: BarChart2 },
-    { href: '/documents', icon: Compass },
-    { href: '/roadmap', icon: Search },
-    { href: '/contact', icon: Settings },
-]
+import Image from "next/image";
 
 export default function Footer() {
-    const pathname = usePathname();
-
   return (
-    <footer className="fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-background/80 backdrop-blur-lg border-t">
-      <div className="flex justify-around items-center h-16">
-        {footerLinks.map(({ href, icon: Icon }) => (
-            <Link key={href} href={href} className="flex flex-col items-center justify-center gap-1 w-full h-full">
-                <Icon className={cn("h-6 w-6 transition-colors", pathname === href ? "text-teal-300" : "text-muted-foreground")} />
-            </Link>
-        ))}
+    <footer className="w-full mt-auto py-6 px-4 md:px-6 border-t border-border/50">
+      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+        <p className="text-sm text-muted-foreground">
+          © {new Date().getFullYear()} Exnus Protocol. All rights reserved.
+        </p>
+        <div className="flex items-center gap-6">
+            <a href="https://x.com/exnusprotocol?t=erRcFQecZLsl-pW3MGFC9g&s=09" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                <Image src="/x.jpg" alt="X" width={20} height={20} />
+                <span className="sr-only">X</span>
+            </a>
+            <a href="https://t.me/Exnusprotocol" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                <Image src="/tg.jpg" alt="Telegram" width={20} height={20} />
+                <span className="sr-only">Telegram</span>
+            </a>
+            <a href="https://discord.gg/v8MpYYFdP8" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                <Image src="/discord.jpg" alt="Discord" width={20} height={20} />
+                <span className="sr-only">Discord</span>
+            </a>
+        </div>
       </div>
     </footer>
   );
