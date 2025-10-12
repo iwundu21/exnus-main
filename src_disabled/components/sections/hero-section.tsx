@@ -1,4 +1,3 @@
-'use client';
 
 import { Button } from "@/components/ui/button";
 import ScrollReveal from "@/components/scroll-reveal";
@@ -9,7 +8,7 @@ import { Label } from "../ui/label";
 export default function HeroSection() {
   return (
     <section 
-      className="relative overflow-hidden min-h-[70vh] md:min-h-[80vh] flex items-center justify-center"
+      className="relative overflow-hidden min-h-screen flex items-center justify-center"
     >
       <HeroBackground />
       <div className="relative z-10 text-center px-4">
@@ -35,12 +34,9 @@ export default function HeroSection() {
           </ScrollReveal>
           <ScrollReveal delay={400}>
             <div className="flex flex-col items-center gap-6">
-                <Button size="lg" className="w-full max-w-xs text-lg rounded-full font-semibold relative overflow-hidden bg-slate-800 border border-slate-700 hover:bg-slate-700 transition-all duration-300">
-                    <span className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]"></span>
-                    <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-900 px-8 py-3 text-sm font-medium text-gray-50 backdrop-blur-3xl">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2 h-6 w-6"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2Z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01"/><path d="M15 9h.01"/></svg>
-                        Connect Wallet
-                    </span>
+                <Button size="lg" className="w-full max-w-xs text-lg rounded-full font-semibold">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2 h-6 w-6"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2Z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01"/><path d="M15 9h.01"/></svg>
+                    Connect Wallet
                 </Button>
                 <div className="flex items-center space-x-2">
                     <Checkbox id="terms" />
@@ -55,11 +51,11 @@ export default function HeroSection() {
         @keyframes pulse {
             0%, 100% {
                 transform: scale(1);
-                opacity: 0.6;
+                opacity: 0.8;
             }
             50% {
                 transform: scale(1.2);
-                opacity: 0.9;
+                opacity: 1;
             }
         }
       `}</style>

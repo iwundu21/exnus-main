@@ -4,56 +4,49 @@
 
 @layer base {
   :root {
-    --background: 211 81% 11%;
-    --foreground: 0 0% 98%;
-    --card: 211 81% 13%;
-    --card-foreground: 0 0% 98%;
-    --popover: 211 81% 11%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 38 92% 50%;
-    --primary-foreground: 211 81% 11%;
-    --secondary: 211 81% 20%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 211 81% 20%;
-    --muted-foreground: 211 10% 60%;
-    --accent: 38 92% 50%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 211 81% 25%;
-    --input: 211 81% 20%;
-    --ring: 38 92% 50%;
-    --gold: 38 92% 50%;
-    
+    --background: 222 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222 47% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+
     --radius: 0.5rem;
   }
  
   .dark {
-    --background: 211 81% 11%;
-    --foreground: 0 0% 98%;
-    --card: 211 81% 13%;
-    --card-foreground: 0 0% 98%;
-    --popover: 211 81% 11%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 38 92% 50%;
-    --primary-foreground: 211 81% 11%;
-    --secondary: 211 81% 20%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 211 81% 20%;
-    --muted-foreground: 211 10% 60%;
-    --accent: 38 92% 50%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 211 81% 25%;
-    --input: 211 81% 20%;
-    --ring: 38 92% 50%;
-    --gold: 38 92% 50%;
-  }
-
-  .theme-gold {
-    --primary: 38 92% 50%; /* Dark Gold */
-    --primary-foreground: 240 6% 10%;
+    --background: 222 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222 47% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
   }
 }
  
@@ -65,7 +58,7 @@
     @apply scroll-smooth;
   }
   body {
-    @apply bg-transparent text-foreground;
+    @apply bg-background text-foreground;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-headline;
@@ -83,9 +76,9 @@
 
 @layer components {
   .header-card {
-    @apply bg-primary/10 backdrop-blur-sm p-8 rounded-lg border border-primary/20;
+    @apply bg-transparent p-8 rounded-lg border-0;
   }
-  .bg-dark-gold {
-    background-color: hsl(38 92% 50%);
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-teal-300 via-purple-300 to-orange-300;
   }
 }
