@@ -282,6 +282,11 @@ const SectionContent = ({ id }: { id: string }) => {
                     <p className="mt-4">
                         This vesting schedule is designed to empower our community from day one while encouraging sustained engagement and mitigating initial market volatility.
                     </p>
+
+                    <h3 className="text-2xl font-semibold gradient-text mt-6 mb-3">Circulating Supply at TGE</h3>
+                    <p>
+                        The initial circulating supply at the Token Generation Event (TGE) is expected to be approximately 350 million tokens. This figure is composed of tokens unlocked for liquidity provision, presale participants, and initial airdrop claims, ensuring a healthy market launch while maintaining long-term stability.
+                    </p>
                 </div>
             );
         case "conclusion":
@@ -429,3 +434,4 @@ export default function ProtocolPage() {
     
 
     
+
