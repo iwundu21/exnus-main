@@ -3,16 +3,17 @@
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 
 const data = [
-  { name: 'Staking Rewards', value: 75.8 },
+  { name: 'Staking Rewards', value: 71.4 },
   { name: 'Liquidity Provision', value: 10 },
   { name: 'Community Airdrop', value: 4 },
   { name: 'Team Allocation', value: 4 },
   { name: 'DAO Treasury', value: 4 },
-  { name: 'Presale', value: 1.4 },
+  { name: 'Launchpad Partnership', value: 4 },
+  { name: 'Presale', value: 1.8 },
   { name: 'Advisors Allocation', value: 0.8 },
 ];
 
-const COLORS = ['hsl(var(--primary))', '#6b7280', '#10b981', '#3b82f6', '#ef4444', '#a855f7', '#8b5cf6'];
+const COLORS = ['hsl(var(--primary))', '#6b7280', '#10b981', '#3b82f6', '#ef4444', '#f97316', '#a855f7', '#8b5cf6'];
 
 const CustomTooltip = ({ active, payload }: any) => {
   if (active && payload && payload.length) {
