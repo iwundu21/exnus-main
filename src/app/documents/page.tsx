@@ -275,8 +275,8 @@ const SectionContent = ({ id }: { id: string }) => {
                         To ensure a fair and stable market entry, the 100 million tokens allocated for the community airdrop will be distributed with a structured vesting schedule. This approach rewards early participants while promoting long-term ecosystem health.
                     </p>
                     <ul className="list-disc pl-6 space-y-2 mt-4">
-                        <li><strong>Initial Unlock at TGE:</strong> 60% of the airdrop allocation (60 million tokens) will be unlocked and available to claim at the Token Generation Event (TGE).</li>
-                        <li><strong>Linear Vesting:</strong> The remaining 40% (40 million tokens) will vest linearly on a monthly basis over the subsequent 8 months. This means an additional 5 million tokens will become available to airdrop recipients each month.</li>
+                        <li><strong>Initial Unlock at TGE:</strong> 50% of the airdrop allocation (50 million tokens) will be unlocked and available to claim at the Token Generation Event (TGE).</li>
+                        <li><strong>Linear Vesting:</strong> The remaining 50% (50 million tokens) will vest linearly on a monthly basis over the subsequent 8 months. This means an additional 6.25 million tokens will become available to airdrop recipients each month.</li>
                     </ul>
                     <p className="mt-4">
                         This vesting schedule is designed to empower our community from day one while encouraging sustained engagement and mitigating initial market volatility.
